@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="Daily Board — a local-first iOS app combining Reminders, Calendar, a private journal and quick notes on one screen. No account, no cloud backend, no tracking."
+    />
+    <link rel="shortcut icon" href="../assets/images/boesger-digital.png" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/boesger-digital.png" />
+    <link rel="icon" href="../assets/images/boesger-digital.png" type="image/webp" />
+    <title>Daily Board — Phillip Bösger</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/style.css?v=20260720a" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="network-canvas"></canvas>
+
+    <div class="page">
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="../index.html" class="brand-logo-link">
+            <img src="../assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+          </a>
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="../index.html" class="nav-pill">Home</a>
+            <a href="../profile.html" class="nav-pill">Profile</a>
+            <a href="../work.html" class="nav-pill is-active">Projects</a>
+            <a href="../blog.html" class="nav-pill">Blog</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="../contact.html" class="btn btn-primary btn-sm">Get in touch</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="../index.html" class="nav-pill">Home</a>
+          <a href="../profile.html" class="nav-pill">Profile</a>
+          <a href="../work.html" class="nav-pill is-active">Projects</a>
+          <a href="../blog.html" class="nav-pill">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="section-inner" style="padding: 28px 24px 64px">
+          <a href="../work.html" class="back-link">← Back to work</a>
+
+          <div class="product-hero" data-reveal>
+            <span class="product-badge">Personal Project · iOS 26+</span>
+            <h1>Daily Board</h1>
+            <p class="product-tagline">Your day, on one screen.</p>
+            <p class="product-subtitle">A local-first iOS app combining Reminders, Calendar, a private journal and quick notes — no account, no cloud backend, no tracking.</p>
+            <div class="product-chips">
+              <span class="tag">SwiftUI</span>
+              <span class="tag">EventKit</span>
+              <span class="tag">On-device AI</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="mailto:digital@boesger.com?subject=Daily%20Board" class="btn btn-primary btn-lg">Get in touch</a>
+              <a href="#privacy" class="btn btn-secondary btn-lg">Read the privacy policy</a>
+            </div>
+          </div>
+
+          <div class="stat-tile-grid" data-reveal>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">2</div><div class="stat-tile-label">Languages · DE &amp; EN</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">iOS 26+</div><div class="stat-tile-label">Platform</div></div>
+          </div>
+
+          <h2 class="section-title">What it does</h2>
+          <div class="feature-grid" data-reveal>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Today, unified</h4>
+              <p>Apple Reminders and Calendar events combined into one daily timeline — tap to complete, swipe to reschedule, or add a todo from free text.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Journal with on-device AI</h4>
+              <p>A short daily check-in with optional task suggestions derived from your free text, powered entirely by Apple's on-device FoundationModels framework.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Quick, rich-text Notes</h4>
+              <p>Bold, italic, underline, headings and lists, with a settable title that falls back to the first line.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Apple stays the source of truth</h4>
+              <p>Reminders and Calendar events sync only through your own iCloud account — Daily Board never keeps a second, parallel copy.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>No account, no tracking</h4>
+              <p>No sign-up, no analytics, no advertising identifiers, no third-party SDKs. Journal entries and notes live only in the app's local store.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>German &amp; English</h4>
+              <p>Fully localized, with English as the fallback for any device language that isn't German.</p>
+            </div>
+          </div>
+
+          <div data-reveal>
+            <h2 class="section-title" style="margin-bottom: 6px">See it in action</h2>
+            <p class="section-lead">Real screens from the running app, not mockups.</p>
+            <div class="carousel-wrap" data-carousel>
+              <figure class="carousel-frame">
+                <div class="code-window-head">
+                  <span class="traffic-dot red"></span><span class="traffic-dot yellow"></span><span class="traffic-dot green"></span>
+                  <figcaption>Today — reminders and calendar events in one timeline</figcaption>
+                </div>
+                <div class="carousel-stage">
+                  <div class="carousel-slide is-active">
+                    <img src="../assets/images/daily-board-today.png" alt="Today tab showing a unified list of reminders and calendar events" loading="lazy" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/images/daily-board-journal.png" alt="Journal tab showing a daily check-in with mood rating" loading="lazy" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/images/daily-board-notes.png" alt="Notes tab showing a rich-text note editor" loading="lazy" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="../assets/images/daily-board-settings.png" alt="Settings tab" loading="lazy" />
+                  </div>
+                </div>
+              </figure>
+              <div class="carousel-controls">
+                <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous">←</button>
+                <div class="carousel-dots">
+                  <button type="button" class="carousel-dot is-active" aria-label="Slide 1"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 4"></button>
+                </div>
+                <button type="button" class="carousel-arrow carousel-next" aria-label="Next">→</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="privacy" style="margin-top: 44px; scroll-margin-top: 100px" data-reveal>
+            <h2 class="section-title" style="margin-bottom: 6px">Privacy, in full</h2>
+            <p class="section-lead">Daily Board does not collect, store, or transmit any personal data to my or any third party's servers. This is the complete privacy policy, not a summary.</p>
+            <div class="feature-grid" style="margin-top: 24px">
+              <div class="glass-card feature-card">
+                <div class="feature-bar"></div>
+                <h4>Reminders &amp; Calendar</h4>
+                <p>Displayed and edited in the daily board, stored on your device and synced only via your own iCloud account (Apple's technology, not mine). No second copy is ever kept.</p>
+              </div>
+              <div class="glass-card feature-card">
+                <div class="feature-bar"></div>
+                <h4>Journal &amp; Notes</h4>
+                <p>Stored exclusively on-device (SwiftData). Deleted when you remove an entry, or when you uninstall the app.</p>
+              </div>
+              <div class="glass-card feature-card">
+                <div class="feature-bar"></div>
+                <h4>On-device AI</h4>
+                <p>Optional journal task suggestions run entirely locally via Apple's FoundationModels framework — no text is ever sent to a server, mine, Apple's, or anyone else's.</p>
+              </div>
+              <div class="glass-card feature-card">
+                <div class="feature-bar"></div>
+                <h4>Backup</h4>
+                <p>An optional local JSON backup (weekly or manual) lands in the app's own Documents folder, visible via the Files app — you decide if and where to move it. The app never uploads it automatically.</p>
+              </div>
+              <div class="glass-card feature-card">
+                <div class="feature-bar"></div>
+                <h4>No sharing with third parties</h4>
+                <p>No advertising, no analytics or tracking services, no data sharing, no in-app purchases, no cloud backend run by me.</p>
+              </div>
+              <div class="glass-card feature-card">
+                <div class="feature-bar"></div>
+                <h4>Questions</h4>
+                <p>Reach out any time at <a href="mailto:digital@boesger.com">digital@boesger.com</a>. See also the site-wide <a href="../imprint.html">Imprint / Legal Disclosure</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-band" data-reveal style="margin-top: 44px">
+            <h2>Curious about Daily Board?</h2>
+            <p>It's a personal project, not (yet) on the App Store — happy to talk about it, or about building something similar for you.</p>
+            <div class="hero-ctas">
+              <a href="mailto:digital@boesger.com?subject=Daily%20Board" class="btn btn-primary btn-lg">Get in touch</a>
+            </div>
+              <div class="ask-ai-inline">
+                <p class="ask-ai-inline-label">Or let an AI sum me up — the prompt is already prepared:</p>
+                <div class="ask-ai-buttons">
+                  <a href="https://chatgpt.com/?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
+                    <img src="../assets/images/ai-chatgpt.png" alt="" />ChatGPT</a>
+                  <a href="https://claude.ai/new?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
+                    <img src="../assets/images/ai-claude.png" alt="" />Claude</a>
+                  <a href="https://www.perplexity.ai/search?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
+                    <img src="../assets/images/ai-perplexity.png" alt="" />Perplexity</a>
+                  <a href="https://www.google.com/search?udm=50&amp;q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
+                    <img src="../assets/images/ai-gemini.png" alt="" />Gemini</a>
+                </div>
+              </div>
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="../index.html" class="brand-logo-link">
+              <img src="../assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+            </a>
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="../assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="../assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="../colors.html" class="footer-pill-link">
+                <img src="../assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
+            <div class="footer-legal-links">
+              <a href="../imprint.html" class="footer-legal-link">Imprint / Legal Disclosure</a>
+            <a href="../privacy.html" class="footer-legal-link">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../assets/js/network.js?v=20260720a"></script>
+    <script src="../assets/js/site.js?v=20260720a"></script>
+    <script>
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
