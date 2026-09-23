@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/css/style.css?v=20260923a" rel="stylesheet" />
+    <link href="../assets/css/style.css?v=20260923b" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -72,56 +72,9 @@
             </div>
           </div>
 
-          <div class="stat-tile-grid" data-reveal>
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">2</div><div class="stat-tile-label">Languages · DE &amp; EN</div></div>
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">iOS 26+</div><div class="stat-tile-label">Platform</div></div>
-          </div>
-
-          <h2 class="section-title">What it does</h2>
-          <div class="feature-grid" data-reveal>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Today, unified</h4>
-              <p>Type "dentist tomorrow 10am" and it becomes a real reminder with that due date — sitting right next to your calendar events on one scrollable timeline, tap to complete, swipe to reschedule.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Journal with on-device AI</h4>
-              <p>Write a few lines about your morning and Daily Board proposes real to-dos from it via Apple's on-device FoundationModels — nothing you write is ever sent to a server.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Quick, rich-text Notes</h4>
-              <p>Bold, italic, underline, headings and lists in a searchable list — set a title yourself, or leave it and the first line becomes one automatically.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Apple stays the source of truth</h4>
-              <p>Reminders and Calendar events sync only through your own iCloud account — Daily Board never keeps a second, parallel copy anywhere else.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>No account, no tracking</h4>
-              <p>No sign-up, no analytics, no advertising identifiers, no third-party SDKs. Journal entries and notes exist only in the app's own local store on your device.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>German &amp; English</h4>
-              <p>Fully localized UI, switching automatically with your device's language — with English as the fallback for anything other than German.</p>
-            </div>
-          </div>
-
           <div data-reveal>
-            <h2 class="section-title" style="margin-bottom: 6px">See it in action</h2>
-            <p class="section-lead">Real screens from the running app, not mockups.</p>
-            <div class="carousel-wrap is-portrait" data-carousel>
+            <div class="carousel-wrap is-phone" data-carousel>
               <figure class="carousel-frame">
-                <div class="code-window-head">
-                  <span class="traffic-dot red"></span><span class="traffic-dot yellow"></span><span class="traffic-dot green"></span>
-                  <span class="code-window-label">DAILY BOARD</span>
-                </div>
                 <div class="carousel-stage">
                   <div class="carousel-slide is-active">
                     <img src="../assets/images/daily-board-today.png" alt="Today tab: Wed 23 selected in the day strip, two reminders (Call the dentist, Buy groceries) on one timeline, quick-add field at the bottom" loading="lazy" />
@@ -156,39 +109,64 @@
             </div>
           </div>
 
+          <div class="stat-tile-grid" data-reveal style="margin-top: 44px">
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">2</div><div class="stat-tile-label">Languages · DE &amp; EN</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">iOS 26+</div><div class="stat-tile-label">Platform</div></div>
+          </div>
+
+          <h2 class="section-title">What it does</h2>
+          <div class="feature-grid" data-reveal>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Today, unified</h4>
+              <p>Type "dentist tomorrow 10am" and it becomes a real reminder with that due date — sitting right next to your calendar events on one scrollable timeline, tap to complete, swipe to reschedule.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Journal with on-device AI</h4>
+              <p>Write a few lines about your morning and Daily Board proposes real to-dos from it via Apple's on-device FoundationModels — nothing you write is ever sent to a server.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Quick, rich-text Notes</h4>
+              <p>Bold, italic, underline, headings and lists in a searchable list — set a title yourself, or leave it and the first line becomes one automatically.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Local, not synced to me</h4>
+              <p>Reminders and Calendar stay in your own iCloud, Apple's sync, not mine — Daily Board never keeps a parallel copy. No accounts, no analytics, no third-party SDKs; journal and notes live only in the app's local store.</p>
+            </div>
+          </div>
+
           <div id="privacy" style="margin-top: 44px; scroll-margin-top: 100px" data-reveal>
             <h2 class="section-title" style="margin-bottom: 6px">Privacy, in full</h2>
             <p class="section-lead">Daily Board does not collect, store, or transmit any personal data to my or any third party's servers. This is the complete privacy policy, not a summary.</p>
-            <div class="feature-grid" style="margin-top: 24px">
-              <div class="glass-card feature-card">
-                <div class="feature-bar"></div>
-                <h4>Reminders &amp; Calendar</h4>
-                <p>Displayed and edited in the daily board, stored on your device and synced only via your own iCloud account (Apple's technology, not mine). No second copy is ever kept.</p>
+            <div class="compat-grid" style="margin-top: 24px">
+              <div class="glass-panel compat-card">
+                <div class="compat-name">Reminders &amp; Calendar</div>
+                <div class="compat-meta">Displayed and edited in the daily board, stored on your device and synced only via your own iCloud account (Apple's technology, not mine). No second copy is ever kept.</div>
               </div>
-              <div class="glass-card feature-card">
-                <div class="feature-bar"></div>
-                <h4>Journal &amp; Notes</h4>
-                <p>Stored exclusively on-device (SwiftData). Deleted when you remove an entry, or when you uninstall the app.</p>
+              <div class="glass-panel compat-card">
+                <div class="compat-name">Journal &amp; Notes</div>
+                <div class="compat-meta">Stored exclusively on-device (SwiftData). Deleted when you remove an entry, or when you uninstall the app.</div>
               </div>
-              <div class="glass-card feature-card">
-                <div class="feature-bar"></div>
-                <h4>On-device AI</h4>
-                <p>Optional journal task suggestions run entirely locally via Apple's FoundationModels framework — no text is ever sent to a server, mine, Apple's, or anyone else's.</p>
+              <div class="glass-panel compat-card">
+                <div class="compat-name">On-device AI</div>
+                <div class="compat-meta">Optional journal task suggestions run entirely locally via Apple's FoundationModels framework — no text is ever sent to a server, mine, Apple's, or anyone else's.</div>
               </div>
-              <div class="glass-card feature-card">
-                <div class="feature-bar"></div>
-                <h4>Backup</h4>
-                <p>An optional local JSON backup (weekly or manual) lands in the app's own Documents folder, visible via the Files app — you decide if and where to move it. The app never uploads it automatically.</p>
+              <div class="glass-panel compat-card">
+                <div class="compat-name">Backup</div>
+                <div class="compat-meta">An optional local JSON backup (weekly or manual) lands in the app's own Documents folder, visible via the Files app — you decide if and where to move it. The app never uploads it automatically.</div>
               </div>
-              <div class="glass-card feature-card">
-                <div class="feature-bar"></div>
-                <h4>No sharing with third parties</h4>
-                <p>No advertising, no analytics or tracking services, no data sharing, no in-app purchases, no cloud backend run by me.</p>
+              <div class="glass-panel compat-card">
+                <div class="compat-name">No sharing with third parties</div>
+                <div class="compat-meta">No advertising, no analytics or tracking services, no data sharing, no in-app purchases, no cloud backend run by me.</div>
               </div>
-              <div class="glass-card feature-card">
-                <div class="feature-bar"></div>
-                <h4>Questions</h4>
-                <p>Reach out any time at <a href="mailto:digital@boesger.com">digital@boesger.com</a>. See also the site-wide <a href="../imprint.html">Imprint / Legal Disclosure</a>.</p>
+              <div class="glass-panel compat-card">
+                <div class="compat-name">Questions</div>
+                <div class="compat-meta">Reach out any time at <a href="mailto:digital@boesger.com">digital@boesger.com</a>. See also the site-wide <a href="../imprint.html">Imprint / Legal Disclosure</a>.</div>
               </div>
             </div>
           </div>
@@ -262,8 +240,8 @@
       </footer>
     </div>
 
-    <script src="../assets/js/network.js?v=20260923a"></script>
-    <script src="../assets/js/site.js?v=20260923a"></script>
+    <script src="../assets/js/network.js?v=20260923b"></script>
+    <script src="../assets/js/site.js?v=20260923b"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
