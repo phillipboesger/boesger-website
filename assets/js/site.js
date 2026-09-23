@@ -176,6 +176,7 @@
   document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
     var slides = carousel.querySelectorAll(".carousel-slide");
     var dots = carousel.querySelectorAll(".carousel-dot");
+    var captions = carousel.querySelectorAll(".carousel-caption-item");
     var prev = carousel.querySelector(".carousel-prev");
     var next = carousel.querySelector(".carousel-next");
     if (slides.length < 2) return;
@@ -186,6 +187,7 @@
       idx = (i + slides.length) % slides.length;
       slides.forEach(function (s, j) { s.classList.toggle("is-active", j === idx); });
       dots.forEach(function (d, j) { d.classList.toggle("is-active", j === idx); });
+      captions.forEach(function (c, j) { c.classList.toggle("is-active", j === idx); });
     }
     dots.forEach(function (d, i) {
       d.addEventListener("click", function () { show(i); });

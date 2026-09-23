@@ -1853,6 +1853,33 @@ a:hover {
   max-height: 380px;
   object-fit: contain;
 }
+.carousel-frame .carousel-caption {
+  margin: 0;
+  padding: 12px 16px 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+.carousel-caption-item {
+  display: none;
+  color: rgba(195, 222, 245, 0.82);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.carousel-caption-item.is-active {
+  display: block;
+}
+/* Portrait screenshots (e.g. phone UI) need height-bound sizing instead of
+   width-bound — the default rule above assumes landscape GIFs/screenshots. */
+.carousel-wrap.is-portrait .carousel-stage {
+  min-height: 480px;
+  padding: 24px 0;
+}
+.carousel-wrap.is-portrait .carousel-slide img {
+  width: auto;
+  max-width: 100%;
+  max-height: 560px;
+  margin: 0 auto;
+}
 .carousel-controls {
   display: flex;
   align-items: center;
