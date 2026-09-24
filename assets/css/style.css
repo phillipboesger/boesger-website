@@ -1900,7 +1900,7 @@ a:hover {
   display: grid;
   grid-template-columns: minmax(260px, 420px) minmax(240px, 340px);
   gap: 48px;
-  align-items: center;
+  align-items: start;
   margin: 44px 0;
 }
 .showcase-media {
