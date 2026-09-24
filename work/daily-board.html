@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/css/style.css?v=20260923b" rel="stylesheet" />
+    <link href="../assets/css/style.css?v=20260924a" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -72,31 +72,24 @@
             </div>
           </div>
 
-          <div data-reveal>
-            <div class="carousel-wrap is-phone" data-carousel>
-              <figure class="carousel-frame">
-                <div class="carousel-stage">
-                  <div class="carousel-slide is-active">
-                    <img src="../assets/images/daily-board-today.png" alt="Today tab: Wed 23 selected in the day strip, two reminders (Call the dentist, Buy groceries) on one timeline, quick-add field at the bottom" loading="lazy" />
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="../assets/images/daily-board-journal.png" alt="Journal tab: a morning free-text entry with two AI-suggested to-dos already turned into tappable items, and a 5-emoji evening rating" loading="lazy" />
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="../assets/images/daily-board-notes.png" alt="Notes tab: a searchable list with one note automatically titled Grocery list from its first line" loading="lazy" />
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="../assets/images/daily-board-settings.png" alt="Settings tab: calendar picker, journal reminder toggles, and a manual backup export button" loading="lazy" />
-                  </div>
-                </div>
-                <figcaption class="carousel-caption">
-                  <span class="carousel-caption-item is-active">Today — every reminder and calendar event on one timeline. Tap the circle to complete, swipe to reschedule, or type a todo in plain text at the bottom.</span>
-                  <span class="carousel-caption-item">Journal — write a few lines in the morning ("go for a walk and call my mom…") and the on-device AI proposes real to-dos from it, here "Call the dentist" and "Buy groceries" — no network call involved.</span>
-                  <span class="carousel-caption-item">Notes — a searchable list where "Grocery list" was never typed as a title, it's just the note's first line; set a custom title any time.</span>
-                  <span class="carousel-caption-item">Settings — choose which calendar feeds Today, turn morning/evening journal reminders on or off, and export a local JSON backup with one tap.</span>
-                </figcaption>
-              </figure>
-              <div class="carousel-controls">
+          <div class="stat-tile-grid" data-reveal style="margin-top: 32px">
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">2</div><div class="stat-tile-label">Languages · DE &amp; EN</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">iOS 26+</div><div class="stat-tile-label">Platform</div></div>
+          </div>
+
+          <div class="showcase" data-carousel data-reveal>
+            <div class="showcase-info">
+              <h2 class="section-title" style="margin-bottom: 6px">See it in action</h2>
+              <p class="section-lead">Real screens from the running app, not mockups.</p>
+              <div class="showcase-caption">
+                <span class="carousel-caption-item is-active">Today — every reminder and calendar event on one timeline. Tap the circle to complete, swipe to reschedule, or type a todo in plain text at the bottom.</span>
+                <span class="carousel-caption-item">Journal — write a few lines in the morning ("go for a walk and call my mom…") and the on-device AI proposes real to-dos from it, here "Call the dentist" and "Buy groceries" — no network call involved.</span>
+                <span class="carousel-caption-item">Notes — a searchable list where "Grocery list" was never typed as a title, it's just the note's first line; set a custom title any time.</span>
+                <span class="carousel-caption-item">Settings — choose which calendar feeds Today, turn morning/evening journal reminders on or off, and export a local JSON backup with one tap.</span>
+              </div>
+              <div class="carousel-controls showcase-controls">
                 <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous">←</button>
                 <div class="carousel-dots">
                   <button type="button" class="carousel-dot is-active" aria-label="Slide 1"></button>
@@ -107,36 +100,21 @@
                 <button type="button" class="carousel-arrow carousel-next" aria-label="Next">→</button>
               </div>
             </div>
-          </div>
-
-          <div class="stat-tile-grid" data-reveal style="margin-top: 44px">
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">2</div><div class="stat-tile-label">Languages · DE &amp; EN</div></div>
-            <div class="glass-panel stat-tile"><div class="stat-tile-value">iOS 26+</div><div class="stat-tile-label">Platform</div></div>
-          </div>
-
-          <h2 class="section-title">What it does</h2>
-          <div class="feature-grid" data-reveal>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Today, unified</h4>
-              <p>Type "dentist tomorrow 10am" and it becomes a real reminder with that due date — sitting right next to your calendar events on one scrollable timeline, tap to complete, swipe to reschedule.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Journal with on-device AI</h4>
-              <p>Write a few lines about your morning and Daily Board proposes real to-dos from it via Apple's on-device FoundationModels — nothing you write is ever sent to a server.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Quick, rich-text Notes</h4>
-              <p>Bold, italic, underline, headings and lists in a searchable list — set a title yourself, or leave it and the first line becomes one automatically.</p>
-            </div>
-            <div class="glass-card feature-card">
-              <div class="feature-bar"></div>
-              <h4>Local, not synced to me</h4>
-              <p>Reminders and Calendar stay in your own iCloud, Apple's sync, not mine — Daily Board never keeps a parallel copy. No accounts, no analytics, no third-party SDKs; journal and notes live only in the app's local store.</p>
+            <div class="showcase-media carousel-wrap is-phone">
+              <div class="carousel-stage">
+                <div class="carousel-slide is-active">
+                  <img src="../assets/images/daily-board-today.png" alt="Today tab: Wed 23 selected in the day strip, two reminders (Call the dentist, Buy groceries) on one timeline, quick-add field at the bottom" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="../assets/images/daily-board-journal.png" alt="Journal tab: a morning free-text entry with two AI-suggested to-dos already turned into tappable items, and a 5-emoji evening rating" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="../assets/images/daily-board-notes.png" alt="Notes tab: a searchable list with one note automatically titled Grocery list from its first line" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="../assets/images/daily-board-settings.png" alt="Settings tab: calendar picker, journal reminder toggles, and a manual backup export button" loading="lazy" />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -240,8 +218,8 @@
       </footer>
     </div>
 
-    <script src="../assets/js/network.js?v=20260923b"></script>
-    <script src="../assets/js/site.js?v=20260923b"></script>
+    <script src="../assets/js/network.js?v=20260924a"></script>
+    <script src="../assets/js/site.js?v=20260924a"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
