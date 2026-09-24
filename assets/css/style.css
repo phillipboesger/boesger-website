@@ -1903,13 +1903,17 @@ a:hover {
   align-items: start;
   margin: 44px 0;
 }
+.showcase.showcase-triple {
+  grid-template-columns: minmax(220px, 300px) minmax(240px, 340px) minmax(200px, 280px);
+  gap: 36px;
+}
 .showcase-media {
   display: flex;
   justify-content: center;
 }
 .showcase-caption {
   margin: 20px 0 24px;
-  min-height: 230px;
+  min-height: 280px;
 }
 .showcase-caption .carousel-caption-item {
   display: none;

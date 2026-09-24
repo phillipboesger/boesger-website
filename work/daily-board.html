@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/css/style.css?v=20260924c" rel="stylesheet" />
+    <link href="../assets/css/style.css?v=20260924d" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -72,11 +72,6 @@
             </div>
           </div>
 
-          <div data-reveal style="margin-top: 32px; max-width: 44rem">
-            <h2 class="section-title" style="margin-bottom: 14px">Why Daily Board</h2>
-            <p class="section-lead">I already like using Apple Reminders and Calendar — I never wanted to replace them, just stop switching apps to see what my day actually looks like. For a while I kept a journal in one app and notes in another; neither survived, because neither lived where I already was. This first version deliberately starts small — Today, Journal, and Notes, entirely on-device — so there's something real to use, and real feedback to build the rest on.</p>
-          </div>
-
           <div class="stat-tile-grid" data-reveal style="margin-top: 32px">
             <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
             <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
@@ -84,7 +79,11 @@
             <div class="glass-panel stat-tile"><div class="stat-tile-value">iOS 26+</div><div class="stat-tile-label">Platform</div></div>
           </div>
 
-          <div class="showcase" data-carousel data-reveal>
+          <div class="showcase showcase-triple" data-carousel data-reveal>
+            <div class="showcase-why">
+              <h2 class="section-title" style="margin-bottom: 14px">Why Daily Board</h2>
+              <p class="section-lead">I already like using Apple Reminders and Calendar — I never wanted to replace them, just stop switching apps to see what my day actually looks like. For a while I kept a journal in one app and notes in another; neither survived, because neither lived where I already was. This first version deliberately starts small — Today, Journal, and Notes, entirely on-device — so there's something real to use, and real feedback to build the rest on.</p>
+            </div>
             <div class="showcase-info">
               <h2 class="section-title" style="margin-bottom: 6px">See it in action</h2>
               <p class="section-lead">Real screens from the running app, not mockups.</p>
@@ -245,8 +244,8 @@
       </footer>
     </div>
 
-    <script src="../assets/js/network.js?v=20260924c"></script>
-    <script src="../assets/js/site.js?v=20260924c"></script>
+    <script src="../assets/js/network.js?v=20260924d"></script>
+    <script src="../assets/js/site.js?v=20260924d"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
