@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/css/style.css?v=20260924b" rel="stylesheet" />
+    <link href="../assets/css/style.css?v=20260924c" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -72,6 +72,12 @@
             </div>
           </div>
 
+          <div data-reveal style="margin-top: 32px; max-width: 44rem">
+            <h2 class="section-title" style="margin-bottom: 14px">Why Daily Board</h2>
+            <p class="section-lead">I already like using Apple Reminders and Calendar — I never wanted to replace them, just stop switching apps to see what my day actually looks like. For a while I kept a journal in one app and notes in another; neither survived, because neither lived where I already was.</p>
+            <p class="section-lead">Daily Board isn't meant to be a second home screen. It's an information center for one day at a time — and the plan is to keep growing that center, not the number of apps: which emails and messages still need a reply, which Claude/AI sessions are waiting on my input, eventually pulling context from my own second brain instead of typing it in twice. All of that is still ahead. This first version deliberately starts small — Today, Journal, and Notes, entirely on-device — so there's something real to use, and real feedback to build the rest on.</p>
+          </div>
+
           <div class="stat-tile-grid" data-reveal style="margin-top: 32px">
             <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
             <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
@@ -84,10 +90,10 @@
               <h2 class="section-title" style="margin-bottom: 6px">See it in action</h2>
               <p class="section-lead">Real screens from the running app, not mockups.</p>
               <div class="showcase-caption">
-                <span class="carousel-caption-item is-active">Today — every reminder and calendar event on one timeline. Tap the circle to complete, swipe to reschedule, or type a todo in plain text at the bottom.</span>
-                <span class="carousel-caption-item">Journal — write a few lines in the morning ("go for a walk and call my mom…") and the on-device AI proposes real to-dos from it, here "Call the dentist" and "Buy groceries" — no network call involved.</span>
-                <span class="carousel-caption-item">Notes — a searchable list where "Grocery list" was never typed as a title, it's just the note's first line; set a custom title any time.</span>
-                <span class="carousel-caption-item">Settings — choose which calendar feeds Today, turn morning/evening journal reminders on or off, and export a local JSON backup with one tap.</span>
+                <span class="carousel-caption-item is-active">Today — every reminder and calendar event on one timeline, because I got tired of switching apps just to see what my day actually looks like. Adding something new works the way it forms in my head: one sentence, what, when, where, not ten fields to tap through. Type "dentist tomorrow 10am" and it becomes a real Apple Reminder with that due date. Tap the circle to complete, swipe to reschedule.</span>
+                <span class="carousel-caption-item">Journal — I've always found reflecting on the day genuinely valuable, but a journal in its own app is a journal I stop opening. Living right next to Today means I actually keep the habit. Write a few lines in the morning ("go for a walk and call my mom…") and the on-device AI proposes real to-dos from it — here "Call the dentist" and "Buy groceries" — no network call involved. Apple finally ships real on-device intelligence, so I wanted to actually use it.</span>
+                <span class="carousel-caption-item">Notes — built to feel almost identical to Apple Notes, on purpose: thin and fast, not a note-taking platform in its own right. The only reason it exists at all is that Apple offers no public API into Notes the way it does for Reminders and Calendar, so anything living next to Today needs its own lightweight store. "Grocery list" here was never typed as a title — it's just the note's first line; set a custom one any time.</span>
+                <span class="carousel-caption-item">Settings — for this first version: choose which calendar feeds Today, toggle morning and evening journal reminders, and export a local JSON backup with one tap. This is also where sync, automation and more AI will land as Daily Board grows from a personal daily driver into a real information hub — deliberately left minimal here until those are actually real, not just planned.</span>
               </div>
               <div class="carousel-controls showcase-controls">
                 <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous">←</button>
@@ -218,8 +224,8 @@
       </footer>
     </div>
 
-    <script src="../assets/js/network.js?v=20260924b"></script>
-    <script src="../assets/js/site.js?v=20260924b"></script>
+    <script src="../assets/js/network.js?v=20260924c"></script>
+    <script src="../assets/js/site.js?v=20260924c"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
