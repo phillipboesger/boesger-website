@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/css/style.css?v=20260924d" rel="stylesheet" />
+    <link href="../assets/css/style.css?v=20260925a" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -59,16 +59,32 @@
           <div class="product-hero" data-reveal>
             <span class="product-badge">Personal Project · iOS 26+</span>
             <h1>Daily Board</h1>
-            <p class="product-tagline">Your day, on one screen.</p>
-            <p class="product-subtitle">A local-first iOS app combining Reminders, Calendar, a private journal and quick notes — no account, no cloud backend, no tracking.</p>
+            <p class="product-tagline">Stop switching apps to find out what your day looks like.</p>
+            <p class="product-subtitle">Reminders, Calendar, journal and quick notes — one screen, entirely on your iPhone.</p>
+            <ul class="app-benefits">
+              <li>Your Apple Reminders and Calendar on one timeline — no second todo system to maintain.</li>
+              <li>Add a todo the way you think it: "dentist tomorrow 10am" becomes a real reminder.</li>
+              <li>A daily journal that turns what you wrote into tasks, using on-device AI.</li>
+              <li>No account, no cloud backend, no tracking — nothing ever leaves your device.</li>
+            </ul>
+            <div class="store-ctas">
+              <span class="store-badge is-soon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="6" y="2" width="12" height="20" rx="3" />
+                  <path d="M11 18.5h2" />
+                </svg>
+                <span class="store-badge-text">
+                  <span class="store-badge-small">Coming soon to the</span>
+                  <span class="store-badge-big">App Store</span>
+                </span>
+              </span>
+              <a href="mailto:digital@boesger.com?subject=Daily%20Board%20%E2%80%94%20notify%20me%20at%20launch" class="btn btn-primary btn-lg">Get notified at launch</a>
+            </div>
+            <p class="trust-line">Free · iPhone, iOS 26 or newer · German &amp; English · <a href="#privacy">What it does with your data</a></p>
             <div class="product-chips">
               <span class="tag">SwiftUI</span>
               <span class="tag">EventKit</span>
               <span class="tag">On-device AI</span>
-            </div>
-            <div class="hero-ctas">
-              <a href="mailto:digital@boesger.com?subject=Daily%20Board" class="btn btn-primary btn-lg">Get in touch</a>
-              <a href="#privacy" class="btn btn-secondary btn-lg">Read the privacy policy</a>
             </div>
           </div>
 
@@ -82,26 +98,39 @@
           <div class="showcase showcase-triple" data-carousel data-reveal>
             <div class="showcase-why">
               <h2 class="section-title" style="margin-bottom: 14px">Why Daily Board</h2>
-              <p class="section-lead">I already like using Apple Reminders and Calendar — I never wanted to replace them, just stop switching apps to see what my day actually looks like. For a while I kept a journal in one app and notes in another; neither survived, because neither lived where I already was. This first version deliberately starts small — Today, Journal, and Notes, entirely on-device — so there's something real to use, and real feedback to build the rest on.</p>
+              <p class="section-lead">I like Apple Reminders and Calendar. I just got tired of opening four apps to find out what my day looks like — and the journal and notes I kept elsewhere never stuck, because they didn't live where I already was.</p>
+              <p class="section-lead">So Daily Board puts all of it on one screen, and keeps every bit of it on the device.</p>
             </div>
             <div class="showcase-info">
               <h2 class="section-title" style="margin-bottom: 6px">See it in action</h2>
               <p class="section-lead">Real screens from the running app, not mockups.</p>
+              <div class="showcase-tabbar">
+                <button type="button" class="carousel-dot is-active">Today</button>
+                <button type="button" class="carousel-dot">Journal</button>
+                <button type="button" class="carousel-dot">Notes</button>
+                <button type="button" class="carousel-dot">Settings</button>
+              </div>
               <div class="showcase-caption">
-                <span class="carousel-caption-item is-active">Today — every reminder and calendar event on one timeline, because I got tired of switching apps just to see what my day actually looks like. Adding something new works the way it forms in my head: one sentence, what, when, where, not ten fields to tap through. Type "dentist tomorrow 10am" and it becomes a real Apple Reminder with that due date. Tap the circle to complete, swipe to reschedule.</span>
-                <span class="carousel-caption-item">Journal — I've always found reflecting on the day genuinely valuable, but a journal in its own app is a journal I stop opening. Living right next to Today means I actually keep the habit. Write a few lines in the morning ("go for a walk and call my mom…") and the on-device AI proposes real to-dos from it — here "Call the dentist" and "Buy groceries" — no network call involved. Apple finally ships real on-device intelligence, so I wanted to actually use it.</span>
-                <span class="carousel-caption-item">Notes — built to feel almost identical to Apple Notes, on purpose: thin and fast, not a note-taking platform in its own right. The only reason it exists at all is that Apple offers no public API into Notes the way it does for Reminders and Calendar, so anything living next to Today needs its own lightweight store. "Grocery list" here was never typed as a title — it's just the note's first line; set a custom one any time.</span>
-                <span class="carousel-caption-item">Settings — for this first version: choose which calendar feeds Today, toggle morning and evening journal reminders, and export a local JSON backup with one tap. This is also where sync, automation and more AI will land as Daily Board grows from a personal daily driver into a real information hub — deliberately left minimal here until those are actually real, not just planned.</span>
+                <div class="carousel-caption-item is-active">
+                  <h3 class="caption-title">The whole day on one timeline</h3>
+                  <p>Reminders and calendar events together, in order. Type "dentist tomorrow 10am" and it becomes a real Apple Reminder with that due date — no ten fields to tap through. Tap to complete, swipe to reschedule.</p>
+                </div>
+                <div class="carousel-caption-item">
+                  <h3 class="caption-title">Reflection that actually sticks</h3>
+                  <p>A short morning and evening check-in, right where your todos already are. On-device AI turns what you wrote into real tasks — here "Call the dentist" and "Buy groceries" — without sending a single word to a server.</p>
+                </div>
+                <div class="carousel-caption-item">
+                  <h3 class="caption-title">Quick notes, nothing more</h3>
+                  <p>Deliberately as thin as Apple Notes: searchable, rich text when you need it, and titled automatically from the first line so you never name a note you'll read once.</p>
+                </div>
+                <div class="carousel-caption-item">
+                  <h3 class="caption-title">Yours to control</h3>
+                  <p>Pick which calendar feeds Today, switch journal reminders on or off, and export a local JSON backup whenever you want. There's no account to manage, because there is no account.</p>
+                </div>
               </div>
               <div class="carousel-controls showcase-controls">
-                <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous">←</button>
-                <div class="carousel-dots">
-                  <button type="button" class="carousel-dot is-active" aria-label="Slide 1"></button>
-                  <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
-                  <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
-                  <button type="button" class="carousel-dot" aria-label="Slide 4"></button>
-                </div>
-                <button type="button" class="carousel-arrow carousel-next" aria-label="Next">→</button>
+                <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous screen">←</button>
+                <button type="button" class="carousel-arrow carousel-next" aria-label="Next screen">→</button>
               </div>
             </div>
             <div class="showcase-media carousel-wrap is-phone">
@@ -110,13 +139,13 @@
                   <img src="../assets/images/daily-board-today.png" width="368" height="700" alt="Today tab: Wed 23 selected in the day strip, two reminders (Call the dentist, Buy groceries) on one timeline, quick-add field at the bottom" />
                 </div>
                 <div class="carousel-slide">
-                  <img src="../assets/images/daily-board-journal.png" width="368" height="700" alt="Journal tab: a morning free-text entry with two AI-suggested to-dos already turned into tappable items, and a 5-emoji evening rating" loading="lazy" />
+                  <img src="../assets/images/daily-board-journal.png" width="368" height="700" alt="Journal tab: a morning free-text entry with two AI-suggested to-dos already turned into tappable items, and a 5-emoji evening rating" />
                 </div>
                 <div class="carousel-slide">
-                  <img src="../assets/images/daily-board-notes.png" width="368" height="700" alt="Notes tab: a searchable list with one note automatically titled Grocery list from its first line" loading="lazy" />
+                  <img src="../assets/images/daily-board-notes.png" width="368" height="700" alt="Notes tab: a searchable list with one note automatically titled Grocery list from its first line" />
                 </div>
                 <div class="carousel-slide">
-                  <img src="../assets/images/daily-board-settings.png" width="368" height="700" alt="Settings tab: calendar picker, journal reminder toggles, and a manual backup export button" loading="lazy" />
+                  <img src="../assets/images/daily-board-settings.png" width="368" height="700" alt="Settings tab: calendar picker, journal reminder toggles, and a manual backup export button" />
                 </div>
               </div>
             </div>
@@ -244,8 +273,8 @@
       </footer>
     </div>
 
-    <script src="../assets/js/network.js?v=20260924d"></script>
-    <script src="../assets/js/site.js?v=20260924d"></script>
+    <script src="../assets/js/network.js?v=20260925a"></script>
+    <script src="../assets/js/site.js?v=20260925a"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();

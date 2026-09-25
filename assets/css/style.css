@@ -1612,6 +1612,83 @@ a:hover {
   margin-top: 6px;
 }
 
+/* App landing CTA: benefit list, store badge, trust line. Used on product
+   pages for an app that people should want to install, not just read about. */
+.app-benefits {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.app-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(224, 244, 255, 0.92);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.app-benefits li::before {
+  content: "✓";
+  flex: none;
+  margin-top: 1px;
+  color: var(--accent-glow);
+  font-weight: 800;
+}
+.store-ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+/* Deliberately NOT a replica of Apple's official "Download on the App Store"
+   artwork (that badge may only be used for a shipping app, with Apple's own
+   asset) — this is our own element that names the store in plain text. */
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(3, 10, 22, 0.85);
+  border: 1px solid var(--border-strong);
+  color: #fff;
+  text-decoration: none;
+}
+.store-badge.is-soon {
+  opacity: 0.82;
+  cursor: default;
+}
+.store-badge svg {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  color: var(--accent-glow);
+}
+.store-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.store-badge-small {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.store-badge-big {
+  font-size: 15px;
+  font-weight: 700;
+}
+.trust-line {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
 .stat-tile-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -1889,6 +1966,11 @@ a:hover {
 }
 .carousel-wrap.is-phone .carousel-slide img {
   width: 100%;
+  /* height:auto is load-bearing: the width/height HTML attributes (kept for
+     CLS) otherwise force a 700px-tall box, and object-fit letterboxes the
+     shorter rendered image inside it — drawing the rounded border and shadow
+     around ~83px of empty space above and below the screenshot. */
+  height: auto;
   max-height: none;
   display: block;
   border-radius: 34px;
@@ -1911,30 +1993,86 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+/* Named tabs instead of anonymous dots: reuses .carousel-dot so site.js's
+   existing click/active handling works untouched, only restyled. */
+.showcase-tabbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 20px;
+}
+.showcase-tabbar .carousel-dot {
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-pill);
+  padding: 8px 15px;
+  background: rgba(7, 20, 45, 0.5);
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: none;
+}
+.showcase-tabbar .carousel-dot:hover {
+  color: #fff;
+  border-color: var(--border-strong);
+}
+.showcase-tabbar .carousel-dot.is-active {
+  background: rgba(1, 191, 251, 0.14);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: none;
+}
+.caption-title {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+/* All captions occupy the same grid cell so the block is always as tall as
+   the longest one. Toggling display instead would resize it per slide, and
+   the browser's scroll anchoring then shifts the page ~100px on every tab
+   click. */
 .showcase-caption {
-  margin: 20px 0 24px;
-  min-height: 280px;
+  display: grid;
+  margin: 0 0 20px;
 }
 .showcase-caption .carousel-caption-item {
-  display: none;
+  grid-area: 1 / 1;
+  /* Overrides the generic .carousel-caption-item display:none — a hidden
+     item must still occupy its grid cell for the height to stay constant. */
+  display: block;
+  visibility: hidden;
   color: var(--text-body);
   font-size: 16px;
   line-height: 1.65;
 }
 .showcase-caption .carousel-caption-item.is-active {
-  display: block;
+  visibility: visible;
+}
+.showcase-caption .carousel-caption-item p {
+  margin: 0;
 }
 .showcase-controls {
   justify-content: flex-start;
 }
 @media (max-width: 900px) {
-  .showcase {
+  /* .showcase.showcase-triple is more specific than a bare .showcase, so the
+     three-column rule has to be un-set by an equally specific selector here,
+     or it survives on phones and squashes into unreadable columns. */
+  .showcase,
+  .showcase.showcase-triple {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
   }
-  .showcase-controls {
+  .showcase-controls,
+  .showcase-tabbar {
     justify-content: center;
+  }
+  .showcase-why,
+  .showcase-info {
+    max-width: 34rem;
   }
 }
 .carousel-controls {
