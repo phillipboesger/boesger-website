@@ -2666,3 +2666,9 @@ a:hover {
     padding-right: 16px;
   }
 }
+
+@media (max-width: 820px) {
+  #network-canvas {
+    opacity: 0.7;
+  }
+}
