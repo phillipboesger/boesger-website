@@ -54,7 +54,7 @@ assets/
   js/site.js                  Nav, mobile menu, reveal-on-scroll, tabs, modal, carousel
   js/snowfall.js              Alternative background animation (currently unused)
   images/                     Photos, logos, product icons
-  documents/                  Downloadable CV PDFs (Polarion Expert / AI Developer, EN / DE)
+  documents/                  Downloadable CV PDF
   gif-readme/                 Legacy demo asset from the original template (unused)
 
 cloudflare/tools-proxy/       Optional Cloudflare Worker; see its own README for setup

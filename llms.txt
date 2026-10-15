@@ -12,7 +12,7 @@
 ## Pages
 
 - [Home](https://boesger.com/): overview, projects teaser, contact
-- [Profile](https://boesger.com/profile): CV, skills, ways of working, about; CV downloads as PDF (Polarion Expert and AI Developer, EN and DE)
+- [Profile](https://boesger.com/profile): CV, skills, ways of working, about; CV as PDF download
 - [Projects & Portfolio](https://boesger.com/work): client projects and open-source tools
 - [Blog](https://boesger.com/blog): Polarion ALM & AI articles (live blog at https://polarion.boesger.com)
 - [Brand Identity](https://boesger.com/colors): brand colors, logos and CSS design tokens

@@ -111,4 +111,4 @@ The July 2026 redesign (Profile/CV/Skills/product-detail content) was ported fro
 
 - Every page carries `<link rel="canonical">` (extension-less URL, e.g. `https://boesger.com/profile`), Open Graph / Twitter tags (shared card `assets/images/og-card.png`, 1200x630) and JSON-LD (`WebSite` / `Organization` / `Person` on Home, `ProfilePage` on Profile, `WebPage` + `BreadcrumbList` elsewhere). `imprint.html` and `privacy.html` stay `noindex` and are not in the sitemap.
 - Root files `sitemap.xml`, `robots.txt` and `llms.txt` are hand-maintained: add new pages to all three plus the page's own head block. Cloudflare prepends its managed content-signals block to `robots.txt`.
-- CV PDFs in `assets/documents/` are build output of the `cv` repo (`dist/`); copy all four variants over when the CV changes.
+- CV PDFs in `assets/documents/` are build output of the `cv` repo (`dist/`); copy `CV_Polarion_Expert_EN.pdf` over when the CV changes.
