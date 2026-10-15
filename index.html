@@ -161,7 +161,7 @@
             </p>
             <div class="hm-ctas">
               <a href="contact.html" class="btn btn-primary btn-lg">Start a project</a>
-              <a href="#stage" class="btn btn-secondary btn-lg">See what replaces it</a>
+              <a href="#change" class="btn btn-secondary btn-lg">What I change</a>
             </div>
             <dl class="hm-stats">
               <div><dt>8+ yrs</dt><dd>with Polarion ALM</dd></div>
@@ -186,75 +186,27 @@
           </div>
         </section>
 
-        <!-- Pinned stage: the comparison, resolved by scroll -->
-        <section class="hm-stage" id="stage" aria-labelledby="stage-h">
-          <div class="hm-pin">
-            <div class="hm-frame" data-c="0">
-              <div class="hm-bg hm-bg-l"></div>
-              <div class="hm-bg hm-bg-r"></div>
-
-              <div class="hm-slot">
-                <div class="hm-slot-a">
-                  <h2 id="stage-h">Five manual chores, and how I replace them</h2>
-                </div>
-                <div class="hm-slot-b" aria-hidden="true">
-                  <p class="hm-close-h">Let's cut the manual work.</p>
-                  <div class="hm-close-ctas">
-                    <a href="https://calendly.com/phillip-boesger/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg" tabindex="-1">Book a call</a>
-                    <a href="mailto:digital@boesger.com" class="btn btn-secondary btn-lg" tabindex="-1">Send an email</a>
-                  </div>
-                </div>
-              </div>
-
-              <ol class="hm-rows">
-                <li class="hm-row">
-                  <p class="hm-by">Copy the work item from Polarion. Paste it into the chat. Copy the answer back.</p>
-                  <div class="hm-with">
-                    <strong>AI agents &amp; MCP</strong>
-                    <span>MCP servers and agents that work with your real Polarion data.</span>
-                    <em class="hm-proof">e.g. <a href="work/polarion-mcp.html">Polarion MCP Server</a></em>
-                  </div>
-                </li>
-                <li class="hm-row">
-                  <p class="hm-by">Check the file out through SVN, edit it locally, commit it back.</p>
-                  <div class="hm-with">
-                    <strong>Polarion development</strong>
-                    <span>Extensions in Java, REST, Velocity and workflows, from spec to production.</span>
-                    <em class="hm-proof">e.g. <a href="work/polarion-code-editor.html">Polarion Code Editor</a></em>
-                  </div>
-                </li>
-                <li class="hm-row">
-                  <p class="hm-by">Set up a fresh Polarion install by hand, then write the release notes by hand.</p>
-                  <div class="hm-with">
-                    <strong>Dev environments &amp; CI/CD</strong>
-                    <span>Containerized setups and pipelines with automated release documentation.</span>
-                    <em class="hm-proof">e.g. <a href="work/polarion-docker.html">Polarion Docker</a></em>
-                  </div>
-                </li>
-                <li class="hm-row">
-                  <p class="hm-by">Write the unit tests for every method yourself.</p>
-                  <div class="hm-with">
-                    <strong>AI enablement &amp; coaching</strong>
-                    <span>Hands-on coaching so teams use Copilot properly, including AI-generated unit tests.</span>
-                    <em class="hm-proof">e.g. <a href="work/ai-enablement-hub.html">AI Enablement Hub</a></em>
-                  </div>
-                </li>
-                <li class="hm-row">
-                  <p class="hm-by">Read every requirement, flag the review issues, untangle the links.</p>
-                  <div class="hm-with">
-                    <strong>AI assistants &amp; automation</strong>
-                    <span>Assistants inside your tools, and n8n workflows that take over repetitive work.</span>
-                    <em class="hm-proof">e.g. <a href="automation.html">my n8n setup</a></em>
-                  </div>
-                </li>
-              </ol>
-
-              <div class="hm-divider" data-divider>
-                <span class="hm-div-line"></span>
-                <span class="hm-div-label" aria-live="off" data-count>0 of 5 steps automated</span>
-              </div>
-            </div>
-          </div>
+        <section class="hm-change" id="change" aria-labelledby="change-h">
+          <h2 id="change-h">What I change</h2>
+          <p class="hm-change-lead">Less manual work comes from how a team works, not from one tool. This is where I put my time.</p>
+          <ul class="hm-change-grid">
+            <li data-reveal>
+              <h3>A network of agents</h3>
+              <p>My own setup of agents, MCP servers and n8n workflows take over the repetitive work, and a self-hosted knowledge base keeps my context. <a href="second-brain.html">Second Brain</a> · <a href="automation.html">Automation</a></p>
+            </li>
+            <li data-reveal>
+              <h3>AI know-how that sticks</h3>
+              <p>Courses and on-the-job coaching, so teams learn to work with AI agents themselves: for StackFuel as an online course, for Polarion developers at avasis.</p>
+            </li>
+            <li data-reveal>
+              <h3>Consulting and building</h3>
+              <p>I work where requirements management meets technical execution: Polarion extensions, dev environments and CI/CD, from spec to production.</p>
+            </li>
+            <li data-reveal>
+              <h3>Sharing what works</h3>
+              <p>What I learn goes into the open: the <a href="blog.html">blog</a>, open-source tools and material for teams to reuse. <a href="work.html">All projects</a></p>
+            </li>
+          </ul>
         </section>
 
         <!-- Calm after the collapse -->
@@ -386,7 +338,7 @@
 
     <script src="assets/js/network.js?v=20260925a"></script>
     <script src="assets/js/site.js?v=20260925a"></script>
-    <script src="assets/js/home.js?v=20261015a"></script>
+    <script src="assets/js/home.js?v=20261015b"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
