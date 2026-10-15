@@ -1,6 +1,5 @@
 /* Home: depth planes in the hero, and the pinned split stage.
-   Scroll position is the single source of truth. The divider knob is a real slider
-   that scrubs the same position (pointer, touch and keyboard). */
+   Scroll position is the single source of truth. The divider is a visual marker only. */
 (function () {
   var root = document.documentElement;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -20,7 +19,6 @@
 
   var frame = stage.querySelector(".hm-frame");
   var rows = Array.prototype.slice.call(stage.querySelectorAll(".hm-row"));
-  var knob = stage.querySelector("[data-knob]");
   var count = stage.querySelector("[data-count]");
   var slotB = stage.querySelector(".hm-slot-b");
   var slotLinks = slotB.querySelectorAll("a");
@@ -73,9 +71,7 @@
       lastDone = done;
       var label = done + " of 5 steps automated";
       count.textContent = label;
-      knob.setAttribute("aria-valuetext", label);
     }
-    knob.setAttribute("aria-valuenow", String(Math.round(p * 100)));
   }
 
   function schedule() {
@@ -84,39 +80,6 @@
       window.requestAnimationFrame(update);
     }
   }
-
-  function scrollToProgress(p) {
-    var top = window.scrollY + stage.getBoundingClientRect().top;
-    var span = stage.offsetHeight - window.innerHeight;
-    window.scrollTo({ top: top + clamp(p) * span, left: 0, behavior: "instant" });
-  }
-
-  // Slider behaviour: right/up = more automated; dragging the knob to the left collapses the manual half.
-  var drag = null;
-  knob.addEventListener("pointerdown", function (e) {
-    drag = { x: e.clientX, p: stageProgress() };
-    knob.setPointerCapture(e.pointerId);
-  });
-  knob.addEventListener("pointermove", function (e) {
-    if (!drag) return;
-    scrollToProgress(drag.p - (e.clientX - drag.x) / (window.innerWidth * 0.5));
-  });
-  function endDrag() {
-    drag = null;
-  }
-  knob.addEventListener("pointerup", endDrag);
-  knob.addEventListener("pointercancel", endDrag);
-  knob.addEventListener("keydown", function (e) {
-    var step = 0.04;
-    var p = stageProgress();
-    if (e.key === "ArrowRight" || e.key === "ArrowUp") p += step;
-    else if (e.key === "ArrowLeft" || e.key === "ArrowDown") p -= step;
-    else if (e.key === "Home") p = 0;
-    else if (e.key === "End") p = 1;
-    else return;
-    e.preventDefault();
-    scrollToProgress(p);
-  });
 
   window.addEventListener("scroll", schedule, { passive: true });
   window.addEventListener("resize", schedule);
