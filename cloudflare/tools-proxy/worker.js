@@ -14,7 +14,6 @@ const PROXY_MAP = {
   "polarion-docker": "polarion-docker.boesger.com",
   "polarion-mcp": "polarion-mcp.boesger.com",
   "polarion-code-editor": "polarion.code.editor.boesger.com",
-  colors: "colors.boesger.com",
 };
 
 const PREFIX = "/tools/";

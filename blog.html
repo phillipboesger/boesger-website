@@ -1,24 +1,73 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=1"
     />
     <meta
       name="description"
-      content="The go-to blog for Polarion ALM & AI — practical tips, real customizations, CI/CD automation and hands-on AI agent experiments from Phillip Bösger."
+      content="A blog about Polarion ALM & AI: practical tips, real customizations, CI/CD automation and hands-on AI agent experiments from Phillip Bösger."
     />
+    <link rel="canonical" href="https://boesger.com/blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bösger Digital" />
+    <meta property="og:title" content="Blog | Phillip Bösger" />
+    <meta property="og:description" content="A blog about Polarion ALM &amp; AI: practical tips, real customizations, CI/CD automation and hands-on AI agent experiments from Phillip Bösger." />
+    <meta property="og:url" content="https://boesger.com/blog" />
+    <meta property="og:image" content="https://boesger.com/assets/images/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bösger Digital: More AI, less manual work." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog | Phillip Bösger" />
+    <meta name="twitter:description" content="A blog about Polarion ALM &amp; AI: practical tips, real customizations, CI/CD automation and hands-on AI agent experiments from Phillip Bösger." />
+    <meta name="twitter:image" content="https://boesger.com/assets/images/og-card.png" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://boesger.com/blog#page",
+      "url": "https://boesger.com/blog",
+      "name": "Blog | Phillip Bösger",
+      "description": "A blog about Polarion ALM & AI: practical tips, real customizations, CI/CD automation and hands-on AI agent experiments from Phillip Bösger.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://boesger.com/#website"
+      },
+      "about": {
+        "@id": "https://boesger.com/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://boesger.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://boesger.com/blog"
+        }
+      ]
+    }
+  ]
+}
+    </script>
     <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png" />
     <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
-    <title>Blog — Phillip Bösger</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link href="assets/css/style.css?v=20260925a" rel="stylesheet" />
+    <title>Blog | Phillip Bösger</title>
+    <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="assets/css/style.css?v=20261015a" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -54,12 +103,9 @@
 
       <main>
         <div class="page-head centered" data-reveal>
-          <span class="kicker">Polarion Blog</span>
-          <h1>The go-to blog for Polarion &amp; AI</h1>
+          <h1>My blog about Polarion &amp; AI</h1>
           <p>
-            Practical tips, real customizations, CI/CD automation and hands-on
-            AI agent experiments — everything I learn shipping AI into
-            Polarion, shared freely.
+            Practical tips, real customizations, CI/CD automation and AI agent experiments. I write down what I learn shipping AI into Polarion and share it freely.
           </p>
         </div>
 
@@ -67,50 +113,33 @@
           <div class="section-inner">
             <div class="posts-grid" data-reveal>
               <div class="glass-panel post-card">
-                <span class="product-badge">Topic</span>
                 <h3>AI agents &amp; Copilot in Polarion</h3>
                 <p>Hands-on experiments connecting GitHub Copilot and the MCP server to real Polarion backlogs.</p>
               </div>
               <div class="glass-panel post-card">
-                <span class="product-badge">Topic</span>
                 <h3>CI/CD &amp; pipeline automation</h3>
                 <p>Automated release notes, quality gates and replacing manual clicks with automated workflows.</p>
               </div>
               <div class="glass-panel post-card">
-                <span class="product-badge">Topic</span>
                 <h3>Real Polarion customizations</h3>
                 <p>Velocity macros, work item types, widgets and configuration lifted straight from real delivery.</p>
               </div>
               <div class="glass-panel post-card">
-                <span class="product-badge">Topic</span>
                 <h3>Dev environment &amp; tooling</h3>
                 <p>VS Code, Docker, MCP and the setups that make Copilot actually useful day to day.</p>
               </div>
             </div>
             <p class="post-note">
-              These are the topics I write about — new articles are published
+              These are the topics I write about. New articles are published
               continuously on the
               <a href="https://polarion.boesger.com" target="_blank" rel="noopener">live blog</a>.
             </p>
             <div class="contact-band" data-reveal>
               <h2>Get free updates</h2>
-              <p>New Polarion &amp; AI deep-dives straight to your inbox — free, no spam, unsubscribe anytime.</p>
+              <p>New Polarion &amp; AI deep dives in your inbox. Free, no spam, unsubscribe anytime.</p>
               <div class="hero-ctas">
                 <a href="https://polarion.boesger.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Read the blog</a>
                 <a href="https://polarion.boesger.com/#/portal/signup" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Subscribe for free</a>
-              </div>
-              <div class="ask-ai-inline">
-                <p class="ask-ai-inline-label">Or let an AI sum me up — the prompt is already prepared:</p>
-                <div class="ask-ai-buttons">
-                  <a href="https://chatgpt.com/?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
-                    <img src="assets/images/ai-chatgpt.png" alt="" />ChatGPT</a>
-                  <a href="https://claude.ai/new?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
-                    <img src="assets/images/ai-claude.png" alt="" />Claude</a>
-                  <a href="https://www.perplexity.ai/search?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
-                    <img src="assets/images/ai-perplexity.png" alt="" />Perplexity</a>
-                  <a href="https://www.google.com/search?udm=50&amp;q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
-                    <img src="assets/images/ai-gemini.png" alt="" />Gemini</a>
-                </div>
               </div>
             </div>
           </div>
@@ -163,7 +192,7 @@
       </footer>
     </div>
 
-    <script src="assets/js/network.js?v=20260925a"></script>
+    <script src="assets/js/network.js?v=20261015a"></script>
     <script src="assets/js/site.js?v=20260925a"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {

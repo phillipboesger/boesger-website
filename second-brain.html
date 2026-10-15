@@ -4,25 +4,73 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=1"
     />
     <meta
       name="description"
-      content="Second Brain — a self-hosted personal knowledge and automation system by Phillip Bösger, connecting his own Google Calendar, Drive and Gmail into one searchable personal assistant."
+      content="Second Brain: the private digital colleague of Phillip Bösger. It takes work off his plate and is fed with his own knowledge, ideas and experience."
     />
+    <link rel="canonical" href="https://boesger.com/second-brain" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bösger Digital" />
+    <meta property="og:title" content="Second Brain: A Digital Colleague" />
+    <meta property="og:description" content="Second Brain: the private digital colleague of Phillip Bösger. It takes work off his plate and is fed with his own knowledge, ideas and experience." />
+    <meta property="og:url" content="https://boesger.com/second-brain" />
+    <meta property="og:image" content="https://boesger.com/assets/images/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bösger Digital: More AI, less manual work." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Second Brain: A Digital Colleague" />
+    <meta name="twitter:description" content="Second Brain: the private digital colleague of Phillip Bösger. It takes work off his plate and is fed with his own knowledge, ideas and experience." />
+    <meta name="twitter:image" content="https://boesger.com/assets/images/og-card.png" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://boesger.com/second-brain#page",
+      "url": "https://boesger.com/second-brain",
+      "name": "Second Brain: A Digital Colleague",
+      "description": "Second Brain: the private digital colleague of Phillip Bösger. It takes work off his plate and is fed with his own knowledge, ideas and experience.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://boesger.com/#website"
+      },
+      "about": {
+        "@id": "https://boesger.com/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://boesger.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Second Brain",
+          "item": "https://boesger.com/second-brain"
+        }
+      ]
+    }
+  ]
+}
+    </script>
     <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png" />
     <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
-    <title>Second Brain — Personal Knowledge &amp; Automation System</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link href="assets/css/style.css?v=20260925a" rel="stylesheet" />
+    <title>Second Brain: A Digital Colleague</title>
+    <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="assets/css/style.css?v=20261015a" rel="stylesheet" />
+    <link href="assets/css/second-brain.css?v=20261015b" rel="stylesheet" />
   </head>
   <body>
-    <canvas id="network-canvas"></canvas>
-
     <div class="page">
       <header class="site-header" id="site-header">
         <div class="site-header-inner">
@@ -53,21 +101,78 @@
       </header>
 
       <main>
-        <div class="page-head">
-          <span class="kicker">Application by Bösger Digital</span>
-          <h1>Second Brain</h1>
-          <p style="max-width: 720px; margin: 14px auto 0; color: rgba(195, 222, 245, 0.85); font-size: 16px; line-height: 1.75">
-            <strong>Second Brain</strong> is a self-hosted personal knowledge
-            and automation application built and operated by Phillip Bösger
-            (Bösger Digital). It brings his own notes, documents, emails and
-            calendar entries together into a single searchable knowledge base,
-            and automates his personal day-to-day organization.
-          </p>
-          <p style="max-width: 720px; margin: 12px auto 0; color: rgba(195, 222, 245, 0.7); font-size: 14px; line-height: 1.7">
-            This is the official homepage of the application named
-            <strong>Second Brain</strong> — the same name shown on its Google
-            sign-in screen.
-          </p>
+        <section class="sb-hero" aria-labelledby="sb-h">
+          <canvas id="sb-brain" aria-label="Abstract map of the Second Brain: points grouped in sections, linked, with questions and jobs moving through them" role="img"></canvas>
+          <div class="sb-hero-copy">
+            <div>
+              <span class="sb-kicker">Application by Bösger Digital</span>
+              <h1 id="sb-h">Second Brain</h1>
+              <p>
+                The digital colleague of Phillip Bösger: a private, single-user application that he builds and operates himself. This page shows its <strong>shape</strong>, not its contents.
+              </p>
+              <p class="sb-hint">Click the map to send a question through it.</p>
+              <div class="sb-legend" aria-hidden="true"><span><i></i>a job being worked on</span></div>
+              <p style="font-size: 13px; opacity: 0.75">
+                This is the official homepage of the application named <strong>Second Brain</strong>, the same name shown on its Google sign-in screen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="sb-block" aria-labelledby="sb-h1">
+          <div class="sb-text">
+            <span class="sb-kicker">Memory</span>
+            <h2 id="sb-h1">Everything becomes a vector</h2>
+            <p>Notes, documents and messages are turned into points in one shared space. Things that mean something similar end up close together, so the brain finds by meaning, not by keyword.</p>
+          </div>
+          <div class="sb-frame"><canvas id="sb-vec" aria-label="Documents pass a gate and become points that cluster by meaning" role="img"></canvas></div>
+        </section>
+
+        <section class="sb-block sb-flip" aria-labelledby="sb-h2">
+          <div class="sb-text">
+            <span class="sb-kicker">Structure</span>
+            <h2 id="sb-h2">Sections that talk to each other</h2>
+            <p>Knowledge lives in sections, and the sections are connected. A question does not stay in one place, it travels across them and brings back what belongs together.</p>
+            <ul class="sb-chips">
+              <li><button type="button" data-sb-chip>Notes</button></li>
+              <li><button type="button" data-sb-chip>Documents</button></li>
+              <li><button type="button" data-sb-chip>Mail</button></li>
+              <li><button type="button" data-sb-chip>Calendar</button></li>
+              <li><button type="button" data-sb-chip>Web</button></li>
+              <li><button type="button" data-sb-chip>Code</button></li>
+            </ul>
+          </div>
+          <div class="sb-frame"><canvas id="sb-map" aria-label="Six connected sections around a core, with information moving between them" role="img"></canvas></div>
+        </section>
+
+        <section class="sb-block" aria-labelledby="sb-h3">
+          <div class="sb-text">
+            <span class="sb-kicker">Work</span>
+            <h2 id="sb-h3">It takes jobs off my plate</h2>
+            <p>Ideas, tickets, messages and schedules go in. Code, documentation, tests and drafts come out. Replies stay drafts until I have reviewed and sent them myself.</p>
+          </div>
+          <div class="sb-frame"><canvas id="sb-jobs" aria-label="Inputs flow into a core and come out as code, docs, tests and drafts, passing a review gate" role="img"></canvas></div>
+        </section>
+
+        <section class="sb-block sb-flip" aria-labelledby="sb-h4">
+          <div class="sb-text">
+            <span class="sb-kicker">Growth</span>
+            <h2 id="sb-h4">It grows with me, and stays behind me</h2>
+            <p>Every idea, note and lesson makes it a little sharper. It learns from me, so it never gets better than me, and that is the point: the time it saves goes into research. I don't stand still, I stay three steps ahead.</p>
+          </div>
+          <div class="sb-frame"><canvas id="sb-ahead" aria-label="Two rising curves: my know-how and the Second Brain, which always follows slightly behind" role="img"></canvas></div>
+        </section>
+
+        <section class="sb-privacy" aria-labelledby="sb-h5">
+          <div>
+            <h2 id="sb-h5">Private by design</h2>
+            <p>A single-user system with no sign-up and no public access. What it knows stays with me, and none of it is shown on this page.</p>
+          </div>
+        </section>
+
+        <div class="sb-details-head">
+          <h2>Details for Google users</h2>
+          <p>What the application does, whose data it uses and why. This is the information Google's verification refers to.</p>
         </div>
 
         <section class="section" style="padding-top: 24px">
@@ -76,18 +181,18 @@
               <h3 class="subsection-title" style="font-size: 19px">What Second Brain Does</h3>
               <ul style="margin: 0; padding-left: 1.2em; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.8">
                 <li>
-                  <strong>Collects</strong> personal documents, notes, emails
-                  and web sources into one private knowledge base.
+                  <strong>Takes over tasks</strong> such as programming work,
+                  documentation and tests.
                 </li>
                 <li>
-                  <strong>Searches</strong> across all of that content in
-                  natural language, so past decisions, notes and conversations
-                  can be found again in seconds.
+                  <strong>Remembers</strong> his notes, documents and emails in
+                  one private knowledge base and finds them again in natural
+                  language.
                 </li>
                 <li>
-                  <strong>Summarizes</strong> the day and the week — upcoming
-                  calendar entries, open threads and things that still need a
-                  reply.
+                  <strong>Keeps him organized</strong> with a summary of the day
+                  and the week: upcoming calendar entries, open threads and
+                  things that still need a reply.
                 </li>
                 <li>
                   <strong>Drafts</strong> replies to Phillip's own emails as
@@ -117,16 +222,16 @@
               </p>
               <ul style="margin: 0 0 14px; padding-left: 1.2em; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.8">
                 <li>
-                  <strong>Google Calendar</strong> — to read upcoming
+                  <strong>Google Calendar</strong>: to read upcoming
                   appointments for the daily and weekly overview, and to create
                   personal events.
                 </li>
                 <li>
-                  <strong>Google Drive</strong> — to read personal documents
+                  <strong>Google Drive</strong>: to read personal documents
                   and notes so they become searchable in the knowledge base.
                 </li>
                 <li>
-                  <strong>Gmail</strong> — to read messages for the same
+                  <strong>Gmail</strong>: to read messages for the same
                   searchable overview, and to create drafts of Phillip's own
                   replies.
                 </li>
@@ -141,17 +246,6 @@
                   >Google API Services User Data Policy</a
                 >, including its Limited Use requirements. Details are in the
                 <a href="privacy.html">Privacy Policy</a>.
-              </p>
-            </div>
-
-            <div class="glass-panel" style="padding: 28px 30px; margin-bottom: 18px">
-              <h3 class="subsection-title" style="font-size: 19px">How It Is Built</h3>
-              <p style="margin: 0; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.7">
-                Second Brain runs entirely on Phillip's own infrastructure: a
-                self-hosted workflow engine for the automations and a
-                self-hosted database with vector search for the knowledge base.
-                There is no public web application and no multi-tenant service
-                behind it — the system is private by design.
               </p>
             </div>
 
@@ -190,17 +284,6 @@
                 <img src="assets/images/instagram.png" alt="" />Instagram</a>
             </div>
           </div>
-          <div class="footer-col align-end">
-            <p class="footer-col-label">Internal</p>
-            <div class="footer-pill-row">
-              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
-                <img src="assets/images/n8n.png" alt="" />n8n</a>
-              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
-                <img src="assets/images/proxmox-light.png" alt="" />Proxmox</a>
-              <a href="colors.html" class="footer-pill-link">
-                <img src="assets/images/colors.png" alt="" />Colors</a>
-            </div>
-          </div>
         </div>
         <div class="site-footer-internal">
           <div class="site-footer-internal-inner">
@@ -212,8 +295,8 @@
       </footer>
     </div>
 
-    <script src="assets/js/network.js?v=20260925a"></script>
     <script src="assets/js/site.js?v=20260925a"></script>
+    <script src="assets/js/second-brain.js?v=20261015e"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();

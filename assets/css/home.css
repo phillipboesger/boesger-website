@@ -1,0 +1,667 @@
+/* Home page: split hero (by hand / with my tools), then the sections below. */
+
+:root {
+  --hm-header: 66px;
+}
+
+.hm-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── Hero: one screen, told in order ───────────────────────────────────────
+   1. the manual steps are struck out, 2. the motto replaces them,
+   3. the motto lifts and who I am pops in. One pass, CSS only. */
+.hm-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: max(100svh, 720px);
+  margin-top: calc(var(--hm-header) * -1);
+  padding: var(--hm-header) 24px 0;
+  text-align: center;
+}
+.hm-lead,
+.hm-intro {
+  grid-area: 1 / 1;
+}
+.hm-lead {
+  animation: hm-lift 0.9s cubic-bezier(0.65, 0, 0.35, 1) 4.7s both;
+}
+.hm-intro {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 560px;
+  padding-bottom: clamp(32px, 12svh, 120px);
+  z-index: 3;
+}
+@keyframes hm-lift {
+  to { transform: translateY(-8svh); }
+}
+.hm-pop {
+  animation: hm-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(5.3s + var(--p) * 0.18s);
+}
+.hm-pop-photo {
+  animation: hm-pop-photo 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(5.3s + var(--p) * 0.18s);
+}
+@keyframes hm-pop {
+  from { opacity: 0; transform: translateY(26px) scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hm-pop-photo {
+  from { opacity: 0; scale: 0.7; translate: 0 30px; }
+  to { opacity: 1; scale: 1; translate: 0 0; }
+}
+.hm-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.hm-label-l {
+  color: var(--accent-muted);
+}
+.hm-label-r {
+  color: var(--accent);
+}
+.hm-old {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+/* One pass: the manual steps get struck out in turn, then the motto fades in over them. */
+.hm-swap {
+  display: grid;
+}
+.hm-swap-a,
+.hm-swap-b {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.hm-swap-a {
+  animation: hm-out 0.7s ease-in 3.6s both;
+}
+.hm-swap-b {
+  animation: hm-in 0.8s ease-out 3.9s both;
+}
+@keyframes hm-out {
+  to { opacity: 0; transform: translateY(-12px); visibility: hidden; }
+}
+@keyframes hm-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.hm-old li {
+  display: block;
+}
+.hm-old li span {
+  position: relative;
+  display: inline-block;
+  animation: hm-dim 0.4s ease-out both;
+  animation-delay: calc(0.6s + var(--i) * 0.7s);
+}
+.hm-old li span::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  top: 56%;
+  height: 0.09em;
+  border-radius: 2px;
+  background: var(--warm);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: hm-strike 0.5s ease-in-out both;
+  animation-delay: calc(0.4s + var(--i) * 0.7s);
+}
+.hm-old li::after {
+  content: "\2713";
+  margin-left: 0.35em;
+  font-size: 0.55em;
+  color: var(--accent);
+  opacity: 0;
+  animation: hm-check 0.3s ease-out both;
+  animation-delay: calc(0.8s + var(--i) * 0.7s);
+}
+@keyframes hm-strike {
+  to { transform: scaleX(1); }
+}
+@keyframes hm-dim {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
+}
+@keyframes hm-check {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+.hm-lead h1 {
+  margin-top: -4px;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 0.96;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  color: #fff;
+  text-wrap: balance;
+}
+.hm-sub {
+  max-width: 46ch;
+  font-size: 1.12rem;
+  line-height: 1.55;
+  color: var(--text-body);
+  text-wrap: pretty;
+}
+.hm-sub strong {
+  color: #fff;
+}
+.hm-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.hm-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 36px;
+  margin-top: 28px;
+}
+.hm-stats dt {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.hm-stats dd {
+  font-size: 12.5px;
+  color: var(--text-body);
+  margin-top: 2px;
+}
+.hm-stats dt.hm-warm {
+  color: var(--warm);
+}
+
+/* Depth: three planes moving at different rates (see home.js) */
+.hm-depth {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hm-plane {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.hm-photo {
+  position: absolute;
+  margin: 0;
+  width: clamp(150px, 15vw, 230px);
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 30px 60px rgba(9, 36, 68, 0.45), 0 4px 10px rgba(9, 36, 68, 0.3);
+}
+.hm-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hm-photo figcaption {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(11, 44, 80, 0.72);
+}
+.hm-photo-a {
+  left: clamp(16px, 7vw, 150px);
+  bottom: 9%;
+  transform: rotate(-4deg);
+}
+.hm-photo-b {
+  right: clamp(16px, 7vw, 150px);
+  bottom: 12%;
+  transform: rotate(3deg);
+}
+/* ── Content sections: everything visible at once, depth from light and layout ── */
+.hm-sec-head {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.hm-sec-head h2,
+.hm-work-head h2 {
+  font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: #fff;
+}
+.hm-sec-head p,
+.hm-work-head p {
+  margin-top: 14px;
+  max-width: 54ch;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+.hm-change,
+.hm-work,
+.hm-projects {
+  padding: clamp(64px, 9vw, 128px) 0 0;
+}
+
+.hm-bento,
+.hm-tools {
+  max-width: 1180px;
+  margin: clamp(28px, 4vw, 48px) auto 0;
+  padding: 0 24px;
+  display: grid;
+  gap: 16px;
+}
+.hm-bento {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.hm-tools {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.hm-card {
+  --gx: 50%;
+  --gy: 0%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(22px, 2.6vw, 34px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(165deg, rgba(98, 214, 255, 0.09), rgba(16, 54, 92, 0.6) 60%);
+  box-shadow: var(--shadow-md), var(--inset-highlight);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s;
+}
+.hm-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(420px circle at var(--gx) var(--gy), rgba(98, 214, 255, 0.16), transparent 65%);
+}
+.hm-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(98, 214, 255, 0.5);
+}
+.hm-card:hover::after {
+  opacity: 1;
+}
+.hm-card-wide {
+  grid-column: 1 / -1;
+}
+.hm-card-band {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(20px, 4vw, 64px);
+  align-items: center;
+  background: linear-gradient(120deg, rgba(255, 194, 102, 0.12), rgba(98, 214, 255, 0.08) 55%, rgba(16, 54, 92, 0.6));
+}
+.hm-card-band h3 {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.hm-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--warm);
+}
+.hm-card h3 {
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.hm-card p {
+  line-height: 1.55;
+  color: var(--text-body);
+}
+.hm-card ul {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.hm-card li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #fff;
+}
+.hm-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.hm-card a,
+.hm-tags a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+.hm-card .hm-more {
+  margin-top: auto;
+  padding-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--accent);
+}
+.hm-card .hm-more::after {
+  content: " \2192";
+}
+.hm-card-wide ul {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* ── Recent client work: a timeline, every entry readable at once ──────── */
+.hm-work-head {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.hm-work-track {
+  position: relative;
+  list-style: none;
+  max-width: 1180px;
+  margin: clamp(28px, 4vw, 48px) auto 0;
+  padding: 0 24px 0 56px;
+  display: grid;
+  gap: 16px;
+}
+.hm-work-track::before {
+  content: "";
+  position: absolute;
+  left: 31px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--warm), var(--accent) 45%, rgba(98, 214, 255, 0.1));
+}
+.hm-work-track li {
+  --gx: 50%;
+  --gy: 0%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 8px 32px;
+  padding: clamp(22px, 2.6vw, 34px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(165deg, rgba(98, 214, 255, 0.08), rgba(16, 54, 92, 0.6) 60%);
+  box-shadow: var(--shadow-md), var(--inset-highlight);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s;
+}
+.hm-work-track li::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 34px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(98, 214, 255, 0.18), 0 0 18px var(--accent);
+}
+.hm-work-track li:has(.is-live)::before {
+  background: var(--warm);
+  box-shadow: 0 0 0 5px rgba(255, 194, 102, 0.2), 0 0 18px var(--warm);
+}
+.hm-work-track li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(420px circle at var(--gx) var(--gy), rgba(98, 214, 255, 0.14), transparent 65%);
+}
+.hm-work-track li:hover {
+  transform: translateX(4px);
+  border-color: rgba(98, 214, 255, 0.5);
+}
+.hm-work-track li:hover::after {
+  opacity: 1;
+}
+.hm-work-track li > .hm-when {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
+.hm-work-track li > div {
+  grid-column: 2;
+}
+.hm-when {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+.hm-who {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+.hm-work-track h3 {
+  margin-top: 6px;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: #fff;
+}
+.hm-work-track li p:not(.hm-who):not(.hm-tags):not(.hm-when) {
+  margin-top: 10px;
+  max-width: 62ch;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+.hm-tags {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-body);
+}
+.hm-status {
+  margin-left: 8px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+.hm-status.is-live {
+  color: var(--on-warm);
+  background: var(--warm);
+}
+
+.hm-projects-links {
+  max-width: 1180px;
+  margin: 28px auto 0;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ── Contact: the close. A light follows the pointer. ───────────────────── */
+.hm-contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(96px, 14vw, 200px) 24px clamp(88px, 12vw, 160px);
+}
+.hm-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(640px circle at var(--mx, 50%) var(--my, 38%), rgba(98, 214, 255, 0.22), rgba(255, 194, 102, 0.06) 45%, transparent 70%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 80%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 80%, transparent);
+}
+.hm-contact h2 {
+  max-width: 15ch;
+  margin: 0 auto;
+  font-size: clamp(2.6rem, 7vw, 6.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: #fff;
+  text-wrap: balance;
+}
+.hm-contact > p {
+  margin-top: 22px;
+  font-size: 1.25rem;
+  color: var(--text-body);
+}
+.hm-contact .hm-ctas {
+  justify-content: center;
+  margin-top: 32px;
+}
+.hm-contact .ask-ai-inline {
+  margin: 56px auto 0;
+  max-width: 760px;
+}
+
+/* ── Small screens: a different composition, not a shrunk one ───────────── */
+@media (max-width: 1060px) {
+  .hm-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  :root {
+    --hm-header: 68px;
+  }
+  .hm-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 0;
+    padding-bottom: 8px;
+  }
+  .hm-lead {
+    width: 100%;
+    min-height: 24svh;
+    display: grid;
+    place-items: center;
+    animation: none;
+  }
+  .hm-intro {
+    align-self: auto;
+    padding-bottom: 0;
+  }
+  .hm-old {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+  .hm-depth {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 240px;
+    margin-top: 8px;
+  }
+  .hm-photo {
+    width: 140px;
+  }
+  .hm-photo-a { left: 14%; right: auto; bottom: auto; top: 14px; }
+  .hm-photo-b { left: auto; right: 14%; bottom: auto; top: 40px; }
+
+  .hm-bento,
+  .hm-tools,
+  .hm-card-band,
+  .hm-card-wide ul {
+    grid-template-columns: 1fr;
+  }
+  .hm-work-track {
+    padding-left: 44px;
+  }
+  .hm-work-track::before {
+    left: 25px;
+  }
+  .hm-work-track li {
+    grid-template-columns: 1fr;
+  }
+  .hm-work-track li > .hm-when,
+  .hm-work-track li > div {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .hm-work-track li::before {
+    left: -26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-swap-a {
+    display: none;
+  }
+  .hm-swap-b,
+  .hm-lead,
+  .hm-pop,
+  .hm-pop-photo {
+    animation: none;
+  }
+  .hm-lead {
+    transform: translateY(-8svh);
+  }
+  .hm-plane {
+    transform: none !important;
+  }
+}

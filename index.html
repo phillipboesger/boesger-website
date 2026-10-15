@@ -1,15 +1,82 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=1"
     />
     <meta
       name="description"
-      content="Phillip Bösger — Polarion ALM expert, AI & full-stack developer. More AI, less manual work. Profile, consulting, open-source Polarion tooling, and all my links in one place."
+      content="Phillip Bösger, Polarion ALM expert and AI builder: agents, MCP, automation and full-stack development. More AI, less manual work. Profile, consulting, open-source Polarion tooling, and all my links in one place."
     />
+    <link rel="canonical" href="https://boesger.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bösger Digital" />
+    <meta property="og:title" content="Phillip Bösger | Bösger Digital" />
+    <meta property="og:description" content="Phillip Bösger, Polarion ALM expert, AI &amp; full-stack developer. More AI, less manual work. Profile, consulting, open-source Polarion tooling, and all my links in one place." />
+    <meta property="og:url" content="https://boesger.com/" />
+    <meta property="og:image" content="https://boesger.com/assets/images/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bösger Digital: More AI, less manual work." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Phillip Bösger | Bösger Digital" />
+    <meta name="twitter:description" content="Phillip Bösger, Polarion ALM expert, AI &amp; full-stack developer. More AI, less manual work. Profile, consulting, open-source Polarion tooling, and all my links in one place." />
+    <meta name="twitter:image" content="https://boesger.com/assets/images/og-card.png" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://boesger.com/#website",
+      "url": "https://boesger.com/",
+      "name": "Bösger Digital",
+      "description": "Phillip Bösger, Polarion ALM expert and AI builder: agents, MCP, automation and full-stack development. More AI, less manual work. Profile, consulting, open-source Polarion tooling, and all my links in one place.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://boesger.com/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://boesger.com/#org",
+      "name": "Bösger Digital",
+      "url": "https://boesger.com/",
+      "logo": "https://boesger.com/assets/images/boesger-digital.png",
+      "founder": {
+        "@id": "https://boesger.com/#phillip"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://boesger.com/#phillip",
+      "name": "Phillip Bösger",
+      "url": "https://boesger.com/",
+      "image": "https://boesger.com/assets/images/about-image.webp",
+      "jobTitle": "Polarion ALM expert, AI & full-stack developer",
+      "worksFor": {
+        "@id": "https://boesger.com/#org"
+      },
+      "knowsAbout": [
+        "Polarion ALM",
+        "AI agents",
+        "MCP servers",
+        "GitHub Copilot",
+        "CI/CD",
+        "n8n automation"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/phillip-boesger-90691215a/",
+        "https://github.com/phillipboesger",
+        "https://polarion.boesger.com",
+        "https://photography.boesger.com"
+      ]
+    }
+  ]
+}
+    </script>
     <link
       rel="shortcut icon"
       href="assets/images/boesger-digital.png"
@@ -25,12 +92,11 @@
       href="assets/images/boesger-digital.png"
       type="image/webp"
     />
-    <title>Phillip Bösger — Bösger Digital</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link href="assets/css/style.css?v=20260925a" rel="stylesheet" />
+    <title>Phillip Bösger | Bösger Digital</title>
+    <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="assets/css/style.css?v=20261015a" rel="stylesheet" />
+    <link href="assets/css/home.css?v=20261015k" rel="stylesheet" />
+    <script>document.documentElement.classList.add("js")</script>
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -79,411 +145,195 @@
       </header>
 
       <main>
-        <!-- Hero -->
-        <section class="hero" id="top" data-reveal>
-          <div>
-            <span class="kicker">AI-driven Polarion consulting</span>
-            <h1>More AI,<br />less manual work.</h1>
-            <p class="hero-sub">
-              I'm <strong>Phillip Bösger</strong> — 8 years of Polarion, from
-              Siemens enterprise to startup. I bridge the gap between
-              requirements management and technical execution. I don't just
-              consult. I build, and I build fast.
+        <!-- Split hero: both sides readable at once -->
+        <section class="hm-hero" id="top" aria-label="Introduction">
+          <div class="hm-lead">
+            <div class="hm-swap">
+              <div class="hm-swap-a" aria-hidden="true">
+                <p class="hm-label hm-label-l">By hand</p>
+                <ol class="hm-old">
+                  <li style="--i:0"><span>Copy.</span></li>
+                  <li style="--i:1"><span>Paste.</span></li>
+                  <li style="--i:2"><span>Check out.</span></li>
+                  <li style="--i:3"><span>Repeat.</span></li>
+                </ol>
+              </div>
+              <div class="hm-swap-b">
+                <p class="hm-label hm-label-r">With my tools</p>
+                <h1>More AI,<br />less manual work.</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="hm-intro">
+            <p class="hm-sub hm-pop" style="--p:0">
+              I'm <strong>Phillip Bösger</strong>. Polarion is my home turf: 8 years from Siemens enterprise to startup, where requirements management meets technical execution. On top of that I build with AI, with agents, MCP and automation that take the manual work off your team. I consult, I build, and I build fast.
             </p>
-            <div class="hero-ctas">
+            <div class="hm-ctas hm-pop" style="--p:1">
               <a href="contact.html" class="btn btn-primary btn-lg">Start a project</a>
-              <a href="work.html" class="btn btn-secondary btn-lg">See what I build</a>
+              <a href="#change" class="btn btn-secondary btn-lg">What I change</a>
             </div>
-            <div class="hero-stats">
-              <div>
-                <div class="stat-num">8+ yrs</div>
-                <div class="stat-label">with Polarion ALM</div>
-              </div>
-              <div class="stat-divider"></div>
-              <div>
-                <div class="stat-num">3+</div>
-                <div class="stat-label">open-source tools</div>
-              </div>
+            <dl class="hm-stats hm-pop" style="--p:2">
+              <div><dt>8+ yrs</dt><dd>with Polarion ALM</dd></div>
+              <div><dt>3+</dt><dd>open-source tools</dd></div>
+              <div><dt class="hm-warm">01/2027</dt><dd>available from</dd></div>
+            </dl>
+          </div>
+
+          <div class="hm-depth" aria-hidden="true">
+            <div class="hm-plane hm-plane-mid" data-depth="0.5">
+              <figure class="hm-photo hm-photo-a hm-pop-photo" style="--p:3">
+                <img src="assets/images/about-image.webp" alt="" width="640" height="800" />
+                <figcaption>In focus</figcaption>
+              </figure>
             </div>
-            <a href="profile.html" class="profile-callout">
-              <img
-                src="assets/images/boesger-icon.png"
-                alt=""
-                class="profile-callout-icon"
-              />
-              <span class="profile-callout-text">
-                <span class="profile-callout-title"
-                  >Full profile, CV &amp; services</span
-                >
-                <span class="profile-callout-desc"
-                  >About me, background and how to work with me — the full
-                  story.</span
-                >
-              </span>
-              <svg
-                class="arrow"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
+            <div class="hm-plane hm-plane-mid2" data-depth="0.8">
+              <figure class="hm-photo hm-photo-b hm-pop-photo" style="--p:4">
+                <img src="assets/images/off-duty.webp" alt="" width="640" height="800" />
+                <figcaption>Off duty</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="hm-change" id="change" aria-labelledby="change-h">
+          <div class="hm-sec-head" data-reveal>
+            <h2 id="change-h">What I change</h2>
+            <p>Less manual work comes from how a team works, not from one tool. Four things I do, with the proof next to each.</p>
+          </div>
+          <div class="hm-bento">
+            <article class="hm-card hm-card-wide" data-glow data-reveal>
+              <p class="hm-kicker">Home turf</p>
+              <h3>Polarion, from spec to production</h3>
+              <p>Custom extensions in Java, REST, Velocity and workflow scripts, with CI/CD and automated release documentation.</p>
+              <ul>
+                <li>Plugins for Polarion ALM, including the avaCopilot AI assistant at avasis</li>
+                <li>Containerized setups so a fresh Polarion runs in minutes: <a href="work/polarion-docker.html">Polarion Docker</a></li>
+                <li>Faster editing inside Polarion, no SVN checkout: <a href="work/polarion-code-editor.html">Polarion Code Editor</a></li>
+              </ul>
+            </article>
+            <article class="hm-card" data-glow data-reveal>
+              <p class="hm-kicker">AI agents &amp; MCP</p>
+              <h3>Agents that work on real Polarion data</h3>
+              <p>No more copying work items into a chat and the answer back.</p>
+              <ul>
+                <li><a href="work/polarion-mcp.html">Polarion MCP Server</a>: 271 REST operations, 5 AI clients, MIT license</li>
+                <li>n8n workflows that take over repetitive work: <a href="automation.html">my setup</a></li>
+              </ul>
+            </article>
+            <article class="hm-card" data-glow data-reveal>
+              <p class="hm-kicker">AI enablement</p>
+              <h3>Teams that use AI properly</h3>
+              <p>Coaching on real tickets, not slideware.</p>
+              <ul>
+                <li><a href="work/ai-enablement-hub.html">AI Enablement Hub</a>: 6+ coaching modules, from €149</li>
+                <li>On-the-job coaching for Polarion plugin developers at avasis</li>
+                <li>An AI-assisted coding course for StackFuel, built around OpenAI Codex</li>
+              </ul>
+            </article>
+            <article class="hm-card" data-glow data-reveal>
+              <p class="hm-kicker">Sharing</p>
+              <h3>What works goes into the open</h3>
+              <p>Tools, guides and write-ups that other teams can reuse.</p>
+              <ul>
+                <li><a href="https://polarion.boesger.com" target="_blank" rel="noopener">Polarion &amp; AI blog</a>: tips, customizations, agent experiments</li>
+                <li>Open-source tools on <a href="https://github.com/phillipboesger" target="_blank" rel="noopener">GitHub</a></li>
+              </ul>
+            </article>
+            <article class="hm-card hm-card-band" data-glow data-reveal>
+              <div>
+                <p class="hm-kicker">A digital colleague</p>
+                <h3>Always three steps ahead</h3>
+              </div>
+              <p>I'm building my own, and it takes work off my plate: programming, documentation, tests. It is the team I don't have to hire. I feed it my knowledge, ideas and experience, so it never outgrows me and I keep the time to research and keep learning. I don't stand still. <a href="second-brain.html">Second Brain</a></p>
+            </article>
+          </div>
+        </section>
+
+        <section class="hm-work" id="work" aria-labelledby="ledger-h">
+          <div class="hm-work-head" data-reveal>
+            <h2 id="ledger-h">Recent client work</h2>
+            <p>Freelance since January 2026: Polarion development, AI enablement and AI training for clients.</p>
+          </div>
+          <ol class="hm-work-track">
+            <li data-glow data-reveal>
+              <p class="hm-when">10/2026 – 12/2026<br />Course author</p>
+              <div>
+                <p class="hm-who">StackFuel GmbH · Berlin <span class="hm-status is-live">Ongoing</span></p>
+                <h3>AI-assisted coding course</h3>
+                <p>A self-paced online course that teaches technical B2B teams to code with AI agents: lessons, hands-on exercises and knowledge checks for OpenAI Codex.</p>
+                <p class="hm-tags">AI coding · OpenAI Codex · Training</p>
+              </div>
+            </li>
+            <li data-glow data-reveal>
+              <p class="hm-when">05/2026 – 06/2026<br />Coach &amp; trainer</p>
+              <div>
+                <p class="hm-who">avasis solutions GmbH <span class="hm-status">Completed</span></p>
+                <h3>AI enablement &amp; coaching</h3>
+                <p>On-the-job coaching for Polarion plugin developers in AI-assisted development across the lifecycle: concept, root-cause analysis, MCP-based implementation, documentation and tests.</p>
+                <p class="hm-tags">AI enablement · Coaching · MCP · <a href="work/ai-enablement-hub.html">Material on the AI Enablement Hub</a></p>
+              </div>
+            </li>
+            <li data-glow data-reveal>
+              <p class="hm-when">01/2026 – present<br />Developer</p>
+              <div>
+                <p class="hm-who">avasis solutions GmbH <span class="hm-status is-live">Ongoing</span></p>
+                <h3>Polarion plugin development</h3>
+                <p>Custom Polarion extensions from spec to production: Java, REST, Velocity and workflow scripts, CI/CD with automated release documentation, plus the avaCopilot AI assistant.</p>
+                <p class="hm-tags">Polarion · Java · CI/CD</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="hm-projects" id="projects" aria-labelledby="more-h">
+          <div class="hm-sec-head" data-reveal>
+            <h2 id="more-h">Products &amp; tools</h2>
+            <p>What I ship besides client work. Most of it is open source, and everything lives on the projects page.</p>
+          </div>
+          <div class="hm-tools">
+            <a class="hm-card" href="https://www.avasis.biz/de/events/digital-blink-avacopilot-23-4-26" target="_blank" rel="noopener" data-glow data-reveal>
+              <p class="hm-kicker">Available</p>
+              <h3>avaCopilot</h3>
+              <p>An AI assistant for Polarion that turns repetitive ALM work into conversational, automated workflows.</p>
+              <span class="hm-more">Learn more</span>
+            </a>
+            <a class="hm-card" href="work/polarion-mcp.html" data-glow data-reveal>
+              <p class="hm-kicker">Open source</p>
+              <h3>Polarion MCP Server</h3>
+              <p>Connects GitHub Copilot, Claude and other AI clients to your Polarion work items. 271 REST operations.</p>
+              <span class="hm-more">Learn more</span>
+            </a>
+            <a class="hm-card" href="work/polarion-code-editor.html" data-glow data-reveal>
+              <p class="hm-kicker">Free download</p>
+              <h3>Polarion Code Editor</h3>
+              <p>Edit Velocity macros, JSON and XML directly inside Polarion on the Monaco engine, without an SVN client.</p>
+              <span class="hm-more">Learn more</span>
+            </a>
+            <a class="hm-card" href="work/polarion-docker.html" data-glow data-reveal>
+              <p class="hm-kicker">Open source</p>
+              <h3>Polarion Docker</h3>
+              <p>A Dockerfile and scripts that containerize a fresh Polarion install on macOS, Windows and Linux.</p>
+              <span class="hm-more">Learn more</span>
             </a>
           </div>
-
-          <div class="hero-visual">
-            <div class="hero-photo-a">
-              <img src="assets/images/about-image.webp" alt="Phillip Bösger" />
-              <span class="hero-photo-badge badge badge-neutral">In focus</span>
-            </div>
-            <div class="hero-photo-b">
-              <img src="assets/images/off-duty.webp" alt="Off duty" />
-              <span class="hero-photo-badge badge badge-neutral">Off duty</span>
-            </div>
-            <span class="hero-available badge badge-success">
-              <span class="badge-dot"></span>Available from 01/2027
-            </span>
+          <div class="hm-projects-links" data-reveal>
+            <a href="work.html" class="btn btn-primary btn-lg">All projects</a>
+            <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">GitHub</a>
+            <a href="https://polarion.boesger.com" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Polarion blog</a>
           </div>
         </section>
 
-        <!-- Work / Portfolio -->
-        <section class="section" id="clients">
-          <div class="section-inner">
-            <div class="section-head" data-reveal>
-              <span class="kicker">References</span>
-              <h2>Recent client work</h2>
-              <p>
-                Freelance since January 2026: Polarion development, AI
-                enablement and AI training for clients.
-              </p>
-            </div>
-            <div class="work-grid">
-              <div class="glass-card work-card" data-reveal>
-                <div class="work-card-body">
-                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-                    <span class="work-card-tagline">StackFuel GmbH · Berlin</span>
-                    <span class="badge badge-success"><span class="badge-dot"></span>Ongoing</span>
-                  </div>
-                  <h3>AI-assisted coding course</h3>
-                  <p class="work-card-desc" style="color: var(--text-muted); font-size: 0.82rem">10/2026 – 12/2026 · Course author</p>
-                  <p class="work-card-desc">
-                    A self-paced online course that teaches technical B2B teams
-                    to code with AI agents: lessons, hands-on exercises and
-                    knowledge checks for OpenAI Codex.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">AI coding</span>
-                    <span class="tag">OpenAI Codex</span>
-                    <span class="tag">Training</span>
-                  </div>
-                </div>
-              </div>
-
-              <a class="glass-card work-card" href="work/ai-enablement-hub.html" data-reveal>
-                <div class="work-card-body">
-                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-                    <span class="work-card-tagline">avasis solutions GmbH</span>
-                    <span class="badge badge-neutral">Completed</span>
-                  </div>
-                  <h3>AI enablement &amp; coaching</h3>
-                  <p class="work-card-desc" style="color: var(--text-muted); font-size: 0.82rem">05/2026 – 06/2026 · Coach &amp; trainer</p>
-                  <p class="work-card-desc">
-                    On-the-job coaching for Polarion plugin developers in
-                    AI-assisted development across the lifecycle: concept,
-                    root-cause analysis, MCP-based implementation, documentation
-                    and tests.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">AI enablement</span>
-                    <span class="tag">Coaching</span>
-                    <span class="tag">MCP</span>
-                  </div>
-                  <span class="work-card-link">Material on the AI Enablement Hub →</span>
-                </div>
-              </a>
-
-              <div class="glass-card work-card" data-reveal>
-                <div class="work-card-body">
-                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-                    <span class="work-card-tagline">avasis solutions GmbH</span>
-                    <span class="badge badge-success"><span class="badge-dot"></span>Ongoing</span>
-                  </div>
-                  <h3>Polarion plugin development</h3>
-                  <p class="work-card-desc" style="color: var(--text-muted); font-size: 0.82rem">01/2026 – present · Developer</p>
-                  <p class="work-card-desc">
-                    Custom Polarion extensions from spec to production: Java,
-                    REST, Velocity and workflow scripts, CI/CD with automated
-                    release documentation, plus the avaCopilot AI assistant.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">Polarion</span>
-                    <span class="tag">Java</span>
-                    <span class="tag">CI/CD</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <section class="hm-contact" id="contact" aria-labelledby="contact-h" data-spot>
+          <h2 id="contact-h" data-reveal>Polarion consulting, AI enablement or a full-stack build</h2>
+          <p>Tell me where your team is losing time.</p>
+          <div class="hm-ctas">
+            <a href="https://calendly.com/phillip-boesger/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a call</a>
+            <a href="mailto:digital@boesger.com" class="btn btn-secondary btn-lg">Send an email</a>
+            <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">LinkedIn</a>
           </div>
-        </section>
-
-        <section class="section" id="work">
-          <div class="section-inner">
-            <div class="section-head" data-reveal>
-              <span class="kicker">Work &amp; portfolio</span>
-              <h2>Things I build</h2>
-              <p>
-                A growing collection of AI agents, automations and Polarion
-                extensions — each a step toward less manual work and more AI
-                in Polarion.
-              </p>
-            </div>
-            <div class="work-grid">
-              <a
-                class="glass-card work-card"
-                href="https://www.avasis.biz/de/events/digital-blink-avacopilot-23-4-26"
-                target="_blank"
-                rel="noopener"
-                data-reveal
-              >
-                <div class="work-card-media">
-                  <img src="assets/images/avasis-logo.svg" alt="" />
-                  <span class="badge badge-solid">Available</span>
-                </div>
-                <div class="work-card-body">
-                  <h3>avaCopilot</h3>
-                  <p class="work-card-tagline">GenAI capabilities inside Polarion ALM</p>
-                  <p class="work-card-desc">
-                    An AI assistant for Polarion that turns repetitive ALM
-                    work into conversational, automated workflows.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">Polarion</span>
-                    <span class="tag">GenAI</span>
-                    <span class="tag">Automation</span>
-                  </div>
-                  <span class="work-card-link">Learn more →</span>
-                </div>
-              </a>
-
-              <a
-                class="glass-card work-card"
-                href="work/polarion-mcp.html"
-                data-reveal
-              >
-                <div class="work-card-media">
-                  <img src="assets/images/mcp-logo.svg" alt="" />
-                  <span class="badge badge-solid">Open Source</span>
-                </div>
-                <div class="work-card-body">
-                  <h3>Polarion MCP Server</h3>
-                  <p class="work-card-tagline">Copilot meets your backlog</p>
-                  <p class="work-card-desc">
-                    No more copy-pasting between Polarion and VS Code —
-                    connects GitHub Copilot directly to your work items.
-                    271 tools, zero switching.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">MCP</span>
-                    <span class="tag">AI Integration</span>
-                    <span class="tag">Open Source</span>
-                  </div>
-                  <span class="work-card-link">Learn more →</span>
-                </div>
-              </a>
-
-              <a
-                class="glass-card work-card"
-                href="work/polarion-code-editor.html"
-                data-reveal
-              >
-                <div class="work-card-media">
-                  <img src="assets/images/boesger-icon.png" alt="" />
-                  <span class="badge badge-solid">Free Download</span>
-                </div>
-                <div class="work-card-body">
-                  <h3>Polarion Code Editor</h3>
-                  <p class="work-card-tagline">VS Code-style editing in Polarion</p>
-                  <p class="work-card-desc">
-                    Stop checking out. Edit Velocity macros, JSON and XML
-                    directly inside Polarion — no SVN client needed, powered
-                    by the Monaco Engine.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">Monaco</span>
-                    <span class="tag">Polarion</span>
-                    <span class="tag">Open Source</span>
-                  </div>
-                  <span class="work-card-link">Learn more →</span>
-                </div>
-              </a>
-
-              <a
-                class="glass-card work-card"
-                href="work/polarion-docker.html"
-                data-reveal
-              >
-                <div class="work-card-media">
-                  <img src="assets/images/docker-logo.svg" alt="" />
-                  <span class="badge badge-solid">Open Source</span>
-                </div>
-                <div class="work-card-body">
-                  <h3>Polarion Docker</h3>
-                  <p class="work-card-tagline">Run Polarion ALM in containers</p>
-                  <p class="work-card-desc">
-                    Fully automated Dockerfile &amp; scripts that containerize
-                    a fresh Polarion install — zero manual effort, on macOS,
-                    Windows and Linux.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">Docker</span>
-                    <span class="tag">Polarion</span>
-                    <span class="tag">Open Source</span>
-                  </div>
-                  <span class="work-card-link">Learn more →</span>
-                </div>
-              </a>
-
-              <a
-                class="glass-card work-card"
-                href="work/ai-enablement-hub.html"
-                data-reveal
-              >
-                <div class="work-card-media">
-                  <img src="assets/images/education.png" alt="" />
-                  <span class="badge badge-solid">Growing</span>
-                </div>
-                <div class="work-card-body">
-                  <h3>AI Enablement Hub</h3>
-                  <p class="work-card-tagline">AI coaching that empowers teams</p>
-                  <p class="work-card-desc">
-                    A growing AI coaching program built into my Polarion
-                    blog — created hand in hand with customers and
-                    continuously expanded.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">AI Coaching</span>
-                    <span class="tag">Enablement</span>
-                  </div>
-                  <span class="work-card-link">Learn more →</span>
-                </div>
-              </a>
-
-              <a class="glass-card work-card" href="work/daily-board.html" data-reveal>
-                <div class="work-card-media">
-                  <img src="assets/images/daily-board-logo.png" alt="" />
-                  <span class="badge badge-solid">Personal Project</span>
-                </div>
-                <div class="work-card-body">
-                  <h3>Daily Board</h3>
-                  <p class="work-card-tagline">Your day, on one screen</p>
-                  <p class="work-card-desc">
-                    A local-first iOS app combining Reminders, Calendar, a
-                    private journal and quick notes — no account, no cloud
-                    backend, no tracking.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">SwiftUI</span>
-                    <span class="tag">iOS</span>
-                    <span class="tag">On-device AI</span>
-                  </div>
-                  <span class="work-card-link">Learn more →</span>
-                </div>
-              </a>
-
-              <a
-                class="glass-card work-card"
-                href="https://polarion.boesger.com"
-                target="_blank"
-                rel="noopener"
-                data-reveal
-              >
-                <div class="work-card-media">
-                  <img src="assets/images/polarion.png" alt="" />
-                  <span class="badge badge-solid">Active</span>
-                </div>
-                <div class="work-card-body">
-                  <h3>Sharing Knowledge with the Community</h3>
-                  <p class="work-card-tagline">The go-to blog for Polarion &amp; AI</p>
-                  <p class="work-card-desc">
-                    Practical tips, real-world customizations, CI/CD
-                    automation and hands-on AI agent experiments — shared
-                    freely.
-                  </p>
-                  <div class="work-card-tags">
-                    <span class="tag">Knowledge Sharing</span>
-                    <span class="tag">AI Agents</span>
-                  </div>
-                  <span class="work-card-link">Learn more →</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Blog -->
-        <section class="section section-tinted" id="blog">
-          <div class="section-inner">
-            <div class="blog-band" data-reveal>
-              <div>
-                <p class="glass-panel-label">Polarion Blog</p>
-                <h2>The go-to blog for Polarion ALM &amp; AI</h2>
-                <p>
-                  Practical tips, real customizations, CI/CD automation and AI
-                  agent experiments — everything I learn shipping AI into
-                  Polarion, written down.
-                </p>
-                <div class="hero-ctas" style="margin-top: 0">
-                  <a href="blog.html" class="btn btn-secondary btn-md">Explore the blog</a>
-                  <a
-                    href="https://polarion.boesger.com/#/portal/signup"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-primary btn-md"
-                    >Subscribe for free</a
-                  >
-                </div>
-              </div>
-              <div class="blog-band-media">
-                <img src="assets/images/polarion-hero.jpeg" alt="Polarion" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="section" id="contact" style="padding-top: 24px">
-          <div class="section-inner">
-            <div class="contact-band" data-reveal>
-              <p class="glass-panel-label" style="margin-bottom: 6px">Let's talk</p>
-              <h2 style="margin-top: 0">Let's cut the manual work</h2>
-              <p>
-                Polarion consulting, AI enablement, or a full-stack build —
-                tell me where your team is losing time.
-              </p>
-              <div class="hero-ctas">
-                <a
-                  href="https://calendly.com/phillip-boesger/30min"
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn-primary btn-lg"
-                  >Book a call</a
-                >
-                <a href="mailto:digital@boesger.com" class="btn btn-secondary btn-lg"
-                  >Send an email</a
-                >
-                <a
-                  href="https://www.linkedin.com/in/phillip-boesger-90691215a/"
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn-secondary btn-lg"
-                  >LinkedIn</a
-                >
-              </div>
-              <div class="ask-ai-inline">
-                <p class="ask-ai-inline-label">Or let an AI sum me up — the prompt is already prepared:</p>
+          <div class="ask-ai-inline">
+                <p class="ask-ai-inline-label">Or ask an AI about me. The prompt is ready:</p>
                 <div class="ask-ai-buttons">
                   <a href="https://chatgpt.com/?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="ai-pill">
                     <img src="assets/images/ai-chatgpt.png" alt="" />ChatGPT</a>
@@ -495,11 +345,9 @@
                     <img src="assets/images/ai-gemini.png" alt="" />Gemini</a>
                 </div>
               </div>
-            </div>
-          </div>
         </section>
-
       </main>
+
 
       <footer class="site-footer">
         <div class="site-footer-main footer-columns">
@@ -554,8 +402,9 @@
       </footer>
     </div>
 
-    <script src="assets/js/network.js?v=20260925a"></script>
+    <script src="assets/js/network.js?v=20261015a"></script>
     <script src="assets/js/site.js?v=20260925a"></script>
+    <script src="assets/js/home.js?v=20261015e"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
