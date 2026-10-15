@@ -115,7 +115,7 @@ The July 2026 redesign (Profile/CV/Skills/product-detail content) was ported fro
 
 ## Design system and home page (Oct 2026 redesign)
 
-- Palette is "Sky Blue + Amber" (tokens in `assets/css/style.css` `:root`, documented on `colors.html`): sky-blue grounds, ice-cyan accent, one amber counterpoint (`--warm`). Button labels use `--text-on-accent`. Do not reintroduce navy `rgba(...)` literals; use the tokens.
+- Palette is "Ocean Bright" (tokens in `assets/css/style.css` `:root`, documented on `colors.html`): sky-blue grounds, ice-cyan accent, one amber counterpoint (`--warm`). Button labels use `--text-on-accent`. Do not reintroduce navy `rgba(...)` literals; use the tokens.
 - Fonts are self-hosted in `assets/fonts/` (Geist, Geist Mono, variable woff2, latin subset). No Google Fonts requests.
 - `index.html` is one hero screen told in order (CSS-only, one pass, `assets/css/home.css`): the manual steps (Copy. Paste. Check out. Repeat.) are struck out, the motto "More AI, less manual work." fades in, then the intro, CTAs, stats and photos pop in. Reduced motion renders the end state. Below the hero everything is visible at once (no pinning, no scroll-jacking): "What I change" bento with proof links, client-work timeline, products grid, contact close with a pointer light. `assets/js/home.js` only does hero parallax and the card glow.
 - Content must come from the project pages (`work/*.html`, `work.html`); the page was previously cut for being all effect and little information. Keep sections content-first and re-check with a visitor read-through after changes.

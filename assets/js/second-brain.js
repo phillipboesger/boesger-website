@@ -739,6 +739,10 @@
   }
 
   var q = function (id) { return document.getElementById(id); };
+  if (reduce) {
+    var hint = document.querySelector(".sb-hint");
+    if (hint) hint.hidden = true;
+  }
   if (q("sb-brain")) brain(q("sb-brain"));
   if (q("sb-vec")) vectors(q("sb-vec"));
   if (q("sb-map")) sections(q("sb-map"), Array.prototype.slice.call(document.querySelectorAll("[data-sb-chip]")));
