@@ -17,7 +17,7 @@
 .hm-hero {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   min-height: min(100svh, 940px);
   margin-top: calc(var(--hm-header) * -1);
   padding-top: var(--hm-header);
@@ -30,7 +30,7 @@
   gap: 18px;
 }
 .hm-hero-r {
-  padding: 56px clamp(24px, 5vw, 80px) 40px clamp(32px, 5vw, 88px);
+  padding: 86px clamp(24px, 5vw, 80px) 40px clamp(16px, 2.5vw, 48px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -59,15 +59,38 @@
   letter-spacing: -0.03em;
   color: #fff;
 }
-/* The manual steps get struck out one after another, then the loop restarts. */
+/* One pass: the manual steps get struck out in turn, then the motto fades in over them. */
+.hm-swap {
+  display: grid;
+}
+.hm-swap-a,
+.hm-swap-b {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.hm-swap-a {
+  animation: hm-out 0.8s ease-in 4.6s both;
+}
+.hm-swap-b {
+  animation: hm-in 0.9s ease-out 5s both;
+}
+@keyframes hm-out {
+  to { opacity: 0; transform: translateY(-12px); visibility: hidden; }
+}
+@keyframes hm-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
 .hm-old li {
   display: block;
 }
 .hm-old li span {
   position: relative;
   display: inline-block;
-  animation: hm-dim 10s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.9s);
+  animation: hm-dim 0.4s ease-out both;
+  animation-delay: calc(0.8s + var(--i) * 0.9s);
 }
 .hm-old li span::after {
   content: "";
@@ -80,8 +103,8 @@
   background: var(--warm);
   transform: scaleX(0);
   transform-origin: left;
-  animation: hm-strike 10s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.9s);
+  animation: hm-strike 0.5s ease-in-out both;
+  animation-delay: calc(0.5s + var(--i) * 0.9s);
 }
 .hm-old li::after {
   content: "\2713";
@@ -89,23 +112,19 @@
   font-size: 0.55em;
   color: var(--accent);
   opacity: 0;
-  animation: hm-check 10s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.9s);
+  animation: hm-check 0.3s ease-out both;
+  animation-delay: calc(0.9s + var(--i) * 0.9s);
 }
 @keyframes hm-strike {
-  0%, 10% { transform: scaleX(0); }
-  20%, 90% { transform: scaleX(1); }
-  97%, 100% { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 @keyframes hm-dim {
-  0%, 14% { opacity: 1; }
-  26%, 90% { opacity: 0.3; }
-  97%, 100% { opacity: 1; }
+  from { opacity: 1; }
+  to { opacity: 0.3; }
 }
 @keyframes hm-check {
-  0%, 20% { opacity: 0; transform: translateY(4px); }
-  30%, 90% { opacity: 1; transform: none; }
-  97%, 100% { opacity: 0; transform: translateY(4px); }
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
 }
 .hm-old-note {
   max-width: 28ch;
@@ -114,8 +133,8 @@
   color: var(--text-body);
 }
 
-.hm-hero-r h1 {
-  margin-top: 14px;
+.hm-hero-l h1 {
+  margin-top: -4px;
   font-size: clamp(2.6rem, 5vw, 4.5rem);
   line-height: 0.96;
   font-weight: 800;
@@ -475,19 +494,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hm-old li span,
-  .hm-old li span::after,
-  .hm-old li::after {
+  .hm-swap-a {
+    display: none;
+  }
+  .hm-swap-b {
     animation: none;
-  }
-  .hm-old li span {
-    opacity: 0.3;
-  }
-  .hm-old li span::after {
-    transform: scaleX(1);
-  }
-  .hm-old li::after {
-    opacity: 1;
   }
   .hm-plane {
     transform: none !important;

@@ -95,7 +95,7 @@
     <title>Phillip Bösger | Bösger Digital</title>
     <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
     <link href="assets/css/style.css?v=20261015a" rel="stylesheet" />
-    <link href="assets/css/home.css?v=20261015b" rel="stylesheet" />
+    <link href="assets/css/home.css?v=20261015c" rel="stylesheet" />
     <script>document.documentElement.classList.add("js")</script>
   </head>
   <body>
@@ -148,19 +148,25 @@
         <!-- Split hero: both sides readable at once -->
         <section class="hm-hero" id="top" aria-label="Introduction">
           <div class="hm-hero-l">
-            <p class="hm-label hm-label-l">By hand</p>
-            <ol class="hm-old" aria-label="Manual steps, struck out one by one">
-              <li style="--i:0"><span>Copy.</span></li>
-              <li style="--i:1"><span>Paste.</span></li>
-              <li style="--i:2"><span>Check out.</span></li>
-              <li style="--i:3"><span>Repeat.</span></li>
-            </ol>
-            <p class="hm-old-note">The steps many Polarion teams still do manually.</p>
+            <div class="hm-swap">
+              <div class="hm-swap-a" aria-hidden="true">
+                <p class="hm-label hm-label-l">By hand</p>
+                <ol class="hm-old">
+                  <li style="--i:0"><span>Copy.</span></li>
+                  <li style="--i:1"><span>Paste.</span></li>
+                  <li style="--i:2"><span>Check out.</span></li>
+                  <li style="--i:3"><span>Repeat.</span></li>
+                </ol>
+                <p class="hm-old-note">The steps many Polarion teams still do manually.</p>
+              </div>
+              <div class="hm-swap-b">
+                <p class="hm-label hm-label-r">With my tools</p>
+                <h1>More AI,<br />less manual work.</h1>
+              </div>
+            </div>
           </div>
 
           <div class="hm-hero-r">
-            <p class="hm-label hm-label-r">With my tools</p>
-            <h1>More AI,<br />less manual work.</h1>
             <p class="hm-sub">
               I'm <strong>Phillip Bösger</strong>. I've spent 8 years with Polarion, from Siemens enterprise to startup, working where requirements management meets technical execution. I consult and I build, and I build fast.
             </p>
