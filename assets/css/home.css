@@ -13,27 +13,52 @@
   white-space: nowrap;
 }
 
-/* ── Hero: split 50/50, both sides readable at once ─────────────────────── */
+/* ── Hero: one screen, told in order ───────────────────────────────────────
+   1. the manual steps are struck out, 2. the motto replaces them,
+   3. the motto lifts and who I am pops in. One pass, CSS only. */
 .hm-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  min-height: min(100svh, 940px);
+  place-items: center;
+  min-height: max(100svh, 720px);
   margin-top: calc(var(--hm-header) * -1);
-  padding-top: var(--hm-header);
+  padding: var(--hm-header) 24px 0;
+  text-align: center;
 }
-.hm-hero-l {
-  position: relative;
-  padding: 56px clamp(24px, 5vw, 80px) 40px;
+.hm-lead,
+.hm-intro {
+  grid-area: 1 / 1;
+}
+.hm-lead {
+  animation: hm-lift 0.9s cubic-bezier(0.65, 0, 0.35, 1) 4.7s both;
+}
+.hm-intro {
+  align-self: end;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  align-items: center;
+  max-width: 560px;
+  padding-bottom: clamp(32px, 12svh, 120px);
+  z-index: 3;
 }
-.hm-hero-r {
-  padding: 86px clamp(24px, 5vw, 80px) 40px clamp(16px, 2.5vw, 48px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+@keyframes hm-lift {
+  to { transform: translateY(-8svh); }
+}
+.hm-pop {
+  animation: hm-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(5.3s + var(--p) * 0.18s);
+}
+.hm-pop-photo {
+  animation: hm-pop-photo 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(5.3s + var(--p) * 0.18s);
+}
+@keyframes hm-pop {
+  from { opacity: 0; transform: translateY(26px) scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hm-pop-photo {
+  from { opacity: 0; scale: 0.7; translate: 0 30px; }
+  to { opacity: 1; scale: 1; translate: 0 0; }
 }
 .hm-label {
   font-family: var(--font-mono);
@@ -54,8 +79,8 @@
   padding: 0;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(2rem, 3.9vw, 3.5rem);
-  line-height: 1.08;
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  line-height: 1.1;
   letter-spacing: -0.03em;
   color: #fff;
 }
@@ -68,13 +93,14 @@
   grid-area: 1 / 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 18px;
 }
 .hm-swap-a {
-  animation: hm-out 0.8s ease-in 4.6s both;
+  animation: hm-out 0.7s ease-in 3.6s both;
 }
 .hm-swap-b {
-  animation: hm-in 0.9s ease-out 5s both;
+  animation: hm-in 0.8s ease-out 3.9s both;
 }
 @keyframes hm-out {
   to { opacity: 0; transform: translateY(-12px); visibility: hidden; }
@@ -90,7 +116,7 @@
   position: relative;
   display: inline-block;
   animation: hm-dim 0.4s ease-out both;
-  animation-delay: calc(0.8s + var(--i) * 0.9s);
+  animation-delay: calc(0.6s + var(--i) * 0.7s);
 }
 .hm-old li span::after {
   content: "";
@@ -104,7 +130,7 @@
   transform: scaleX(0);
   transform-origin: left;
   animation: hm-strike 0.5s ease-in-out both;
-  animation-delay: calc(0.5s + var(--i) * 0.9s);
+  animation-delay: calc(0.4s + var(--i) * 0.7s);
 }
 .hm-old li::after {
   content: "\2713";
@@ -113,7 +139,7 @@
   color: var(--accent);
   opacity: 0;
   animation: hm-check 0.3s ease-out both;
-  animation-delay: calc(0.9s + var(--i) * 0.9s);
+  animation-delay: calc(0.8s + var(--i) * 0.7s);
 }
 @keyframes hm-strike {
   to { transform: scaleX(1); }
@@ -126,14 +152,8 @@
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: none; }
 }
-.hm-old-note {
-  max-width: 28ch;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--text-body);
-}
 
-.hm-hero-l h1 {
+.hm-lead h1 {
   margin-top: -4px;
   font-size: clamp(2.6rem, 5vw, 4.5rem);
   line-height: 0.96;
@@ -143,7 +163,6 @@
   text-wrap: balance;
 }
 .hm-sub {
-  margin-top: 22px;
   max-width: 46ch;
   font-size: 1.12rem;
   line-height: 1.55;
@@ -156,14 +175,16 @@
 .hm-ctas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 .hm-stats {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px 36px;
-  margin-top: 34px;
+  margin-top: 28px;
 }
 .hm-stats dt {
   font-size: 1.6rem;
@@ -223,13 +244,13 @@
   background: rgba(11, 44, 80, 0.72);
 }
 .hm-photo-a {
-  left: 24%;
-  bottom: 7%;
+  left: clamp(16px, 7vw, 150px);
+  bottom: 9%;
   transform: rotate(-4deg);
 }
 .hm-photo-b {
-  left: 37%;
-  bottom: 3%;
+  right: clamp(16px, 7vw, 150px);
+  bottom: 12%;
   transform: rotate(3deg);
 }
 /* ── What changes: the work beyond single tools ────────────────────────── */
@@ -441,38 +462,39 @@
     --hm-header: 68px;
   }
   .hm-hero {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     min-height: 0;
+    padding-bottom: 8px;
   }
-  .hm-hero-l {
-    padding: calc(var(--hm-header) + 20px) 24px 0;
-    gap: 10px;
+  .hm-lead {
+    width: 100%;
+    min-height: 34svh;
+    display: grid;
+    place-items: center;
+    animation: none;
+  }
+  .hm-intro {
+    align-self: auto;
+    padding-bottom: 0;
   }
   .hm-old {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 0.6em;
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
-  .hm-old-note {
-    display: none;
-  }
-  .hm-hero-r {
-    padding: 28px 24px 24px;
+    font-size: 2rem;
+    line-height: 1.15;
   }
   .hm-depth {
     position: relative;
     inset: auto;
-    height: 230px;
-    margin-bottom: 8px;
-    grid-column: 1;
+    width: 100%;
+    height: 240px;
+    margin-top: 8px;
   }
   .hm-photo {
     width: 140px;
   }
-  .hm-photo-a { left: 12%; bottom: auto; top: 14px; }
-  .hm-photo-b { left: 38%; bottom: auto; top: 40px; }
+  .hm-photo-a { left: 14%; right: auto; bottom: auto; top: 14px; }
+  .hm-photo-b { left: auto; right: 14%; bottom: auto; top: 40px; }
 
   .hm-change-grid {
     grid-template-columns: 1fr;
@@ -497,8 +519,14 @@
   .hm-swap-a {
     display: none;
   }
-  .hm-swap-b {
+  .hm-swap-b,
+  .hm-lead,
+  .hm-pop,
+  .hm-pop-photo {
     animation: none;
+  }
+  .hm-lead {
+    transform: translateY(-8svh);
   }
   .hm-plane {
     transform: none !important;
