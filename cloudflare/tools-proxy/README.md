@@ -8,7 +8,6 @@ without moving their hosting or touching their repos:
 | `boesger.com/tools/polarion-docker` | `polarion-docker.boesger.com` |
 | `boesger.com/tools/polarion-mcp` | `polarion-mcp.boesger.com` |
 | `boesger.com/tools/polarion-code-editor` | `polarion.code.editor.boesger.com` |
-| `boesger.com/tools/colors` | `colors.boesger.com` |
 
 The subdomains keep working exactly as before — this is additive, not a
 redirect. Add more entries to `PROXY_MAP` in `worker.js` to proxy more

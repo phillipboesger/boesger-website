@@ -20,7 +20,7 @@
 
 This repository is the canonical source for `boesger.com`: a fully static, multi-page site with no build system, no package manager, and no JavaScript framework. Every page is hand-authored HTML, styled by a single shared CSS file, and enhanced by a small amount of vanilla JS (navigation, reveal-on-scroll, tabs, modals, carousel). There is nothing to install and nothing to compile — clone it, open a page in a browser, and it renders exactly as it will in production.
 
-Other Bösger properties (`digital.boesger.com`, `polarion.boesger.com`, `colors.boesger.com`, `photography.boesger.com`, product subdomains such as `polarion-mcp.boesger.com`) are separate deployments and are not managed from this repository; they are linked from here as external references.
+`digital.boesger.com` and `colors.boesger.com` have been retired and redirect here (see `cloudflare/redirects/`). Other Bösger properties (`polarion.boesger.com`, `photography.boesger.com`, product subdomains such as `polarion-mcp.boesger.com`) are separate deployments and are not managed from this repository; they are linked from here as external references.
 
 ## Tech Stack
 
@@ -54,10 +54,12 @@ assets/
   js/site.js                  Nav, mobile menu, reveal-on-scroll, tabs, modal, carousel
   js/snowfall.js              Alternative background animation (currently unused)
   images/                     Photos, logos, product icons
-  documents/                  Downloadable documents (e.g. CV PDF)
+  documents/                  Downloadable CV PDFs (Polarion Expert / AI Developer, EN / DE)
   gif-readme/                 Legacy demo asset from the original template (unused)
 
 cloudflare/tools-proxy/       Optional Cloudflare Worker; see its own README for setup
+cloudflare/redirects/         Redirect rules retiring digital.boesger.com and colors.boesger.com
+sitemap.xml, robots.txt, llms.txt   Search and AI-agent discovery files
 CLAUDE.md                     Detailed architecture and conventions reference for this repo
 ```
 

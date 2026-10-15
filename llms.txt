@@ -1,0 +1,48 @@
+# Phillip Bösger · Bösger Digital
+
+> Personal site and brand hub of Phillip Bösger, a freelance Polarion ALM expert and AI & full-stack developer (Bösger Digital). Tagline: "More AI, less manual work." Available from 01/2027, remote worldwide, hybrid on request in DACH.
+
+## Work with me
+
+- Dev: custom Polarion extensions (Java, REST, Velocity, workflows) from spec to production, CI/CD with automated release documentation.
+- Enablement: hands-on assessments, coaching sprints and AI training for teams using Polarion and AI tools.
+- Beyond: full-stack and AI development, custom AI agents, automations, integrations and internal tools.
+- Contact: digital@boesger.com · https://calendly.com/phillip-boesger/30min · https://www.linkedin.com/in/phillip-boesger-90691215a/
+
+## Pages
+
+- [Home](https://boesger.com/): overview, projects teaser, contact
+- [Profile](https://boesger.com/profile): CV, skills, ways of working, about; CV downloads as PDF (Polarion Expert and AI Developer, EN and DE)
+- [Projects & Portfolio](https://boesger.com/work): client projects and open-source tools
+- [Blog](https://boesger.com/blog): Polarion ALM & AI articles (live blog at https://polarion.boesger.com)
+- [Brand Identity](https://boesger.com/colors): brand colors, logos and CSS design tokens
+- [Contact](https://boesger.com/contact)
+- [Automation & Homelab](https://boesger.com/automation) and [Second Brain](https://boesger.com/second-brain): self-hosted n8n / Proxmox setup
+- [Links](https://boesger.com/links): all public channels
+
+## Projects
+
+- [AI Enablement Hub](https://boesger.com/work/ai-enablement-hub): structured AI coaching for developers, from 149 EUR (materials access), team package on request
+- [Polarion MCP Server](https://boesger.com/work/polarion-mcp): open-source MCP server for the Polarion REST API (MIT)
+- [Polarion Docker](https://boesger.com/work/polarion-docker): containerized Polarion ALM setup (open source, MIT)
+- [Polarion Code Editor](https://boesger.com/work/polarion-code-editor): Monaco-based file editor inside the Polarion admin
+- [Daily Board](https://boesger.com/work/daily-board): local-first iOS app combining Reminders, Calendar, journal and notes
+
+## Brand colors
+
+All colors are CSS custom properties; full reference with HEX and RGB at https://boesger.com/colors.
+
+| Name | HEX | CSS token | Usage |
+|---|---|---|---|
+| Deep Navy | `#000D1C` | `--bg-deep` | Page background |
+| Dark Navy | `#001222` | `--bg-base` | Sections and areas |
+| Surface Navy | `#062237` | `--bg-surface` | Cards and panels |
+| Elevated | `#124061` | `--bg-elevated` | Hover, borders, dividers |
+| Cyan Primary | `#01BFFB` | `--accent` | Logo, CTAs, links, icons |
+| Cyan Light | `#6BDFF1` | `--accent-light` | Hover, glow, highlights |
+| Cyan Deep | `#058FC1` | `--accent-deep` | Active states, gradient end |
+| Cyan Muted | `#336D91` | `--accent-muted` | Disabled, subtle UI |
+| Cyan Tint | `rgba(1,191,251,0.12)` | `--accent-tint` | Tinted backgrounds and badges |
+| White | `#FFFFFF` | `--text-primary` | Headings |
+| Ice Blue | `#C0F6FC` | `--text-body` | Body text |
+| Muted Blue | `#336D91` | `--text-muted` | Placeholders, labels, meta |
