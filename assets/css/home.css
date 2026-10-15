@@ -2,7 +2,7 @@
    Base rules describe the static, no-JS layout. `.js` adds the pinned scroll stage. */
 
 :root {
-  --hm-manual: #3c5878; /* the "by hand" ground: greyer, flatter */
+  --hm-manual: #32506f; /* the "by hand" ground: greyer, flatter */
   --hm-manual-ink: #dbe5ef;
   --hm-header: 66px;
 }
@@ -136,7 +136,7 @@
   border-radius: 22px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 30px 60px rgba(10, 44, 84, 0.45), 0 4px 10px rgba(10, 44, 84, 0.3);
+  box-shadow: 0 30px 60px rgba(9, 36, 68, 0.45), 0 4px 10px rgba(9, 36, 68, 0.3);
 }
 .hm-photo img {
   width: 100%;
@@ -155,7 +155,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #fff;
-  background: rgba(12, 54, 100, 0.72);
+  background: rgba(11, 44, 80, 0.72);
 }
 .hm-photo-a {
   left: 24%;
@@ -176,7 +176,7 @@
   font-weight: 600;
   color: var(--on-warm);
   background: var(--accent);
-  box-shadow: 0 10px 24px rgba(10, 44, 84, 0.35);
+  box-shadow: 0 10px 24px rgba(9, 36, 68, 0.35);
 }
 .hm-chip-1 { left: 20%; top: 56%; }
 .hm-chip-2 { left: 47%; top: 50%; background: var(--warm); }
@@ -394,7 +394,7 @@
   border: 0;
   border-radius: 24px;
   background: var(--accent);
-  box-shadow: 0 12px 28px rgba(10, 44, 84, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 28px rgba(9, 36, 68, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6);
   cursor: ew-resize;
   touch-action: none;
   display: grid;
@@ -422,7 +422,7 @@
   font-size: 12px;
   font-weight: 600;
   color: #fff;
-  background: rgba(12, 54, 100, 0.82);
+  background: rgba(11, 44, 80, 0.82);
   border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
@@ -545,7 +545,7 @@
   height: auto;
   border-radius: 34px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 40px 80px rgba(10, 44, 84, 0.5);
+  box-shadow: 0 40px 80px rgba(9, 36, 68, 0.5);
   transform: rotate(-3deg);
 }
 .hm-laptop img {
@@ -553,7 +553,7 @@
   height: auto;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 30px 70px rgba(10, 44, 84, 0.45);
+  box-shadow: 0 30px 70px rgba(9, 36, 68, 0.45);
 }
 .hm-more-copy p:not(.hm-who) {
   margin-top: 14px;

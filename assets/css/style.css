@@ -20,30 +20,30 @@
 
 :root {
   /* Surfaces */
-  --bg-deep: #18508a;
-  --bg-base: #1c5994;
-  --bg-surface: #1f6099;
-  --bg-elevated: #3a82c4;
+  --bg-deep: #12385f;
+  --bg-base: #174470;
+  --bg-surface: #1d5183;
+  --bg-elevated: #2e6ca3;
 
   /* Accent (electric cyan) */
-  --accent: #b0efff;
-  --accent-light: #dcf8ff;
-  --accent-deep: #5fcaf7;
-  --accent-muted: #7fb4e0;
-  --accent-tint: rgba(176, 239, 255, 0.14);
-  --accent-bright: #8fe4ff;
-  --accent-glow: #c9f4ff;
-  --accent-blue: #b9d6ff;
+  --accent: #62d6ff;
+  --accent-light: #a8ecff;
+  --accent-deep: #2bb3ee;
+  --accent-muted: #8fb9e0;
+  --accent-tint: rgba(98, 214, 255, 0.14);
+  --accent-bright: #7fdcff;
+  --accent-glow: #bdeeff;
+  --accent-blue: #6aa9ff;
 
   /* Text */
   --text-primary: #ffffff;
-  --text-body: #e6f2fb;
-  --text-muted: #cfe3f5;
-  --text-on-accent: #0d3a68;
+  --text-body: #eef8ff;
+  --text-muted: #c4dcef;
+  --text-on-accent: #0f3358;
 
   /* Warm counterpoint (availability, prices, highlights) */
-  --warm: #ffc766;
-  --on-warm: #0d3a68;
+  --warm: #ffc266;
+  --on-warm: #0f3358;
 
   /* Semantic status */
   --success: #34d87a;
@@ -56,13 +56,13 @@
   --text-link-hover: var(--accent-light);
 
   /* Lines & borders */
-  --border-subtle: rgba(190, 242, 255, 0.14);
-  --border-default: rgba(176, 239, 255, 0.22);
-  --border-strong: rgba(176, 239, 255, 0.55);
+  --border-subtle: rgba(160, 232, 255, 0.14);
+  --border-default: rgba(98, 214, 255, 0.22);
+  --border-strong: rgba(98, 214, 255, 0.55);
 
   /* Surfaces (semantic) */
-  --surface-glass: rgba(18, 66, 116, 0.6);
-  --surface-glass-2: rgba(12, 52, 96, 0.82);
+  --surface-glass: rgba(16, 54, 92, 0.6);
+  --surface-glass-2: rgba(11, 42, 76, 0.82);
 
   /* Spacing (4px base) */
   --space-2: 8px;
@@ -80,13 +80,13 @@
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(10, 44, 84, 0.3);
-  --shadow-md: 0 8px 28px rgba(10, 44, 84, 0.22);
-  --shadow-lg: 0 16px 40px rgba(10, 44, 84, 0.28);
-  --shadow-xl: 0 28px 70px rgba(10, 44, 84, 0.4);
-  --glow-accent: 0 0 18px rgba(176, 239, 255, 0.35);
-  --glow-accent-lg: 0 0 40px rgba(176, 239, 255, 0.2);
-  --inset-highlight: inset 0 1px 0 rgba(190, 242, 255, 0.07);
+  --shadow-sm: 0 2px 8px rgba(9, 36, 68, 0.3);
+  --shadow-md: 0 8px 28px rgba(9, 36, 68, 0.22);
+  --shadow-lg: 0 16px 40px rgba(9, 36, 68, 0.28);
+  --shadow-xl: 0 28px 70px rgba(9, 36, 68, 0.4);
+  --glow-accent: 0 0 18px rgba(98, 214, 255, 0.35);
+  --glow-accent-lg: 0 0 40px rgba(98, 214, 255, 0.2);
+  --inset-highlight: inset 0 1px 0 rgba(160, 232, 255, 0.07);
 
   /* Motion */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
@@ -117,7 +117,7 @@
   /* Legacy aliases kept for anything still referencing the old names */
   --bg: var(--bg-deep);
   --bg-card: var(--surface-glass);
-  --bg-hover: rgba(26, 84, 140, 0.85);
+  --bg-hover: rgba(24, 72, 120, 0.85);
   --cyan: var(--accent);
   --blue: var(--accent-blue);
   --border: var(--border-default);
@@ -152,7 +152,7 @@ body {
     ),
     radial-gradient(
       ellipse at 82% 96%,
-      rgba(255, 199, 102, 0.10) 0%,
+      rgba(255, 194, 102, 0.10) 0%,
       transparent 48%
     );
   background-attachment: fixed;
@@ -221,7 +221,7 @@ a:hover {
     backdrop-filter var(--dur-slow) ease;
 }
 .site-header.is-scrolled {
-  background: rgba(24, 80, 138, 0.78);
+  background: rgba(18, 56, 95, 0.78);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-subtle);
@@ -247,7 +247,7 @@ a:hover {
   display: block;
   height: 32px;
   width: auto;
-  filter: brightness(1.5) saturate(0.75) drop-shadow(0 2px 10px rgba(10, 44, 84, 0.35));
+  filter: brightness(1.5) saturate(0.75) drop-shadow(0 2px 10px rgba(9, 36, 68, 0.35));
 }
 
 .site-nav {
@@ -262,7 +262,7 @@ a:hover {
   gap: 7px;
   padding: 9px 17px;
   border-radius: var(--radius-pill);
-  background: rgba(14, 62, 110, 0.38);
+  background: rgba(13, 48, 84, 0.38);
   border: 1px solid var(--border-subtle);
   color: rgba(214, 232, 247, 0.82);
   font-size: 14px;
@@ -273,7 +273,7 @@ a:hover {
     border-color var(--dur-base), transform var(--dur-base);
 }
 .nav-pill:hover {
-  background: rgba(26, 80, 134, 0.65);
+  background: rgba(22, 66, 110, 0.65);
   border-color: var(--border-strong);
   color: var(--accent-glow);
   transform: translateY(var(--lift-sm));
@@ -297,7 +297,7 @@ a:hover {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background: rgba(14, 62, 110, 0.5);
+  background: rgba(13, 48, 84, 0.5);
   border: 1px solid var(--border-subtle);
   color: var(--text-body);
   cursor: pointer;
@@ -363,11 +363,11 @@ a:hover {
   background: linear-gradient(135deg, var(--accent), var(--accent-blue));
   color: var(--text-on-accent);
   font-weight: 700;
-  border: 1px solid rgba(190, 242, 255, 0.18);
+  border: 1px solid rgba(160, 232, 255, 0.18);
   box-shadow: 0 16px 32px rgba(10, 76, 166, 0.28);
 }
 .btn-secondary {
-  background: rgba(12, 54, 100, 0.48);
+  background: rgba(11, 44, 80, 0.48);
   color: var(--accent-glow);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-md);
@@ -392,7 +392,7 @@ a:hover {
   align-items: center;
   padding: 7px 15px;
   border-radius: var(--radius-pill);
-  background: rgba(14, 58, 104, 0.78);
+  background: rgba(12, 46, 82, 0.78);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-md);
   font-size: var(--fs-caption);
@@ -431,7 +431,7 @@ a:hover {
   color: var(--text-on-accent);
 }
 .badge-accent {
-  background: rgba(176, 239, 255, 0.14);
+  background: rgba(98, 214, 255, 0.14);
   color: var(--accent-glow);
   border-color: var(--border-default);
 }
@@ -448,7 +448,7 @@ a:hover {
   align-items: center;
   padding: 3px 12px;
   border-radius: var(--radius-pill);
-  background: rgba(176, 239, 255, 0.1);
+  background: rgba(98, 214, 255, 0.1);
   color: var(--accent-glow);
   border: 1px solid var(--border-default);
   font-size: var(--fs-caption);
@@ -498,7 +498,7 @@ a:hover {
   align-items: center;
   gap: 14px;
   padding: 13px 16px;
-  background: rgba(176, 239, 255, 0.05);
+  background: rgba(98, 214, 255, 0.05);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
   text-decoration: none;
@@ -514,7 +514,7 @@ a:hover {
 .link-card:active {
   background: var(--bg-hover);
   border-color: var(--border-strong);
-  box-shadow: 0 0 18px rgba(176, 239, 255, 0.18), var(--shadow-lg);
+  box-shadow: 0 0 18px rgba(98, 214, 255, 0.18), var(--shadow-lg);
 }
 @media (hover: hover) {
   .link-card:hover {
@@ -555,7 +555,7 @@ a:hover {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(22, 84, 138, 0.35),
+    rgba(26, 79, 127, 0.35),
     transparent
   );
 }
@@ -723,7 +723,7 @@ a:hover {
   z-index: 1;
   border-radius: 1.6rem;
   overflow: hidden;
-  border: 1px solid rgba(176, 239, 255, 0.18);
+  border: 1px solid rgba(98, 214, 255, 0.18);
   box-shadow: var(--shadow-xl);
 }
 .hero-photo-b {
@@ -735,8 +735,8 @@ a:hover {
   z-index: 2;
   border-radius: 1.6rem;
   overflow: hidden;
-  border: 2px solid rgba(190, 242, 255, 0.22);
-  box-shadow: 0 18px 50px rgba(10, 44, 84, 0.45);
+  border: 2px solid rgba(160, 232, 255, 0.22);
+  box-shadow: 0 18px 50px rgba(9, 36, 68, 0.45);
 }
 .hero-photo-a img,
 .hero-photo-b img {
@@ -780,15 +780,15 @@ a:hover {
   justify-content: center;
   background: linear-gradient(
     135deg,
-    rgba(176, 239, 255, 0.1),
-    rgba(58, 130, 196, 0.2)
+    rgba(98, 214, 255, 0.1),
+    rgba(46, 108, 163, 0.2)
   );
 }
 .work-card-media img {
   max-height: 58px;
   max-width: 70%;
   object-fit: contain;
-  filter: drop-shadow(0 6px 18px rgba(176, 239, 255, 0.3));
+  filter: drop-shadow(0 6px 18px rgba(98, 214, 255, 0.3));
 }
 .work-card-media .badge {
   position: absolute;
@@ -846,8 +846,8 @@ a:hover {
   border-radius: var(--radius-xl);
   background: linear-gradient(
     135deg,
-    rgba(176, 239, 255, 0.1),
-    rgba(185, 214, 255, 0.06)
+    rgba(98, 214, 255, 0.1),
+    rgba(106, 169, 255, 0.06)
   );
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg);
@@ -896,8 +896,8 @@ a:hover {
   border-radius: var(--radius-xl);
   background: linear-gradient(
     135deg,
-    rgba(176, 239, 255, 0.12),
-    rgba(185, 214, 255, 0.06)
+    rgba(98, 214, 255, 0.12),
+    rgba(106, 169, 255, 0.06)
   );
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg), var(--inset-highlight);
@@ -1111,7 +1111,7 @@ a:hover {
 .tab-pill-sm {
   padding: 7px 13px;
   font-size: 13px;
-  background: rgba(14, 62, 110, 0.4);
+  background: rgba(13, 48, 84, 0.4);
 }
 .tab-panel {
   display: none;
@@ -1142,7 +1142,7 @@ a:hover {
 .profile-side-photo {
   border-radius: 1.4rem;
   overflow: hidden;
-  border: 1px solid rgba(176, 239, 255, 0.18);
+  border: 1px solid rgba(98, 214, 255, 0.18);
   box-shadow: var(--shadow-xl);
 }
 .profile-side-photo img {
@@ -1321,8 +1321,8 @@ a:hover {
   justify-content: center;
   background: linear-gradient(
     135deg,
-    rgba(176, 239, 255, 0.12),
-    rgba(58, 130, 196, 0.22)
+    rgba(98, 214, 255, 0.12),
+    rgba(46, 108, 163, 0.22)
   );
   border: 1px solid var(--border-subtle);
   flex-shrink: 0;
@@ -1414,7 +1414,7 @@ a:hover {
   padding: 12px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-default);
-  background: rgba(12, 54, 100, 0.6);
+  background: rgba(11, 44, 80, 0.6);
   color: var(--accent-glow);
   font-family: var(--font-sans);
   font-size: 14px;
@@ -1454,7 +1454,7 @@ a:hover {
 .about-photo {
   border-radius: 1.4rem;
   overflow: hidden;
-  border: 1px solid rgba(176, 239, 255, 0.18);
+  border: 1px solid rgba(98, 214, 255, 0.18);
   box-shadow: var(--shadow-xl);
   position: sticky;
   top: 90px;
@@ -1509,12 +1509,12 @@ a:hover {
   text-align: center;
   background: radial-gradient(
     circle at 50% 34%,
-    rgba(176, 239, 255, 0.2),
-    rgba(18, 66, 116, 0.82)
+    rgba(98, 214, 255, 0.2),
+    rgba(16, 54, 92, 0.82)
   );
   border: 1px solid var(--border-default);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 34px rgba(176, 239, 255, 0.14);
+  box-shadow: 0 0 34px rgba(98, 214, 255, 0.14);
   transition: transform var(--dur-base), border-color var(--dur-base);
   position: relative;
 }
@@ -1549,8 +1549,8 @@ a:hover {
   border-radius: var(--radius-lg);
   background: linear-gradient(
     135deg,
-    rgba(176, 239, 255, 0.1),
-    rgba(185, 214, 255, 0.06)
+    rgba(98, 214, 255, 0.1),
+    rgba(106, 169, 255, 0.06)
   );
   border: 1px solid var(--border-default);
   backdrop-filter: blur(var(--blur-lg));
@@ -1592,7 +1592,7 @@ a:hover {
   align-self: flex-start;
   padding: 5px 12px;
   border-radius: var(--radius-pill);
-  background: rgba(176, 239, 255, 0.14);
+  background: rgba(98, 214, 255, 0.14);
   color: var(--accent-glow);
   border: 1px solid var(--border-default);
   font-size: 11px;
@@ -1672,7 +1672,7 @@ a:hover {
   gap: 12px;
   padding: 11px 20px;
   border-radius: var(--radius-md);
-  background: rgba(10, 44, 84, 0.85);
+  background: rgba(9, 36, 68, 0.85);
   border: 1px solid var(--border-strong);
   color: #fff;
   text-decoration: none;
@@ -1834,7 +1834,7 @@ a:hover {
   display: inline-flex;
   padding: 3px 10px;
   border-radius: var(--radius-pill);
-  background: rgba(176, 239, 255, 0.1);
+  background: rgba(98, 214, 255, 0.1);
   color: var(--accent-glow);
   border: 1px solid var(--border-default);
   font-size: 11px;
@@ -1859,7 +1859,7 @@ a:hover {
 .code-window {
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: rgba(10, 44, 84, 0.9);
+  background: rgba(9, 36, 68, 0.9);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-md);
 }
@@ -1869,7 +1869,7 @@ a:hover {
   gap: 8px;
   padding: 10px 16px;
   border-bottom: 1px solid var(--border-subtle);
-  background: rgba(14, 62, 110, 0.5);
+  background: rgba(13, 48, 84, 0.5);
 }
 .traffic-dot {
   width: 10px;
@@ -1919,7 +1919,7 @@ a:hover {
   margin: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: rgba(10, 44, 84, 0.85);
+  background: rgba(9, 36, 68, 0.85);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-xl);
 }
@@ -2026,7 +2026,7 @@ a:hover {
   height: auto;
   border-radius: var(--radius-pill);
   padding: 8px 15px;
-  background: rgba(14, 62, 110, 0.5);
+  background: rgba(13, 48, 84, 0.5);
   border: 1px solid var(--border-default);
   color: var(--text-muted);
   font-size: 13px;
@@ -2038,7 +2038,7 @@ a:hover {
   border-color: var(--border-strong);
 }
 .showcase-tabbar .carousel-dot.is-active {
-  background: rgba(176, 239, 255, 0.14);
+  background: rgba(98, 214, 255, 0.14);
   border-color: var(--accent);
   color: #fff;
   box-shadow: none;
@@ -2110,7 +2110,7 @@ a:hover {
   height: 38px;
   border-radius: 50%;
   border: 1px solid var(--border-default);
-  background: rgba(14, 62, 110, 0.5);
+  background: rgba(13, 48, 84, 0.5);
   color: var(--accent-glow);
   text-decoration: none;
   font-size: 16px;
@@ -2119,7 +2119,7 @@ a:hover {
 }
 .carousel-arrow:hover {
   border-color: var(--border-strong);
-  background: rgba(26, 80, 134, 0.65);
+  background: rgba(22, 66, 110, 0.65);
 }
 .carousel-dots {
   display: flex;
@@ -2139,7 +2139,7 @@ a:hover {
 }
 .carousel-dot.is-active {
   background: var(--accent);
-  box-shadow: 0 0 8px rgba(176, 239, 255, 0.8);
+  box-shadow: 0 0 8px rgba(98, 214, 255, 0.8);
 }
 
 /* ── Colors page ─────────────────────────────────────────────────────────── */
@@ -2267,7 +2267,7 @@ a:hover {
 .asset-tag {
   padding: 2px 9px;
   border-radius: var(--radius-pill);
-  background: rgba(176, 239, 255, 0.1);
+  background: rgba(98, 214, 255, 0.1);
   border: 1px solid var(--border-default);
   color: var(--accent-glow);
   font-size: 11px;
@@ -2300,7 +2300,7 @@ a:hover {
   margin-left: auto;
   padding: 5px 14px;
   border-radius: var(--radius-pill);
-  background: rgba(176, 239, 255, 0.1);
+  background: rgba(98, 214, 255, 0.1);
   border: 1px solid var(--border-default);
   color: var(--accent-glow);
   font-family: var(--font-sans);
@@ -2311,7 +2311,7 @@ a:hover {
 }
 .code-copy-btn:hover {
   border-color: var(--border-strong);
-  background: rgba(26, 80, 134, 0.65);
+  background: rgba(22, 66, 110, 0.65);
 }
 .code-copy-btn.is-copied {
   color: var(--success);
@@ -2349,8 +2349,8 @@ a:hover {
   justify-content: center;
   background: linear-gradient(
     135deg,
-    rgba(176, 239, 255, 0.12),
-    rgba(58, 130, 196, 0.22)
+    rgba(98, 214, 255, 0.12),
+    rgba(46, 108, 163, 0.22)
   );
   border: 1px solid var(--border-subtle);
 }
@@ -2358,7 +2358,7 @@ a:hover {
   width: 32px;
   height: 32px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(176, 239, 255, 0.35));
+  filter: drop-shadow(0 4px 12px rgba(98, 214, 255, 0.35));
 }
 .automation-card h3 {
   margin: 0;
@@ -2456,8 +2456,8 @@ a:hover {
   border-radius: var(--radius-lg);
   background: linear-gradient(
     135deg,
-    rgba(176, 239, 255, 0.08),
-    rgba(185, 214, 255, 0.05)
+    rgba(98, 214, 255, 0.08),
+    rgba(106, 169, 255, 0.05)
   );
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg);
@@ -2489,7 +2489,7 @@ a:hover {
   gap: 8px;
   padding: 9px 17px;
   border-radius: var(--radius-pill);
-  background: rgba(14, 62, 110, 0.5);
+  background: rgba(13, 48, 84, 0.5);
   border: 1px solid var(--border-subtle);
   color: rgba(214, 232, 247, 0.85);
   font-family: var(--font-sans);
@@ -2502,7 +2502,7 @@ a:hover {
     border-color var(--dur-base), transform var(--dur-base);
 }
 .ai-pill:hover {
-  background: rgba(26, 80, 134, 0.65);
+  background: rgba(22, 66, 110, 0.65);
   border-color: var(--border-strong);
   color: var(--accent-glow);
   transform: translateY(var(--lift-sm));
@@ -2571,7 +2571,7 @@ a:hover {
   gap: 7px;
   padding: 7px 12px;
   border-radius: var(--radius-pill);
-  background: rgba(14, 62, 110, 0.5);
+  background: rgba(13, 48, 84, 0.5);
   border: 1px solid var(--border-subtle);
   color: rgba(214, 232, 247, 0.82);
   text-decoration: none;
