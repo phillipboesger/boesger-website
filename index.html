@@ -95,7 +95,7 @@
     <title>Phillip Bösger | Bösger Digital</title>
     <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
     <link href="assets/css/style.css?v=20261015a" rel="stylesheet" />
-    <link href="assets/css/home.css?v=20261015h" rel="stylesheet" />
+    <link href="assets/css/home.css?v=20261015k" rel="stylesheet" />
     <script>document.documentElement.classList.add("js")</script>
   </head>
   <body>
@@ -196,53 +196,68 @@
           </div>
         </section>
 
-        <section class="hm-change" id="change" aria-labelledby="change-h" data-pin="change">
-          <div class="hm-change-pin">
-            <div class="hm-change-head">
-              <h2 id="change-h">What I change</h2>
-              <p class="hm-change-lead">Less manual work comes from how a team works, not from one tool. This is where I put my time.</p>
-            </div>
-            <div class="hm-change-stage">
-              <ol class="hm-change-titles" aria-hidden="true">
-              <li data-step="0">A digital colleague</li>
-              <li data-step="1">AI know-how that sticks</li>
-              <li data-step="2">Consulting and building</li>
-              <li data-step="3">Sharing what works</li>
-              </ol>
-              <div class="hm-change-bodies">
-              <article class="hm-change-item" data-step="0">
-                <h3>A digital colleague</h3>
-                <p>I'm building my own, and it takes work off my plate: programming, documentation, tests. It is the team I don't have to hire. I feed it my knowledge, ideas and experience, so it never outgrows me and I keep the time to research and keep learning. I don't stand still, I stay three steps ahead. <a href="second-brain.html">Second Brain</a> · <a href="automation.html">Automation</a></p>
-              </article>
-              <article class="hm-change-item" data-step="1">
-                <h3>AI know-how that sticks</h3>
-                <p>Courses and on-the-job coaching, so teams learn to work with AI agents themselves: for StackFuel as an online course, for Polarion developers at avasis.</p>
-              </article>
-              <article class="hm-change-item" data-step="2">
-                <h3>Consulting and building</h3>
-                <p>I work where requirements management meets technical execution: Polarion extensions, dev environments and CI/CD, from spec to production.</p>
-              </article>
-              <article class="hm-change-item" data-step="3">
-                <h3>Sharing what works</h3>
-                <p>What I learn goes into the open: the <a href="blog.html">blog</a>, open-source tools and material for teams to reuse. <a href="work.html">All projects</a></p>
-              </article>
+        <section class="hm-change" id="change" aria-labelledby="change-h">
+          <div class="hm-sec-head" data-reveal>
+            <h2 id="change-h">What I change</h2>
+            <p>Less manual work comes from how a team works, not from one tool. Four things I do, with the proof next to each.</p>
+          </div>
+          <div class="hm-bento">
+            <article class="hm-card hm-card-wide" data-glow data-reveal>
+              <p class="hm-kicker">Home turf</p>
+              <h3>Polarion, from spec to production</h3>
+              <p>Custom extensions in Java, REST, Velocity and workflow scripts, with CI/CD and automated release documentation.</p>
+              <ul>
+                <li>Plugins for Polarion ALM, including the avaCopilot AI assistant at avasis</li>
+                <li>Containerized setups so a fresh Polarion runs in minutes: <a href="work/polarion-docker.html">Polarion Docker</a></li>
+                <li>Faster editing inside Polarion, no SVN checkout: <a href="work/polarion-code-editor.html">Polarion Code Editor</a></li>
+              </ul>
+            </article>
+            <article class="hm-card" data-glow data-reveal>
+              <p class="hm-kicker">AI agents &amp; MCP</p>
+              <h3>Agents that work on real Polarion data</h3>
+              <p>No more copying work items into a chat and the answer back.</p>
+              <ul>
+                <li><a href="work/polarion-mcp.html">Polarion MCP Server</a>: 271 REST operations, 5 AI clients, MIT license</li>
+                <li>n8n workflows that take over repetitive work: <a href="automation.html">my setup</a></li>
+              </ul>
+            </article>
+            <article class="hm-card" data-glow data-reveal>
+              <p class="hm-kicker">AI enablement</p>
+              <h3>Teams that use AI properly</h3>
+              <p>Coaching on real tickets, not slideware.</p>
+              <ul>
+                <li><a href="work/ai-enablement-hub.html">AI Enablement Hub</a>: 6+ coaching modules, from €149</li>
+                <li>On-the-job coaching for Polarion plugin developers at avasis</li>
+                <li>An AI-assisted coding course for StackFuel, built around OpenAI Codex</li>
+              </ul>
+            </article>
+            <article class="hm-card" data-glow data-reveal>
+              <p class="hm-kicker">Sharing</p>
+              <h3>What works goes into the open</h3>
+              <p>Tools, guides and write-ups that other teams can reuse.</p>
+              <ul>
+                <li><a href="https://polarion.boesger.com" target="_blank" rel="noopener">Polarion &amp; AI blog</a>: tips, customizations, agent experiments</li>
+                <li>Open-source tools on <a href="https://github.com/phillipboesger" target="_blank" rel="noopener">GitHub</a></li>
+              </ul>
+            </article>
+            <article class="hm-card hm-card-band" data-glow data-reveal>
+              <div>
+                <p class="hm-kicker">A digital colleague</p>
+                <h3>Always three steps ahead</h3>
               </div>
-            </div>
-            <span class="hm-change-rail" aria-hidden="true"></span>
+              <p>I'm building my own, and it takes work off my plate: programming, documentation, tests. It is the team I don't have to hire. I feed it my knowledge, ideas and experience, so it never outgrows me and I keep the time to research and keep learning. I don't stand still. <a href="second-brain.html">Second Brain</a></p>
+            </article>
           </div>
         </section>
 
-        <!-- Calm after the collapse -->
-        <section class="hm-work" id="work" aria-labelledby="ledger-h" data-pin="work">
-          <div class="hm-work-pin">
-            <div class="hm-work-head">
+        <section class="hm-work" id="work" aria-labelledby="ledger-h">
+          <div class="hm-work-head" data-reveal>
             <h2 id="ledger-h">Recent client work</h2>
             <p>Freelance since January 2026: Polarion development, AI enablement and AI training for clients.</p>
           </div>
-            <div class="hm-work-viewport" tabindex="0" role="region" aria-label="Recent client work">
-              <ol class="hm-work-track">
-            <li>
-              <p class="hm-when">10/2026 – 12/2026</p>
+          <ol class="hm-work-track">
+            <li data-glow data-reveal>
+              <p class="hm-when">10/2026 – 12/2026<br />Course author</p>
               <div>
                 <p class="hm-who">StackFuel GmbH · Berlin <span class="hm-status is-live">Ongoing</span></p>
                 <h3>AI-assisted coding course</h3>
@@ -250,8 +265,8 @@
                 <p class="hm-tags">AI coding · OpenAI Codex · Training</p>
               </div>
             </li>
-            <li>
-              <p class="hm-when">05/2026 – 06/2026</p>
+            <li data-glow data-reveal>
+              <p class="hm-when">05/2026 – 06/2026<br />Coach &amp; trainer</p>
               <div>
                 <p class="hm-who">avasis solutions GmbH <span class="hm-status">Completed</span></p>
                 <h3>AI enablement &amp; coaching</h3>
@@ -259,8 +274,8 @@
                 <p class="hm-tags">AI enablement · Coaching · MCP · <a href="work/ai-enablement-hub.html">Material on the AI Enablement Hub</a></p>
               </div>
             </li>
-            <li>
-              <p class="hm-when">01/2026 – present</p>
+            <li data-glow data-reveal>
+              <p class="hm-when">01/2026 – present<br />Developer</p>
               <div>
                 <p class="hm-who">avasis solutions GmbH <span class="hm-status is-live">Ongoing</span></p>
                 <h3>Polarion plugin development</h3>
@@ -269,25 +284,43 @@
               </div>
             </li>
           </ol>
-            </div>
-          </div>
         </section>
 
-        <section class="hm-projects" aria-labelledby="more-h">
-          <div class="hm-marquee" aria-hidden="true">
-            <div class="hm-marquee-track" data-marquee="1"><span>Tools</span><span class="o">Apps</span><span>Experiments</span><span class="o">Open source</span><span>Tools</span><span class="o">Apps</span><span>Experiments</span><span class="o">Open source</span></div>
-            <div class="hm-marquee-track" data-marquee="-1"><span class="o">Agents</span><span>MCP</span><span class="o">Automation</span><span>Plugins</span><span class="o">Agents</span><span>MCP</span><span class="o">Automation</span><span>Plugins</span></div>
+        <section class="hm-projects" id="projects" aria-labelledby="more-h">
+          <div class="hm-sec-head" data-reveal>
+            <h2 id="more-h">Products &amp; tools</h2>
+            <p>What I ship besides client work. Most of it is open source, and everything lives on the projects page.</p>
           </div>
-          <div class="hm-projects-body" data-reveal>
-            <div>
-              <h2 id="more-h">And the projects?</h2>
-              <p>I keep building tools, apps and experiments, and the list keeps growing. It lives in one place, so this page can stay about what I do.</p>
-            </div>
-            <div class="hm-projects-links">
-              <a href="work.html" class="btn btn-primary btn-lg">All projects</a>
-              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">GitHub</a>
-              <a href="https://polarion.boesger.com" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Polarion blog</a>
-            </div>
+          <div class="hm-tools">
+            <a class="hm-card" href="https://www.avasis.biz/de/events/digital-blink-avacopilot-23-4-26" target="_blank" rel="noopener" data-glow data-reveal>
+              <p class="hm-kicker">Available</p>
+              <h3>avaCopilot</h3>
+              <p>An AI assistant for Polarion that turns repetitive ALM work into conversational, automated workflows.</p>
+              <span class="hm-more">Learn more</span>
+            </a>
+            <a class="hm-card" href="work/polarion-mcp.html" data-glow data-reveal>
+              <p class="hm-kicker">Open source</p>
+              <h3>Polarion MCP Server</h3>
+              <p>Connects GitHub Copilot, Claude and other AI clients to your Polarion work items. 271 REST operations.</p>
+              <span class="hm-more">Learn more</span>
+            </a>
+            <a class="hm-card" href="work/polarion-code-editor.html" data-glow data-reveal>
+              <p class="hm-kicker">Free download</p>
+              <h3>Polarion Code Editor</h3>
+              <p>Edit Velocity macros, JSON and XML directly inside Polarion on the Monaco engine, without an SVN client.</p>
+              <span class="hm-more">Learn more</span>
+            </a>
+            <a class="hm-card" href="work/polarion-docker.html" data-glow data-reveal>
+              <p class="hm-kicker">Open source</p>
+              <h3>Polarion Docker</h3>
+              <p>A Dockerfile and scripts that containerize a fresh Polarion install on macOS, Windows and Linux.</p>
+              <span class="hm-more">Learn more</span>
+            </a>
+          </div>
+          <div class="hm-projects-links" data-reveal>
+            <a href="work.html" class="btn btn-primary btn-lg">All projects</a>
+            <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">GitHub</a>
+            <a href="https://polarion.boesger.com" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Polarion blog</a>
           </div>
         </section>
 
@@ -371,7 +404,7 @@
 
     <script src="assets/js/network.js?v=20260925a"></script>
     <script src="assets/js/site.js?v=20260925a"></script>
-    <script src="assets/js/home.js?v=20261015d"></script>
+    <script src="assets/js/home.js?v=20261015e"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
