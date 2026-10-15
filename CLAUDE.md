@@ -112,3 +112,11 @@ The July 2026 redesign (Profile/CV/Skills/product-detail content) was ported fro
 - Every page carries `<link rel="canonical">` (extension-less URL, e.g. `https://boesger.com/profile`), Open Graph / Twitter tags (shared card `assets/images/og-card.png`, 1200x630) and JSON-LD (`WebSite` / `Organization` / `Person` on Home, `ProfilePage` on Profile, `WebPage` + `BreadcrumbList` elsewhere). `imprint.html` and `privacy.html` stay `noindex` and are not in the sitemap.
 - Root files `sitemap.xml`, `robots.txt` and `llms.txt` are hand-maintained: add new pages to all three plus the page's own head block. Cloudflare prepends its managed content-signals block to `robots.txt`.
 - CV PDFs in `assets/documents/` are build output of the `cv` repo (`dist/`); copy `CV_Polarion_Expert_EN.pdf` over when the CV changes.
+
+## Design system and home page (Oct 2026 redesign)
+
+- Palette is "Sky Blue + Amber" (tokens in `assets/css/style.css` `:root`, documented on `colors.html`): sky-blue grounds, ice-cyan accent, one amber counterpoint (`--warm`). Button labels use `--text-on-accent`. Do not reintroduce navy `rgba(...)` literals; use the tokens.
+- Fonts are self-hosted in `assets/fonts/` (Geist, Geist Mono, variable woff2, latin subset). No Google Fonts requests.
+- `index.html` follows the "split stage" grammar (scroll-craft): hero split 50/50 (by hand / with my tools), a pinned comparison stage (`#stage`, `assets/js/home.js`, `assets/css/home.css`), then calm flow sections. The divider knob is a real `role="slider"` that scrubs the stage. No JS or reduced motion renders a static, fully visible stage (`.is-static`).
+- The five stage rows pair a manual chore with the tool that replaces it. Only claims already published on the site are used; do not add timings or numbers without a documented source.
+- Keep copy free of em dashes (humanizer rule). Date ranges keep an en dash.

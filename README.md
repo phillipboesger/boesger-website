@@ -52,6 +52,9 @@ assets/
   css/style.css               All styling; design tokens as CSS custom properties in :root
   js/network.js               Animated particle-network canvas background (every page)
   js/site.js                  Nav, mobile menu, reveal-on-scroll, tabs, modal, carousel
+  js/home.js                  Home only: hero depth planes and the pinned split stage
+  css/home.css                Home only: split hero, stage, ledger, close
+  fonts/                      Self-hosted Geist and Geist Mono (variable woff2)
   js/snowfall.js              Alternative background animation (currently unused)
   images/                     Photos, logos, product icons
   documents/                  Downloadable CV PDF

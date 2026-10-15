@@ -41,7 +41,7 @@
                 if (dist < MAX_DIST) {
                     var alpha = (1 - dist / MAX_DIST) * 0.28;
                     ctx.beginPath();
-                    ctx.strokeStyle = 'rgba(0,180,255,' + alpha + ')';
+                    ctx.strokeStyle = 'rgba(200,236,255,' + alpha + ')';
                     ctx.lineWidth = 0.7;
                     ctx.moveTo(nodes[i].x, nodes[i].y);
                     ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -55,8 +55,8 @@
 
             /* glow halo */
             var grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 4);
-            grad.addColorStop(0, 'rgba(0,200,255,0.18)');
-            grad.addColorStop(1, 'rgba(0,200,255,0)');
+            grad.addColorStop(0, 'rgba(200,236,255,0.22)');
+            grad.addColorStop(1, 'rgba(200,236,255,0)');
             ctx.beginPath();
             ctx.arc(n.x, n.y, n.r * 4, 0, Math.PI * 2);
             ctx.fillStyle = grad;
@@ -65,7 +65,7 @@
             /* node dot */
             ctx.beginPath();
             ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0,210,255,0.65)';
+            ctx.fillStyle = 'rgba(220,244,255,0.7)';
             ctx.fill();
 
             /* update */

@@ -30,19 +30,22 @@
 
 ## Brand colors
 
-All colors are CSS custom properties; full reference with HEX and RGB at https://boesger.com/colors.
+All colors are CSS custom properties; full reference with HEX and RGB at https://boesger.com/colors. Palette: sky blue grounds, ice cyan accent, one amber counterpoint.
 
 | Name | HEX | CSS token | Usage |
 |---|---|---|---|
-| Deep Navy | `#000D1C` | `--bg-deep` | Page background |
-| Dark Navy | `#001222` | `--bg-base` | Sections and areas |
-| Surface Navy | `#062237` | `--bg-surface` | Cards and panels |
-| Elevated | `#124061` | `--bg-elevated` | Hover, borders, dividers |
-| Cyan Primary | `#01BFFB` | `--accent` | Logo, CTAs, links, icons |
-| Cyan Light | `#6BDFF1` | `--accent-light` | Hover, glow, highlights |
-| Cyan Deep | `#058FC1` | `--accent-deep` | Active states, gradient end |
-| Cyan Muted | `#336D91` | `--accent-muted` | Disabled, subtle UI |
-| Cyan Tint | `rgba(1,191,251,0.12)` | `--accent-tint` | Tinted backgrounds and badges |
+| Deep Blue | `#18508A` | `--bg-deep` | Page background, deepest level |
+| Base Blue | `#1C5994` | `--bg-base` | Sections and areas |
+| Surface Blue | `#1F6099` | `--bg-surface` | Cards and panels |
+| Elevated Blue | `#3A82C4` | `--bg-elevated` | Hover states, borders, dividers |
+| Ice Cyan | `#B0EFFF` | `--accent` | CTAs, links, icons, eyebrow labels |
+| Cyan Light | `#DCF8FF` | `--accent-light` | Hover, glow, highlights |
+| Cyan Deep | `#5FCAF7` | `--accent-deep` | Active states, chips, gradient end |
+| Cyan Muted | `#7FB4E0` | `--accent-muted` | Disabled, subtle UI |
+| Cyan Tint | `rgba(176,239,255,0.14)` | `--accent-tint` | Tinted backgrounds and badges |
+| Amber | `#FFC766` | `--warm` | Availability, prices, key highlights (the one warm counterpoint) |
+| Ink on Light | `#0D3A68` | `--text-on-accent` | Text on cyan buttons and amber badges |
+| Logo Cyan | `#01BFFB` | logo files | Original logo cyan, used in the logo and icon files only |
 | White | `#FFFFFF` | `--text-primary` | Headings |
-| Ice Blue | `#C0F6FC` | `--text-body` | Body text |
-| Muted Blue | `#336D91` | `--text-muted` | Placeholders, labels, meta |
+| Ice Blue | `#E6F2FB` | `--text-body` | Body text, subheadings |
+| Soft Blue | `#CFE3F5` | `--text-muted` | Labels, meta text (4.5:1 or better on every surface) |
