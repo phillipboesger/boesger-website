@@ -21,11 +21,16 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(min(100svh, 940px) - var(--hm-header));
+  min-height: min(100svh, 940px);
+  margin-top: calc(var(--hm-header) * -1);
+  padding-top: var(--hm-header);
 }
 .hm-hero-l {
-  background: var(--hm-manual);
+  background: linear-gradient(180deg, #3b5979, #2c4766);
   color: var(--hm-manual-ink);
+  border-radius: 0 56px 0 0;
+  box-shadow: 28px 0 64px rgba(6, 24, 46, 0.32);
+  position: relative;
   padding: 56px clamp(24px, 5vw, 80px) 40px;
   display: flex;
   flex-direction: column;
@@ -120,6 +125,7 @@
 .hm-depth {
   position: absolute;
   inset: 0;
+  z-index: 2;
   pointer-events: none;
   overflow: hidden;
 }
@@ -197,7 +203,9 @@
 .hm-bg-l {
   position: absolute;
   inset: 0 50% 0 0;
-  background: var(--hm-manual);
+  background: linear-gradient(180deg, #2c4766, #36516f);
+  border-radius: 0 0 56px 0;
+  box-shadow: 28px 0 64px rgba(6, 24, 46, 0.3);
 }
 .hm-slot {
   position: relative;
@@ -240,10 +248,12 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   min-height: 92px;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2) 14%, rgba(255, 255, 255, 0.2) 86%, transparent) 1;
 }
 .hm-row:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2) 14%, rgba(255, 255, 255, 0.2) 86%, transparent) 1;
 }
 .hm-by {
   justify-self: end;
@@ -379,10 +389,11 @@
 }
 .hm-div-line {
   position: absolute;
-  inset: 0 auto 0 -1px;
-  width: 2px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 1px;
+  inset: 0 auto 0 -1.5px;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.85) 14%, rgba(255, 255, 255, 0.85) 86%, transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(160, 232, 255, 0.55);
 }
 .hm-knob {
   position: absolute;
@@ -462,10 +473,12 @@
   grid-template-columns: 150px minmax(0, 1fr);
   gap: 24px;
   padding: 30px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.24) 60%, transparent) 1;
 }
 .hm-ledger-rows li:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.24) 60%, transparent) 1;
 }
 .hm-when {
   font-family: var(--font-mono);
@@ -607,8 +620,10 @@
     min-height: 0;
   }
   .hm-hero-l {
-    padding: 28px 24px 24px;
+    padding: calc(var(--hm-header) + 20px) 24px 24px;
     gap: 10px;
+    border-radius: 0 0 32px 32px;
+    box-shadow: 0 24px 56px rgba(6, 24, 46, 0.3);
   }
   .hm-old {
     font-size: 1.5rem;
