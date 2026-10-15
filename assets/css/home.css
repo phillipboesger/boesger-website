@@ -1,7 +1,7 @@
 /* Home page: split hero (by hand / with my tools), then the sections below. */
 
 :root {
-  --hm-header: 66px;
+  --hm-header: calc(66px + env(safe-area-inset-top, 0px));
 }
 
 .hm-sr {
@@ -586,7 +586,7 @@
 
 @media (max-width: 820px) {
   :root {
-    --hm-header: 68px;
+    --hm-header: calc(68px + env(safe-area-inset-top, 0px));
   }
   .hm-hero {
     display: flex;

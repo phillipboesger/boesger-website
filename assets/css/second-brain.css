@@ -3,8 +3,8 @@
 .sb-hero {
   position: relative;
   min-height: min(92svh, 880px);
-  margin-top: -66px;
-  padding-top: 66px;
+  margin-top: calc(-66px - env(safe-area-inset-top, 0px));
+  padding-top: calc(66px + env(safe-area-inset-top, 0px));
   display: grid;
   align-items: end;
   overflow: hidden;
