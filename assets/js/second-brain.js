@@ -541,7 +541,8 @@
     return stage(canvas, function (w, h, old) {
       return { packets: old ? old.packets : [], spawn: 0, glow: old ? old.glow : [0, 0, 0, 0], R: old ? old.R : rng(5) };
     }, function (ctx, w, h, t, dt, s, still) {
-      var xi = w * 0.1, xc = w * 0.46, xr = w * 0.64, xo = w * 0.9;
+      var narrow = w < 520;
+      var xi = w * 0.1, xc = w * (narrow ? 0.4 : 0.46), xr = w * (narrow ? 0.56 : 0.64), xo = w * (narrow ? 0.72 : 0.9);
       function yIn(i) { return h * (0.2 + i * 0.2); }
       function yOut(i) { return h * (0.18 + i * 0.213); }
       if (!still) {
@@ -637,13 +638,13 @@
         s.glow[o] = Math.max(0, s.glow[o] - dt * 1.2);
         if (still) s.glow[o] = 0.4;
         ctx.fillStyle = rgba(outs[o][1], 0.15 + s.glow[o] * 0.5);
-        roundRect(ctx, xo - 4, yOut(o) - 15, Math.min(70, w - xo - 6), 30, 8);
+        roundRect(ctx, xo - 4, yOut(o) - 15, Math.min(70, w - xo - 10), 30, 8);
         ctx.fill();
         ctx.strokeStyle = rgba(outs[o][1], 0.8);
         ctx.stroke();
         ctx.fillStyle = "#fff";
         ctx.textAlign = "center";
-        ctx.fillText(outs[o][0].toUpperCase(), xo - 4 + Math.min(70, w - xo - 6) / 2, yOut(o) + 4);
+        ctx.fillText(outs[o][0].toUpperCase(), xo - 4 + Math.min(70, w - xo - 10) / 2, yOut(o) + 4);
       }
     });
   }
