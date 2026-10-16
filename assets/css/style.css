@@ -2674,3 +2674,44 @@ a:hover {
     opacity: 0.7;
   }
 }
+
+/* ── Shared polish, matching the home page ───────────────────────────────── */
+.page-head {
+  padding-top: clamp(48px, 7vw, 80px);
+}
+.page-head h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+.glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+  background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 0%), rgba(98, 214, 255, 0.14), transparent 65%);
+}
+.glass-card:hover::after {
+  opacity: 1;
+}
+
+/* Same pointer light for the smaller cards (skills, links, features, steps) */
+:is(.skill-card, .link-card, .feature-card, .post-card, .cert-card, .step-card, .compat-card) {
+  position: relative;
+  overflow: hidden;
+}
+:is(.skill-card, .link-card, .feature-card, .post-card, .cert-card, .step-card, .compat-card)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+  background: radial-gradient(320px circle at var(--gx, 50%) var(--gy, 0%), rgba(98, 214, 255, 0.14), transparent 65%);
+}
+:is(.skill-card, .link-card, .feature-card, .post-card, .cert-card, .step-card, .compat-card):hover::after {
+  opacity: 1;
+}
