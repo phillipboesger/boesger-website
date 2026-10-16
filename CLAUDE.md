@@ -105,7 +105,7 @@ Skill-grid icons on `profile.html` reference small third-party icon CDNs (simple
 
 ## Data correctness — redesign-specific note
 
-The July 2026 redesign (Profile/CV/Skills/product-detail content) was ported from a Claude Design mockup the site owner authored describing their own career/products. It was implemented largely verbatim on the owner's authority, but per the rule above it has **not** been independently fact-checked against LinkedIn/GitHub/etc. — specific dates, GPA figures, certifications, and product stats (e.g. "271 REST operations", pricing) should be spot-checked against source before treating them as permanently correct if they're ever queried or challenged.
+The July 2026 redesign (Profile/CV/Skills/product-detail content) was ported from a Claude Design mockup the site owner authored describing their own career/products. It was implemented largely verbatim on the owner's authority, but per the rule above it has **not** been independently fact-checked against LinkedIn/GitHub/etc. — specific dates, GPA figures, certifications, and product stats (e.g. "284 REST operations", pricing) should be spot-checked against source before treating them as permanently correct if they're ever queried or challenged.
 
 ## SEO and machine-readable files
 
