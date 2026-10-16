@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Create the redirects that retire digital.boesger.com and colors.boesger.com.
+"""Create the redirects that retire digital.boesger.com and colors.boesger.com, and send the old
+boesger.com/work/polarion-* product pages to the project sites that replaced them.
 
 Cloudflare already proxies both hostnames, so a Single Redirect ruleset in the
 boesger.com zone is enough: no origin changes, no DNS changes.
@@ -55,6 +56,12 @@ RULES = [
     rule("boesger.com/tools/colors -> /colors",
          '(http.host eq "boesger.com" and starts_with(http.request.uri.path, "/tools/colors"))', f"{SITE}/colors"),
     # catch-all for everything else on digital (must stay last)
+    rule("product page polarion-mcp -> project site",
+         '(http.host eq "boesger.com" and starts_with(http.request.uri.path, "/work/polarion-mcp"))', "https://polarion-mcp.boesger.com/"),
+    rule("product page polarion-docker -> project site",
+         '(http.host eq "boesger.com" and starts_with(http.request.uri.path, "/work/polarion-docker"))', "https://polarion-docker.boesger.com/"),
+    rule("product page polarion-code-editor -> project site",
+         '(http.host eq "boesger.com" and starts_with(http.request.uri.path, "/work/polarion-code-editor"))', "https://polarion.code.editor.boesger.com/"),
     rule("digital catch-all -> home", '(http.host eq "digital.boesger.com")', f"{SITE}/"),
 ]
 
