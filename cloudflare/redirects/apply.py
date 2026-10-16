@@ -22,7 +22,7 @@ PREFIX = "retire:"
 SITE = "https://boesger.com"
 
 
-def rule(desc, expr, target):
+def rule(desc, expr, target, dynamic=False):
     return {
         "description": f"{PREFIX} {desc}",
         "expression": expr,
@@ -30,7 +30,7 @@ def rule(desc, expr, target):
         "action_parameters": {
             "from_value": {
                 "status_code": 301,
-                "target_url": {"value": target},
+                "target_url": {"expression": target} if dynamic else {"value": target},
                 "preserve_query_string": False,
             }
         },
@@ -43,19 +43,16 @@ def digital(paths, desc, target):
 
 
 RULES = [
-    digital(["/about", "/about/"], "digital /about", f"{SITE}/profile#about"),
+    rule("digital /about,/cv,/skills -> profile tab",
+         '(http.host eq "digital.boesger.com" and http.request.uri.path in {"/about" "/cv" "/skills"})',
+         'concat("https://boesger.com/profile#", substring(http.request.uri.path, 1))', dynamic=True),
     digital(["/services", "/services/"], "digital /services", f"{SITE}/profile#working-with-me"),
-    digital(["/cv", "/cv/"], "digital /cv", f"{SITE}/profile#cv"),
-    digital(["/skills", "/skills/"], "digital /skills", f"{SITE}/profile#skills"),
     digital(["/ai-hub", "/ai-hub/"], "digital /ai-hub", f"{SITE}/work/ai-enablement-hub"),
     digital(["/imprint", "/imprint/"], "digital /imprint", f"{SITE}/imprint"),
     rule("digital CV PDFs",
          '(http.host eq "digital.boesger.com" and ends_with(http.request.uri.path, ".pdf"))',
          f"{SITE}/assets/documents/CV_Polarion_Expert_EN.pdf"),
     rule("colors.boesger.com -> /colors", '(http.host eq "colors.boesger.com")', f"{SITE}/colors"),
-    rule("boesger.com/tools/colors -> /colors",
-         '(http.host eq "boesger.com" and starts_with(http.request.uri.path, "/tools/colors"))', f"{SITE}/colors"),
-    # catch-all for everything else on digital (must stay last)
     rule("product page polarion-mcp -> project site",
          '(http.host eq "boesger.com" and starts_with(http.request.uri.path, "/work/polarion-mcp"))', "https://polarion-mcp.boesger.com/"),
     rule("product page polarion-docker -> project site",
