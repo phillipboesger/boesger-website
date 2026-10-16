@@ -74,6 +74,7 @@
     <title>Daily Board | Phillip Bösger</title>
     <link rel="preload" href="../assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
     <link href="../assets/css/style.css?v=20261016b" rel="stylesheet" />
+    <link href="../assets/css/daily-board.css?v=20261016b" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -108,12 +109,13 @@
       </header>
 
       <main>
-        <div class="section-inner" style="padding: 28px 24px 64px">
+        <div class="section-inner" style="padding: 20px 24px 8px">
           <a href="../work.html" class="back-link">← Back to work</a>
-
-          <div class="product-hero" data-reveal>
+        </div>
+        <section class="db-hero" aria-labelledby="db-h">
+          <div data-reveal>
             <span class="product-badge">Personal Project · iOS 26+</span>
-            <h1>Daily Board</h1>
+            <h1 id="db-h">Daily Board</h1>
             <p class="product-tagline">Stop switching apps to find out what your day looks like.</p>
             <p class="product-subtitle">Reminders, Calendar, journal and quick notes on one screen, entirely on your iPhone.</p>
             <ul class="app-benefits">
@@ -135,6 +137,7 @@
               </span>
               <a href="mailto:digital@boesger.com?subject=Daily%20Board%20%E2%80%94%20notify%20me%20at%20launch" class="btn btn-primary btn-lg">Get notified at launch</a>
             </div>
+
             <p class="trust-line">Free · iPhone, iOS 26 or newer · German &amp; English · <a href="#privacy">What it does with your data</a></p>
             <div class="product-chips">
               <span class="tag">SwiftUI</span>
@@ -142,13 +145,33 @@
               <span class="tag">On-device AI</span>
             </div>
           </div>
+          <div class="db-frame"><canvas id="db-hero" role="img" aria-label="Reminders, Calendar, Journal and Notes flow into one timeline on a phone, inside a boundary that says everything stays on your iPhone"></canvas></div>
+        </section>
 
+        <div class="section-inner" style="padding: 24px 24px 64px">
           <div class="stat-tile-grid" data-reveal style="margin-top: 32px">
             <div class="glass-panel stat-tile"><div class="stat-tile-value">0</div><div class="stat-tile-label">Third-party SDKs</div></div>
             <div class="glass-panel stat-tile"><div class="stat-tile-value">100%</div><div class="stat-tile-label">Data stays on-device</div></div>
             <div class="glass-panel stat-tile"><div class="stat-tile-value">2</div><div class="stat-tile-label">Languages · DE &amp; EN</div></div>
             <div class="glass-panel stat-tile"><div class="stat-tile-value">iOS 26+</div><div class="stat-tile-label">Platform</div></div>
           </div>
+
+          <section class="db-type" data-reveal aria-labelledby="db-t">
+            <div>
+              <p class="kicker">Type it like you think it</p>
+              <h2 id="db-t" style="margin-top: 14px">Say it once, it becomes a real reminder</h2>
+              <p>Type "dentist tomorrow 10am" and it becomes a real Apple Reminder with that due date, without ten fields to tap through.</p>
+            </div>
+            <div class="db-demo" data-typing role="img" aria-label="Typing dentist tomorrow 10am creates a reminder for tomorrow at 10:00">
+              <div class="db-field"><span data-field> </span><span class="caret"></span></div>
+              <div class="db-result">
+                <span class="dot"></span>
+                <div><strong>dentist</strong><span class="meta">Tomorrow · 10:00</span></div>
+                <span class="tag">Reminders</span>
+              </div>
+              <p class="db-note">Created in your own Apple Reminders. Nothing leaves the device.</p>
+            </div>
+          </section>
 
           <div class="showcase showcase-triple" data-carousel data-reveal>
             <div class="showcase-why">
@@ -317,6 +340,7 @@
 
     <script src="../assets/js/network.js?v=20261015a"></script>
     <script src="../assets/js/site.js?v=20261016b"></script>
+    <script src="../assets/js/daily-board.js?v=20261016a"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
