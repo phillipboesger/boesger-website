@@ -24,9 +24,9 @@
 ## Projects
 
 - [AI Enablement Hub](https://boesger.com/work/ai-enablement-hub): structured AI coaching for developers, from 149 EUR (materials access), team package on request
-- [Polarion MCP Server](https://boesger.com/work/polarion-mcp): open-source MCP server for the Polarion REST API (MIT)
-- [Polarion Docker](https://boesger.com/work/polarion-docker): containerized Polarion ALM setup (open source, MIT)
-- [Polarion Code Editor](https://boesger.com/work/polarion-code-editor): Monaco-based file editor inside the Polarion admin
+- [Polarion MCP Server](https://polarion-mcp.boesger.com): open-source MCP server for the Polarion REST API (MIT)
+- [Polarion Docker](https://polarion-docker.boesger.com): containerized Polarion ALM setup (open source, MIT)
+- [Polarion Code Editor](https://polarion.code.editor.boesger.com): Monaco-based file editor inside the Polarion admin
 - [Daily Board](https://boesger.com/work/daily-board): local-first iOS app combining Reminders, Calendar, journal and notes
 
 ## Brand colors

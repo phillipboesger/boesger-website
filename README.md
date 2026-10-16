@@ -36,9 +36,6 @@ index.html                    Home — hero, work/portfolio teaser, blog teaser,
 profile.html                  Profile — overview, CV, skills, working-with-me, about (tabbed)
 work.html                     Full work & portfolio grid
 work/
-  polarion-mcp.html           Project detail page
-  polarion-docker.html        Project detail page
-  polarion-code-editor.html   Project detail page
   ai-enablement-hub.html      Project detail page
 blog.html                     Blog topic teaser + newsletter CTA
 colors.html                   Complete brand/identity reference (logos, palette, tokens)

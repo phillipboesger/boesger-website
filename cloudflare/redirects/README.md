@@ -6,7 +6,7 @@ Both hostnames are already proxied by Cloudflare, so redirects are a single rule
 ## Apply
 
 ```sh
-python3 apply.py                                   # dry run, prints the 10 rules
+python3 apply.py                                   # dry run, prints the 13 rules
 CF_API_TOKEN=... CF_ZONE_ID=... python3 apply.py --apply
 ```
 
@@ -28,6 +28,9 @@ whose description starts with `retire:` are replaced.
 | `digital.boesger.com/*` (catch-all, last) | `boesger.com/` |
 | `colors.boesger.com/*` | `boesger.com/colors` |
 | `boesger.com/tools/colors*` | `boesger.com/colors` |
+| `boesger.com/work/polarion-mcp*` | `polarion-mcp.boesger.com` |
+| `boesger.com/work/polarion-docker*` | `polarion-docker.boesger.com` |
+| `boesger.com/work/polarion-code-editor*` | `polarion.code.editor.boesger.com` |
 
 ## Dashboard alternative
 
