@@ -30,7 +30,7 @@
 
   // Soft pointer light inside glass cards (skipped for reduced motion and touch)
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.querySelectorAll(".glass-card").forEach(function (card) {
+    document.querySelectorAll(".glass-card, .skill-card, .link-card, .feature-card, .post-card, .cert-card, .step-card, .compat-card").forEach(function (card) {
       card.addEventListener("pointermove", function (e) {
         if (e.pointerType === "touch") return;
         var r = card.getBoundingClientRect();
