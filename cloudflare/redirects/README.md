@@ -6,7 +6,7 @@ Both hostnames are already proxied by Cloudflare, so redirects are a single rule
 ## Apply
 
 ```sh
-python3 apply.py                                   # dry run, prints the 13 rules
+python3 apply.py                                   # dry run, prints the 10 rules
 CF_API_TOKEN=... CF_ZONE_ID=... python3 apply.py --apply
 ```
 
@@ -18,19 +18,18 @@ whose description starts with `retire:` are replaced.
 
 | From | To |
 |---|---|
-| `digital.boesger.com/about` | `boesger.com/profile#about` |
+| `digital.boesger.com/about`, `/cv`, `/skills` | `boesger.com/profile#about`, `#cv`, `#skills` (one rule) |
 | `digital.boesger.com/services` | `boesger.com/profile#working-with-me` |
-| `digital.boesger.com/cv` | `boesger.com/profile#cv` |
-| `digital.boesger.com/skills` | `boesger.com/profile#skills` |
 | `digital.boesger.com/ai-hub` | `boesger.com/work/ai-enablement-hub` |
 | `digital.boesger.com/imprint` | `boesger.com/imprint` |
 | `digital.boesger.com/*.pdf` | `boesger.com/assets/documents/CV_Polarion_Expert_EN.pdf` |
 | `digital.boesger.com/*` (catch-all, last) | `boesger.com/` |
 | `colors.boesger.com/*` | `boesger.com/colors` |
-| `boesger.com/tools/colors*` | `boesger.com/colors` |
 | `boesger.com/work/polarion-mcp*` | `polarion-mcp.boesger.com` |
 | `boesger.com/work/polarion-docker*` | `polarion-docker.boesger.com` |
 | `boesger.com/work/polarion-code-editor*` | `polarion.code.editor.boesger.com` |
+
+The free Cloudflare plan allows 10 redirect rules per zone, which this ruleset uses up entirely: merge or drop a rule before adding another.
 
 ## Dashboard alternative
 
