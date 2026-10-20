@@ -315,16 +315,28 @@
         ctx.restore();
       });
       // section labels (front side only)
-      ctx.font = "600 11px 'Geist Mono', ui-monospace, Menlo, monospace";
+      ctx.font = "600 " + (w < 440 ? 10 : 11) + "px 'Geist Mono', ui-monospace, Menlo, monospace";
       ctx.textAlign = "center";
+      var labels = [];
       centers.forEach(function (c, i) {
         var x1 = c[0] * cy + c[2] * sy, z1 = -c[0] * sy + c[2] * cy;
         var y1 = c[1] * cp - z1 * sp, z2 = c[1] * sp + z1 * cp;
         var f = 2.6 / (2.6 + z2);
         var a = clamp(0.9 - z2 * 0.9, 0, 0.95);
         if (a < 0.08) return;
-        ctx.fillStyle = rgba(names[i][1], a);
-        ctx.fillText(names[i][0].toUpperCase(), ox + x1 * scale * f, oy + y1 * scale * f - 0.42 * scale * f);
+        var text = names[i][0].toUpperCase();
+        labels.push({ i: i, a: a, text: text, hw: ctx.measureText(text).width / 2 + 3, x: ox + x1 * scale * f, y: oy + y1 * scale * f - 0.42 * scale * f });
+      });
+      // Push overlapping labels apart vertically so rotating clusters never stack their names.
+      var lineH = w < 440 ? 13 : 14;
+      labels.sort(function (p, q) { return p.y - q.y; });
+      labels.forEach(function (l, k) {
+        for (var j = 0; j < k; j++) {
+          var o = labels[j];
+          if (Math.abs(l.x - o.x) < l.hw + o.hw && l.y - o.y < lineH) l.y = o.y + lineH;
+        }
+        ctx.fillStyle = rgba(names[l.i][1], l.a);
+        ctx.fillText(l.text, l.x, l.y);
       });
     });
   }
