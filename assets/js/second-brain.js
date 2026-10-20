@@ -315,7 +315,7 @@
         ctx.restore();
       });
       // section labels (front side only)
-      ctx.font = "600 11px 'Geist Mono', ui-monospace, Menlo, monospace";
+      ctx.font = (w < 440 ? "600 10px 'Geist Mono', ui-monospace, Menlo, monospace" : "600 11px 'Geist Mono', ui-monospace, Menlo, monospace");
       ctx.textAlign = "center";
       centers.forEach(function (c, i) {
         var x1 = c[0] * cy + c[2] * sy, z1 = -c[0] * sy + c[2] * cy;
