@@ -39,7 +39,6 @@ work/
   ai-enablement-hub.html      Project detail page
 blog.html                     Blog topic teaser + newsletter CTA
 colors.html                   Complete brand/identity reference (logos, palette, tokens)
-automation.html               n8n / Proxmox homelab showcase
 links.html                    Compact link-in-bio page (social bio link target)
 contact.html                  LinkedIn / email / book-a-call contact cards
 imprint.html                  Imprint / legal disclosure

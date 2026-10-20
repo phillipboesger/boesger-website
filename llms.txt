@@ -17,7 +17,6 @@
 - [Blog](https://boesger.com/blog): Polarion ALM & AI articles (live blog at https://polarion.boesger.com)
 - [Brand Identity](https://boesger.com/colors): brand colors, logos and CSS design tokens
 - [Contact](https://boesger.com/contact)
-- [Automation & Homelab](https://boesger.com/automation): self-hosted n8n / Proxmox setup
 - [Second Brain](https://boesger.com/second-brain): private single-user digital colleague (application homepage)
 - [Links](https://boesger.com/links): all public channels
 
