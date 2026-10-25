@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://n8n.boesger.com; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -140,6 +142,26 @@
         </section>
 
 
+        <section class="section" id="contact-form" aria-labelledby="contact-form-title" style="padding-top:0">
+          <div class="section-inner">
+            <div class="glass-panel" style="max-width:760px;padding:28px">
+              <h2 id="contact-form-title">Direkter Kontakt / Contact form</h2>
+              <p>Schreib mir zu deinem Anliegen. Alternativ erreichst du mich unter <a href="mailto:digital@boesger.com">digital@boesger.com</a>.</p>
+              <form action="https://n8n.boesger.com/webhook/boesger-contact-v1" method="post" accept-charset="UTF-8" style="display:grid;gap:16px">
+                <label for="contact-name">Name (optional)</label>
+                <input id="contact-name" name="name" autocomplete="name" maxlength="120" style="padding:12px;border:1px solid var(--border-strong);border-radius:8px;background:var(--bg-base);color:var(--text-primary);font:inherit">
+                <label for="contact-email">E-Mail-Adresse / Email (Pflichtfeld)</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" style="padding:12px;border:1px solid var(--border-strong);border-radius:8px;background:var(--bg-base);color:var(--text-primary);font:inherit">
+                <label for="contact-message">Nachricht / Message (Pflichtfeld)</label>
+                <textarea id="contact-message" name="message" required minlength="10" maxlength="5000" rows="7" style="padding:12px;border:1px solid var(--border-strong);border-radius:8px;background:var(--bg-base);color:var(--text-primary);font:inherit;resize:vertical"></textarea>
+                <div hidden aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
+                <p id="contact-privacy" style="font-size:14px">Deine Angaben werden zur Beantwortung deiner Anfrage verarbeitet und an mein Postfach übermittelt. Keine Newsletter-Anmeldung. Einzelheiten stehen in der <a href="privacy.html">Datenschutzerklärung</a>.</p>
+                <button type="submit" class="btn btn-primary" aria-describedby="contact-privacy" style="justify-self:start">Nachricht senden / Send message</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
         <!-- Ask AI -->
         <section class="section ask-ai-section">
           <div class="section-inner">
@@ -193,8 +215,8 @@
           <div class="site-footer-internal-inner">
             <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
             <div class="footer-legal-links">
-              <a href="imprint.html" class="footer-legal-link">Imprint / Legal Disclosure</a>
-            <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+              <a href="imprint.html" class="footer-legal-link">Impressum</a>
+            <a href="privacy.html" class="footer-legal-link">Datenschutz / Privacy</a>
             </div>
           </div>
         </div>

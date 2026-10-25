@@ -22,7 +22,7 @@ A multi-page static site sharing one CSS file and two core JS files. There is no
 - **`blog.html`** — Blog topic cards + newsletter CTA (teases the live blog at polarion.boesger.com; posts are not authored here).
 - **`colors.html`** — The complete brand identity reference, canonical source (colors.boesger.com redirects here): logo/icon variant tiles (downloadable `assets/images/brand-*` files), Backgrounds / Accent / Typography swatch groups (name, purpose, hex, rgb; click-to-copy via `site.js`'s `[data-copy]` handler), brand background image, usage examples, and the CSS token block with a copy button (`[data-copy-target]`).
 - **`links.html`** — Compact, single-column link-in-bio page (all Connect links in one lightweight list — this is the URL to use as an Instagram/social bio link). It is intentionally a standalone URL, matching the design: it is not linked from the nav or Home.
-- **`contact.html`** — LinkedIn / Email / Book-a-call contact cards.
+- **`contact.html`** — LinkedIn / Email / Book-a-call cards plus the direct contact form. The form posts to the dedicated n8n webhook `boesger-contact-v1`; it validates input, limits abuse and delivers to digital@boesger.com via the existing Gmail credential. Its workflow and deployment reference are documented in `docs/privacy-operations.md`.
 - **`imprint.html`** — Imprint / legal disclosure (`noindex`), linked from every footer's bottom bar. Content ported from the retired digital.boesger.com site.
 
 **Shared assets:**
@@ -96,7 +96,7 @@ Marketing/bio copy on this site (years of experience, CV dates, stats, product s
 
 All icons/photos live in `assets/images/` (flat, no subfolders). Recommended formats: PNG or WEBP with transparent background for icons, JPEG for photos. Keep images under ~300 KB. Link card icons are displayed at `34×34 px`; work-card media icons are shown at up to `60px` tall. Non-image documents (e.g. the downloadable CV) live in `assets/documents/`.
 
-Skill-grid icons on `profile.html` reference small third-party icon CDNs (simpleicons.org, DuckDuckGo/Google favicon services, iconify.design) instead of local files, matching the design handoff — these are utility favicons, not brand photography, so hot-linking them is an acceptable exception to "images live locally." Prefer a local asset in `assets/images/` when one already exists for that brand (GitHub, Docker, etc.).
+Skill-grid icons on `profile.html` are self-hosted under `assets/images/skill-*`. Keep fonts, icons and scripts local; do not reintroduce automatic third-party requests. Every page carries a CSP that blocks optional network connections and analytics. The contact form is the only external form action.
 
 ## Cache-busting
 
