@@ -1,0 +1,301 @@
+{
+  "name": "Website: boesger.com contact form",
+  "nodes": [
+    {
+      "id": "ef3c23a7-7666-4131-b5a3-b8b58a9dde97",
+      "name": "Clean abuse window",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "888d936e-c4ea-461f-a0b1-fe65442c79bf",
+      "name": "Expire abuse data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "jsCode": "const state = $getWorkflowStaticData('global'); state.window = (state.window || []).filter(x => x.at > Date.now() - 15 * 60 * 1000); return [];"
+      }
+    },
+    {
+      "id": "4da04a8b-de0b-40f1-9a18-051e3fae7627",
+      "name": "Contact POST",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "boesger-contact-v1",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "1f57e8ef-baec-4a67-a83a-8d39d393bbee"
+    },
+    {
+      "id": "45987460-bce1-4fb5-8a53-f6bf77d7d850",
+      "name": "Validate and limit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "jsCode": "\nconst item = $input.first().json;\nconst body = item.body || {};\nconst headers = item.headers || {};\nconst origin = String(headers.origin || '');\nconst name = String(body.name || '').trim();\nconst email = String(body.email || '').trim();\nconst message = String(body.message || '').trim();\nconst forbidden = /[\\r\\n\\x00]/;\nlet valid = ['https://boesger.com','https://polarion.boesger.com'].includes(origin);\nvalid &&= !String(body.website || '').trim();\nvalid &&= name.length <= 120 && !forbidden.test(name);\nvalid &&= email.length <= 254 && /^[^\\s@<>]+@[^\\s@<>]+\\.[^\\s@<>]+$/.test(email) && !forbidden.test(email);\nvalid &&= message.length >= 10 && message.length <= 5000 && !message.includes('\\x00');\nconst state = $getWorkflowStaticData('global');\nconst now = Date.now();\n// Only a short, per-IP anti-spam window. No messages or email addresses in static data.\nstate.window = (state.window || []).filter(x => x.at > now - 15 * 60 * 1000);\nconst ip = String(headers['cf-connecting-ip'] || '').slice(0,64);\nif (!ip) valid = false;\nif (state.window.length >= 100 || state.window.filter(x => x.ip === ip).length >= 3) valid = false;\nif (valid) state.window.push({ip,at:now});\nreturn [{json:{valid,name,email,message}}];\n"
+      }
+    },
+    {
+      "id": "34c0d256-c6e9-4ec8-b7e9-423c57d96e95",
+      "name": "Valid request",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7dd07b4d-7ab7-48dd-a9b5-19b99e393bdf",
+              "leftValue": "={{ $json.valid }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "8ddea01b-2235-455e-bc0f-9780b3e87e96",
+      "name": "Deliver contact email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        660,
+        -100
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "sendTo": "digital@boesger.com",
+        "subject": "={{ \"[Website-Kontakt] \" + ($json.name || \"Neue Anfrage\") }}",
+        "emailType": "text",
+        "message": "={{ \"Neue Kontaktanfrage über boesger.com\\n\\nName: \" + ($json.name || \"nicht angegeben\") + \"\\nE-Mail: \" + $json.email + \"\\n\\n\" + $json.message }}",
+        "options": {
+          "appendAttribution": false,
+          "replyTo": "={{ $json.email }}"
+        }
+      },
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "RKeUc2AUmS1L4PFo",
+          "name": "Gmail account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "id": "117c078c-1eb2-4e78-9873-9065188c40d6",
+      "name": "Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        900,
+        -180
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "<!doctype html><html lang=\"de\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>Nachricht gesendet</title><body><main style=\"max-width:650px;margin:60px auto;padding:24px;font:18px/1.7 system-ui\"><h1>Nachricht gesendet</h1><p>Danke für deine Anfrage. Deine Nachricht wurde zur Zustellung angenommen.</p><p><a href=\"https://boesger.com/contact.html\">Zurück zu Bösger Digital</a></p><p><a href=\"https://boesger.com/imprint.html\">Impressum</a> · <a href=\"https://boesger.com/privacy.html\">Datenschutz</a></p></main></body></html>",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              },
+              {
+                "name": "Cache-Control",
+                "value": "no-store"
+              },
+              {
+                "name": "Referrer-Policy",
+                "value": "no-referrer"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "436165c4-6116-423f-8ec7-2e725bb0fe46",
+      "name": "Invalid or limited",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        660,
+        160
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "<!doctype html><html lang=\"de\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>Nachricht nicht gesendet</title><body><main style=\"max-width:650px;margin:60px auto;padding:24px;font:18px/1.7 system-ui\"><h1>Nachricht nicht gesendet</h1><p>Bitte prüfe deine E-Mail-Adresse und Nachricht. Nach mehreren Anfragen warte bitte 15 Minuten. Alternativ erreichst du mich per E-Mail.</p><p><a href=\"https://boesger.com/contact.html#contact-form\">Zurück zum Formular</a> · <a href=\"mailto:digital@boesger.com\">digital@boesger.com</a></p></main></body></html>",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              },
+              {
+                "name": "Cache-Control",
+                "value": "no-store"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "7337c2b9-b870-4790-aa19-c8860dc2cb8d",
+      "name": "Delivery error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        900,
+        60
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "<!doctype html><html lang=\"de\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>Zustellung fehlgeschlagen</title><body><main style=\"max-width:650px;margin:60px auto;padding:24px;font:18px/1.7 system-ui\"><h1>Nachricht nicht gesendet</h1><p>Die Zustellung ist vorübergehend nicht möglich. Bitte sende deine Anfrage direkt an <a href=\"mailto:digital@boesger.com\">digital@boesger.com</a>.</p><p><a href=\"https://boesger.com/contact.html\">Zurück</a></p></main></body></html>",
+        "options": {
+          "responseCode": 503,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              },
+              {
+                "name": "Cache-Control",
+                "value": "no-store"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Clean abuse window": {
+      "main": [
+        [
+          {
+            "node": "Expire abuse data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact POST": {
+      "main": [
+        [
+          {
+            "node": "Validate and limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate and limit": {
+      "main": [
+        [
+          {
+            "node": "Valid request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid request": {
+      "main": [
+        [
+          {
+            "node": "Deliver contact email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Invalid or limited",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deliver contact email": {
+      "main": [
+        [
+          {
+            "node": "Success",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Delivery error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "none",
+    "saveManualExecutions": false,
+    "executionTimeout": 30,
+    "timezone": "Europe/Berlin"
+  }
+}
