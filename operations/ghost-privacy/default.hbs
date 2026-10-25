@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
+<head>
+
+    {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
+    <title>{{meta_title}}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'nonce-axMa4D9ZXs6xFzCK3zbziGcNzaDTsWNA' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://*.stripe.com https://*.stripe.network https://cdn.jsdelivr.net https://tally.so; frame-src https://*.stripe.com https://*.stripe.network https://tally.so; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://n8n.boesger.com; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="stylesheet" href="{{asset "privacy.css"}}">
+    <script nonce="axMa4D9ZXs6xFzCK3zbziGcNzaDTsWNA">window.BDPrivacy = (() => {
+      let choice = null;
+      try {
+        const value = document.cookie.split('; ').find(c => c.startsWith('bd_privacy='));
+        const match = value && /^v1-m([01])-s([01])-t(\d+)$/.exec(value.slice(11));
+        if (match && Date.now() / 1000 - Number(match[3]) < 15552000 && Number(match[3]) <= Date.now() / 1000 + 60) {
+          choice = {membership: match[1] === '1', surveys: match[2] === '1'};
+        }
+      } catch (_) {}
+      if (!choice || !choice.membership) {
+        for (const key of ['__stripe_mid', '__stripe_sid']) {
+          document.cookie = key + '=; Max-Age=0; Path=/; Secure; SameSite=Lax';
+          document.cookie = key + '=; Max-Age=0; Path=/; Domain=' + location.hostname + '; Secure; SameSite=Lax';
+        }
+      }
+      return {choice};
+    })();</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {{!-- Preload scripts --}}
+    <link rel="preload" as="style" href="{{asset "built/screen.css"}}" />
+    <link rel="preload" as="script" href="{{asset "built/casper.js"}}" />
+
+    {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
+    this will take care of caching and cache-busting automatically --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+
+    {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
+    it should always be the last tag before the closing head tag --}}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}}">
+        <div class="gh-head-inner inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                <button class="gh-burger" aria-label="Main Menu"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                {{navigation}}
+                {{#unless @site.members_enabled}}
+                    {{#match @custom.navigation_layout "Stacked"}}
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                    {{/match}}
+                {{/unless}}
+            </nav>
+
+            <div class="gh-head-actions">
+                {{#unless @site.members_enabled}}
+                    {{^match @custom.navigation_layout "Stacked"}}
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                    {{/match}}
+                {{else}}
+                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                    <div class="gh-head-members">
+                        {{#unless @member}}
+                            {{#unless @site.members_invite_only}}
+                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">{{t "Sign in"}}</a>
+                                <a class="gh-head-button" href="#/portal/signup" data-portal="signup">{{t "Subscribe"}}</a>
+                            {{else}}
+                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin">{{t "Sign in"}}</a>
+                            {{/unless}}
+                        {{else}}
+                            <a class="gh-head-button" href="#/portal/account" data-portal="account">{{t "Account"}}</a>
+                        {{/unless}}
+                    </div>
+                {{/unless}}
+            </div>
+        </div>
+    </header>
+
+    <div class="site-content">
+        {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+    </div>
+
+    {{!-- The global footer at the very bottom of the screen --}}
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <nav class="site-footer-nav">
+                {{navigation type="secondary"}}
+                <a href="/legal-notice-impressum/">Impressum</a>
+                <a href="/privacy/">Datenschutz / Privacy</a>
+                <a href="/contact/">Kontaktformular</a>
+                <button type="button" class="bd-privacy-open">Datenschutz-Einstellungen</button>
+            </nav>
+            <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">{{t "Powered by Ghost"}}</a></div>
+        </div>
+    </footer>
+
+</div>
+{{!-- /.viewport --}}
+
+{{#is "post, page"}}
+    {{> "lightbox"}}
+{{/is}}
+
+{{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
+<script nonce="axMa4D9ZXs6xFzCK3zbziGcNzaDTsWNA" src="{{asset "vendor/jquery-3.5.1.min.js"}}"></script>
+<script nonce="axMa4D9ZXs6xFzCK3zbziGcNzaDTsWNA" src="{{asset "built/casper.js"}}"></script>
+<script nonce="axMa4D9ZXs6xFzCK3zbziGcNzaDTsWNA">
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+{{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
+{{ghost_foot}}
+
+
+<section id="bd-privacy" aria-labelledby="bd-privacy-title" hidden>
+  <h2 id="bd-privacy-title">Optionale Dienste</h2>
+  <p>Dieser Blog lädt Dienste für Mitgliedschaft, Newsletter und Unterstützung (Ghost Portal über jsDelivr und Stripe) sowie eingebettete Umfragen (Tally) erst nach deiner Einwilligung. Dabei können Daten an Dritte, auch außerhalb der EU, übertragen und Cookies oder andere Browser-Speicher verwendet werden. Zum Lesen brauchst du diese Dienste nicht.</p>
+  <p><a href="/privacy/">Datenschutzerklärung mit Anbietern und Speicherfristen</a> · <a href="/legal-notice-impressum/">Impressum</a></p>
+  <div class="bd-privacy-actions"><button type="button" id="bd-reject">Nur notwendige</button><button type="button" id="bd-accept">Alle erlauben</button><button type="button" id="bd-details">Auswahl anpassen</button></div>
+  <div id="bd-options" hidden>
+    <p><label><input type="checkbox" id="bd-membership"> Mitgliedschaft, Newsletter-Portal und Zahlungen (Ghost Portal/jsDelivr, Stripe)</label></p>
+    <p><label><input type="checkbox" id="bd-surveys"> Eingebettete Umfragen (Tally)</label></p>
+    <button type="button" id="bd-save">Auswahl speichern</button>
+  </div>
+  <p class="bd-privacy-note">Deine Auswahl wird für höchstens sechs Monate in einem notwendigen Cookie gespeichert. Du kannst sie jederzeit über „Datenschutz-Einstellungen“ ändern oder widerrufen.</p>
+</section>
+<p id="bd-service-status" role="status" aria-live="polite"></p>
+<script nonce="axMa4D9ZXs6xFzCK3zbziGcNzaDTsWNA" data-bd-controller src="{{asset "privacy-controls.js"}}"></script>
+
+</body>
+</html>
