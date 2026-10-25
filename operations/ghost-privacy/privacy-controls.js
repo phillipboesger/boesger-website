@@ -64,8 +64,8 @@
         frame.dataset.bdLoaded='true'; frame.src=frame.dataset.tallySrc;
       } else {
         const panel=document.createElement('section'); panel.className='bd-survey-placeholder';
-        const info=document.createElement('p'); info.textContent='Externe Umfrage gesperrt. Tally erhält erst nach deiner Einwilligung deine IP-Adresse und technische Browserdaten. Antworten sendest du anschließend freiwillig direkt an Tally. Details stehen in der Datenschutzerklärung.';
-        const button=document.createElement('button');button.type='button';button.textContent='Datenschutz-Einstellungen für die Umfrage öffnen';button.addEventListener('click',()=>open(true));
+        const info=document.createElement('p'); info.textContent='External survey blocked. Tally only receives your IP address and technical browser data after you agree. You then submit answers to Tally voluntarily. See the privacy policy for details.';
+        const button=document.createElement('button');button.type='button';button.textContent='Open privacy settings for the survey';button.addEventListener('click',()=>open(true));
         panel.append(info,button);frame.before(panel);
       }
     });
@@ -73,7 +73,7 @@
   }
   const ready = () => {
     if (!state.choice) open();
-    services().catch(()=>{document.getElementById('bd-service-status').textContent='Ein Dienst konnte nicht geladen werden. Du kannst den Blog weiterhin lesen und mich über das Kontaktformular erreichen.';});
+    services().catch(()=>{document.getElementById('bd-service-status').textContent='A service could not be loaded. You can still read the blog and reach me via the contact form.';});
   };
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',ready,{once:true}); else ready();
 })();
