@@ -11,7 +11,8 @@
     box.hidden = false; options.hidden = !details;
     membership.checked = Boolean(state.choice && state.choice.membership);
     surveys.checked = Boolean(state.choice && state.choice.surveys);
-    document.getElementById(details ? 'bd-membership' : 'bd-reject').focus({preventScroll:true});
+    // No autofocus on the first, automatic display: the focus ring would cover the banner text.
+    if (details) document.getElementById('bd-membership').focus({preventScroll:true});
   }
   function save(member, survey) {
     const value = `v1-m${Number(member)}-s${Number(survey)}-t${Math.floor(Date.now()/1000)}`;
