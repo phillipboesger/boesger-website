@@ -139,16 +139,19 @@ $(document).ready(function () {
 
 
 <section id="bd-privacy" role="dialog" aria-modal="false" aria-labelledby="bd-privacy-title" hidden>
-  <h2 id="bd-privacy-title">Privacy settings</h2>
-  <p>Membership, newsletter, payments (Ghost Portal via jsDelivr, Stripe) and embedded surveys (Tally) load only after you agree. Data may go to third parties, also outside the EU. You don't need them to read the blog.</p>
-  <p class="bd-privacy-links"><a href="/privacy/">Privacy policy with providers and retention periods</a> · <a href="/legal-notice-impressum/">Legal notice (Impressum)</a></p>
+  <h2 id="bd-privacy-title">Privacy</h2>
+  <p>Optional services (membership, payments, surveys) load only if you agree. Not needed for reading.</p>
+  <details class="bd-privacy-more"><summary>More information</summary>
+    <p>Membership, newsletter and payments use Ghost Portal via jsDelivr and Stripe; surveys use Tally. Data may go to third parties, also outside the EU, and cookies or browser storage may be used.</p>
+    <p class="bd-privacy-links"><a href="/privacy/">Privacy policy with providers and retention periods</a> · <a href="/legal-notice-impressum/">Legal notice (Impressum)</a></p>
+    <p class="bd-privacy-note">Your choice is stored for at most six months in a strictly necessary cookie. Change or withdraw it any time via "Privacy settings" in the footer.</p>
+  </details>
   <div class="bd-privacy-actions"><button type="button" id="bd-reject">Necessary only</button><button type="button" id="bd-accept">Allow all</button><button type="button" id="bd-details">Customize</button></div>
   <div id="bd-options" hidden>
     <p><label><input type="checkbox" id="bd-membership"> Membership, newsletter portal and payments (Ghost Portal/jsDelivr, Stripe)</label></p>
     <p><label><input type="checkbox" id="bd-surveys"> Embedded surveys (Tally)</label></p>
     <button type="button" id="bd-save">Save selection</button>
   </div>
-  <p class="bd-privacy-note">Your choice is stored for at most six months in a strictly necessary cookie. You can change or withdraw it at any time via "Privacy settings" in the footer.</p>
 </section>
 <p id="bd-service-status" role="status" aria-live="polite"></p>
 <script nonce="axMa4D9ZXs6xFzCK3zbziGcNzaDTsWNA" data-bd-controller src="{{asset "privacy-controls.js"}}"></script>
