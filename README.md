@@ -59,7 +59,7 @@ assets/
 cloudflare/tools-proxy/       Optional Cloudflare Worker; see its own README for setup
 cloudflare/redirects/         Redirect rules retiring digital.boesger.com and colors.boesger.com
 sitemap.xml, robots.txt, llms.txt   Search and AI-agent discovery files
-CLAUDE.md                     Detailed architecture and conventions reference for this repo
+CLAUDE.md                     Agent entry point (commands, hard constraints); details in .claude/rules/
 ```
 
 ## Local Development
@@ -77,7 +77,7 @@ Pushing to `main` triggers `.github/workflows/updateWebsite.yml`, which publishe
 
 ## Customization
 
-For the full architecture reference, design-token table, and copy-paste patterns for links, work cards, section headings, tabs, and the media carousel, see [`CLAUDE.md`](./CLAUDE.md).
+For the full architecture reference, design-token table, and copy-paste patterns for links, work cards, section headings, tabs, and the media carousel, see [`docs/architecture.md`](./docs/architecture.md).
 
 ## License
 
