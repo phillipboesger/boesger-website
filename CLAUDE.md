@@ -15,7 +15,7 @@ Fully static personal hub site for Phillip Bösger (Bösger Digital): home, prof
 
 ## Hard constraints
 
-- Data correctness: bio/marketing copy (years, CV dates, stats, product statuses) must be traceable to a real source (git history, github.com/phillipboesger, LinkedIn, product repos). Never invent numbers, testimonials, post titles or CV entries, also when porting from a design mockup. Unverifiable: ask before publishing.
+- Data correctness: bio/marketing copy (years, CV dates, stats, product statuses) must be traceable to a real source (git history, github.com/phillipboesger, LinkedIn, product repos). Never invent numbers, testimonials, post titles or CV entries, also when porting from a design mockup. Unverifiable: ask before publishing. The July 2026 redesign content (dates, GPA, certifications, product stats such as "284 REST operations", pricing) came verbatim from the owner's mockup and is not fact-checked: spot-check it against the source before relying on it or when it is challenged.
 - Cache-busting: Cloudflare and browsers cache `assets/css/style.css` and `assets/js/*.js` for 4 h under unchanging names. Every `.html` page references them with the same `?v=YYYYMMDDx`; bump it on every commit that changes `style.css`, `site.js` or `network.js`, across all pages (`grep -rn '?v=' --include='*.html'`).
 - No third-party requests: fonts, icons, scripts stay local; every page has a CSP that blocks optional network connections and analytics. The contact form (n8n webhook `boesger-contact-v1`, see `docs/privacy-operations.md`) is the only external form action.
 - Use design tokens from `assets/css/style.css` `:root`; no literal color values.
@@ -24,4 +24,4 @@ Fully static personal hub site for Phillip Bösger (Bösger Digital): home, prof
 ## Docs and rules
 
 - Architecture, page inventory, CSS tokens, copy-paste HTML patterns: `docs/architecture.md`.
-- Path-scoped rules in `.claude/rules/`: `html-pages.md` (`*.html`), `styles-and-scripts.md` (`assets/**`), `seo-files.md` (sitemap, robots, llms, CV PDFs).
+- Path-scoped rules in `.claude/rules/`: `html-pages.md` (all `.html`), `styles-and-scripts.md` (`assets/**`), `seo-files.md` (sitemap, robots, llms, CV PDFs).

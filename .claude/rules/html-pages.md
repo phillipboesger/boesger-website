@@ -1,7 +1,7 @@
 ---
 paths:
   - "*.html"
-  - "work/**/*.html"
+  - "**/*.html"
 ---
 # HTML page rules
 
