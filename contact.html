@@ -69,7 +69,7 @@
     <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
     <title>Contact | Phillip Bösger</title>
     <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
-    <link href="assets/css/style.css?v=20261020a" rel="stylesheet" />
+    <link href="assets/css/style.css?v=20261122a" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -144,19 +144,33 @@
 
         <section class="section" id="contact-form" aria-labelledby="contact-form-title" style="padding-top:0">
           <div class="section-inner">
-            <div class="glass-panel" style="max-width:760px;padding:28px">
-              <h2 id="contact-form-title">Direkter Kontakt / Contact form</h2>
-              <p>Schreib mir zu deinem Anliegen. Alternativ erreichst du mich unter <a href="mailto:digital@boesger.com">digital@boesger.com</a>.</p>
-              <form action="https://n8n.boesger.com/webhook/boesger-contact-v1" method="post" accept-charset="UTF-8" style="display:grid;gap:16px">
-                <label for="contact-name">Name (optional)</label>
-                <input id="contact-name" name="name" autocomplete="name" maxlength="120" style="padding:12px;border:1px solid var(--border-strong);border-radius:8px;background:var(--bg-base);color:var(--text-primary);font:inherit">
-                <label for="contact-email">E-Mail-Adresse / Email (Pflichtfeld)</label>
-                <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" style="padding:12px;border:1px solid var(--border-strong);border-radius:8px;background:var(--bg-base);color:var(--text-primary);font:inherit">
-                <label for="contact-message">Nachricht / Message (Pflichtfeld)</label>
-                <textarea id="contact-message" name="message" required minlength="10" maxlength="5000" rows="7" style="padding:12px;border:1px solid var(--border-strong);border-radius:8px;background:var(--bg-base);color:var(--text-primary);font:inherit;resize:vertical"></textarea>
-                <div hidden aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
-                <p id="contact-privacy" style="font-size:14px">Deine Angaben werden zur Beantwortung deiner Anfrage verarbeitet und an mein Postfach übermittelt. Keine Newsletter-Anmeldung. Einzelheiten stehen in der <a href="privacy.html">Datenschutzerklärung</a>.</p>
-                <button type="submit" class="btn btn-primary" aria-describedby="contact-privacy" style="justify-self:start">Nachricht senden / Send message</button>
+            <div class="glass-panel contact-form-panel" data-reveal>
+              <div class="contact-form-intro">
+                <p class="glass-panel-label">Message</p>
+                <h2 id="contact-form-title">Write me directly</h2>
+                <p>A few lines on what you are working on are enough.</p>
+                <p class="contact-form-alt">Prefer your own mail client? <a href="mailto:digital@boesger.com">digital@boesger.com</a></p>
+              </div>
+              <form class="contact-form" action="https://n8n.boesger.com/webhook/boesger-contact-v1" method="post" accept-charset="UTF-8">
+                <div class="contact-form-row">
+                  <div class="form-field">
+                    <label for="contact-name">Name <span class="form-optional">(optional)</span></label>
+                    <input id="contact-name" name="name" autocomplete="name" maxlength="120" placeholder="Your name" />
+                  </div>
+                  <div class="form-field">
+                    <label for="contact-email">Email</label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@company.com" />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="contact-message">Message</label>
+                  <textarea id="contact-message" name="message" required minlength="10" maxlength="5000" rows="6" placeholder="What should we talk about?"></textarea>
+                </div>
+                <div hidden aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off" /></div>
+                <div class="contact-form-footer">
+                  <p id="contact-privacy" class="contact-form-note">I only use your details to answer your request; they are sent to my inbox. No newsletter. Details in the <a href="privacy.html">privacy policy</a>.</p>
+                  <button type="submit" class="btn btn-primary btn-lg" aria-describedby="contact-privacy">Send message</button>
+                </div>
               </form>
             </div>
           </div>
