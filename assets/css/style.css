@@ -2826,3 +2826,31 @@ a:hover {
 :is(.skill-card, .link-card, .feature-card, .post-card, .cert-card, .step-card, .compat-card):hover::after {
   opacity: 1;
 }
+
+/* Legal pages (privacy): readable single column of glass panels */
+.legal-panel {
+  max-width: 860px;
+  padding: 28px 30px;
+  margin-bottom: 18px;
+}
+.legal-panel p,
+.legal-panel li {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.legal-panel p {
+  margin: 0 0 12px;
+}
+.legal-panel p:last-child {
+  margin-bottom: 0;
+}
+.legal-panel ul {
+  margin: 0 0 12px;
+  padding-left: 1.2em;
+}
+@media (max-width: 560px) {
+  .legal-panel {
+    padding: 22px 20px;
+  }
+}
